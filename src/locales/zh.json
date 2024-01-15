@@ -1,0 +1,15 @@
+{
+    "app": {
+        "title": "About GK"
+    },
+    "nav": {
+        "about": "關於我",
+        "proficiency": "專業能力",
+        "project": "專案"
+    },
+    "skills": {
+        "backend": "後端開發",
+        "devops": "部署維運",
+        "frontend": "前端開發"
+    }
+}
