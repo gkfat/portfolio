@@ -1,7 +1,9 @@
 <template>
-    <About />
-    <Proficiency />
-    <Project />
+    <v-container>
+        <About />
+        <Proficiency />
+        <Project />
+    </v-container>
 
     <!-- Go Top Button -->
     <v-btn
