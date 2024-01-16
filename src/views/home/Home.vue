@@ -1,5 +1,5 @@
 <template>
-    <v-container style="max-width:900px">
+    <v-container style="max-width: 900px">
         <About />
         <Proficiency />
         <Project />

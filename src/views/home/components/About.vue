@@ -4,7 +4,7 @@
         class="mb-10"
         fluid
     >
-        <v-row class="flex-wrap mb-8">
+        <v-row class="flex-wrap mb-14">
             <v-col cols="12">
                 <p class="text-h5 text-center font-weight-medium">
                     {{ t('nav.' + NavItems.About) }}

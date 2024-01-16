@@ -105,7 +105,9 @@ function goTop() {
 }
 
 function goToSection(nav: string) {
-    document.getElementById(nav)!.scrollIntoView({
+    const { offsetTop } = document.getElementById(nav)!;
+    window.scrollTo({
+        top: offsetTop - 100,
         behavior: 'smooth',
     });
     drawer.value = false;
