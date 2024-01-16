@@ -1,5 +1,5 @@
 <template>
-    <v-container>
+    <v-container style="max-width:900px">
         <About />
         <Proficiency />
         <Project />
@@ -9,6 +9,7 @@
     <v-btn
         v-show="passScrollToTopThreshold"
         v-scroll="onScroll"
+        color="primary"
         position="fixed"
         location="right bottom"
         class="ma-6"

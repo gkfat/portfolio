@@ -1,12 +1,22 @@
 <template>
     <v-container
         :id="NavItems.Proficiency"
-        class="mb-5"
+        class="mb-10"
         fluid
     >
-        <p class="text-h5 mb-3">
-            {{ t('nav.' + NavItems.Proficiency) }}
-        </p>
+        <v-row class="flex-wrap mb-8">
+            <v-col cols="12">
+                <p class="text-h5 text-center font-weight-medium">
+                    {{ t('nav.' + NavItems.Proficiency) }}
+                </p>
+            </v-col>
+            <v-col col="12">
+                <v-divider
+                    thickness="3"
+                    class="w-25 mx-auto"
+                />
+            </v-col>
+        </v-row>
 
         <v-carousel
             cycle
@@ -19,37 +29,45 @@
                 :key="pro.title"
             >
                 <v-sheet
-                    color="primary"
                     height="100%"
-                    rounded
+                    class="overflow-hidden"
+                    color="primary"
+                    rounded="lg"
                 >
-                    <div class="pa-3 d-flex justify-center align-items-center flex-wrap ga-1">
-                        <h4 class="text-h6 text-center w-100">
-                            <v-icon
-                                class="mb-1"
-                                :icon="pro.icon"
-                                size="36"
-                            />
-                            <br>
-                            {{ pro.title }}
-                        </h4>
-                        <v-divider class="my-3" />
-                        <v-list-item
-                            v-for="item of pro.items"
-                            :key="item"
-                            class="text-body-2 w-100"
+                    <v-row class="justify-center pa-4">
+                        <v-col
+                            cols="12"
+                            md="8"
                         >
-                            <template #prepend>
+                            <h4 class="text-h6 text-center w-100">
                                 <v-icon
-                                    icon="mdi-check-circle-outline"
-                                    size="18"
+                                    class="mb-1"
+                                    :icon="pro.icon"
+                                    size="36"
                                 />
-                            </template>
-                            <v-list-item-subtitle>
-                                {{ item }}
-                            </v-list-item-subtitle>
-                        </v-list-item>
-                    </div>
+                                <br>
+                                {{ pro.title }}
+                            </h4>
+
+                            <v-divider class="my-5" />
+
+                            <v-list-item
+                                v-for="item of pro.items"
+                                :key="item"
+                                class="text-body-2 w-100"
+                            >
+                                <template #prepend>
+                                    <v-icon
+                                        icon="mdi-check-circle-outline"
+                                        size="18"
+                                    />
+                                </template>
+                                <v-list-item-title class="text-wrap">
+                                    {{ item }}
+                                </v-list-item-title>
+                            </v-list-item>
+                        </v-col>
+                    </v-row>
                 </v-sheet>
             </v-carousel-item>
         </v-carousel>

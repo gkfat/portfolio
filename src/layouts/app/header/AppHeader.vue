@@ -1,9 +1,10 @@
 <template>
     <v-app-bar
         flat
+        style="position:fixed;"
     >
         <v-app-bar-title
-            class="logo"
+            class="logo text-primary"
             @click="goTop()"
         >
             {{ t('app.title') }}
@@ -28,8 +29,8 @@
                     v-for="nav of navItems"
                     :key="nav"
                     :ripple="false"
-                    variant="plain"
-                    class="text-capitalize"
+                    variant="text"
+                    class="text-primary"
                     @click="goToSection(nav)"
                 >
                     {{ t('nav.' + nav) }}
