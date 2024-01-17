@@ -1,7 +1,7 @@
 <template>
     <v-card
         color="primary"
-        class="h-100 d-flex flex-wrap rounded-xl gradient"
+        class="h-100 d-flex flex-wrap rounded-xl gradient justify-start"
         style="flex-direction: column;"
         hover
     >
