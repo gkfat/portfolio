@@ -26,9 +26,6 @@ export const vuetify = createVuetify({
                     primary: colors.teal.darken1,
                     secondary: colors.teal.darken4,
                     warning: colors.amber.base,
-                    info: colors.cyan.base,
-                    error: colors.red.base,
-                    success: colors.green.base,
                 },
             },
             dark: {
@@ -36,7 +33,7 @@ export const vuetify = createVuetify({
                 colors: {
                     primary: colors.amber.base,
                     secondary: colors.amber.darken4,
-                    error: colors.red.base,
+                    warning: colors.teal.base,
                 },
             },
         },

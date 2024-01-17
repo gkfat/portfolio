@@ -18,7 +18,19 @@
             </v-col>
         </v-row>
 
-        <v-carousel
+        <v-row class="align-stretch flex-wrap">
+            <v-col
+                v-for="proficiency of proficiencys"
+                :key="proficiency.title"
+                cols="12"
+                sm="6"
+                md="4"
+            >
+                <ProficiencyCard :proficiency="proficiency" />
+            </v-col>
+        </v-row>
+
+        <!-- <v-carousel
             cycle
             hide-delimiters
             show-arrows="hover"
@@ -70,18 +82,20 @@
                     </v-row>
                 </v-sheet>
             </v-carousel-item>
-        </v-carousel>
+        </v-carousel> -->
     </v-container>
 </template>
 
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 
+import ProficiencyCard from '@/components/ProficiencyCard.vue';
 import { NavItems } from '@/enums/nav-items';
+import { Types } from '@/types/types';
 
 const { t } = useI18n();
 
-const proficiency = [
+const proficiencys: Types.Proficiency[] = [
     {
         title: '程式碼分析＆文件編寫',
         icon: 'mdi-text-box-search-outline',

@@ -1,6 +1,6 @@
 <template>
     <v-card
-        class="h-100 d-flex flex-wrap"
+        class="h-100 d-flex flex-wrap rounded-xl"
         style="flex-direction: column;"
         hover
     >
@@ -57,11 +57,11 @@
 </template>
 
 <script lang="ts" setup>
-import { Projects } from '@/types/project';
+import { Types } from '@/types/types';
 
 import Chip from './Chip.vue';
 
 defineProps<{
-    project: Projects.Project;
+    project: Types.Project;
 }>();
 </script>

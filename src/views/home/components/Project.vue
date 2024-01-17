@@ -38,11 +38,11 @@ import { useI18n } from 'vue-i18n';
 
 import ProjectCard from '@/components/ProjectCard.vue';
 import { NavItems } from '@/enums/nav-items';
-import { Projects } from '@/types/project';
+import { Types } from '@/types/types';
 
 const { t } = useI18n();
 
-const projects: Projects.Project[] = [
+const projects: Types.Project[] = [
     {
         title: '台積心築藝術季 2021',
         subtitle: '前端網站開發',
@@ -74,7 +74,7 @@ const projects: Projects.Project[] = [
         linkUrl: 'https://demo-thlk.pages.dev/',
     },
     {
-        title: '艾信科金融科技網站',
+        title: 'Atrustek Fintech SaaS',
         subtitle: '網站前端開發 & 串接',
         items: [
             '會員系統',
@@ -92,7 +92,7 @@ const projects: Projects.Project[] = [
         linkUrl: 'https://www.atrustek.com/cis/home',
     },
     {
-        title: 'Asink 艾新科 EIP',
+        title: 'Asink EIP',
         subtitle: '網站前端開發 & 串接',
         items: [
             '帳號權限系統',
