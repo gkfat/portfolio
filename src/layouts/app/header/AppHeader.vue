@@ -13,11 +13,10 @@
         <v-spacer />
 
         <div class="d-flex align-center">
-            <v-switch
+            <v-btn
                 v-model="isDark"
-                :prepend-icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'"
-                hide-details
-                inset
+                variant="plain"
+                :icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'"
                 @click.prevent="changeTheme()"
             />
 

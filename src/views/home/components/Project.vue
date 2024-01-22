@@ -44,7 +44,8 @@ const { t } = useI18n();
 
 const projects: Types.Project[] = [
     {
-        title: '台積心築藝術季 2021',
+        title: '台積心築藝術季',
+        time: '2021',
         subtitle: '前端網站開發',
         items: [
             '網站視覺與流程設計',
@@ -60,6 +61,7 @@ const projects: Types.Project[] = [
     },
     {
         title: '海禾通商',
+        time: '2022~2023',
         subtitle: '網站改版 & RWD',
         items: [
             '靜態網站改版為 RWD 網站',
@@ -75,6 +77,7 @@ const projects: Types.Project[] = [
     },
     {
         title: 'Atrustek Fintech SaaS',
+        time: '2019~2021',
         subtitle: '網站前端開發 & 串接',
         items: [
             '會員系統',
@@ -93,6 +96,7 @@ const projects: Types.Project[] = [
     },
     {
         title: 'Asink EIP',
+        time: '2021~2022',
         subtitle: '網站前端開發 & 串接',
         items: [
             '帳號權限系統',
@@ -115,6 +119,7 @@ const projects: Types.Project[] = [
     },
     {
         title: '齊柏林基金會 EDM',
+        time: '2021',
         subtitle: 'EDM 切版',
         items: [
             'EDM 模板設計',
@@ -126,6 +131,7 @@ const projects: Types.Project[] = [
     },
     {
         title: 'Logicard Duel',
+        time: '2023',
         subtitle: '前端遊戲規劃 & 開發',
         items: [
             '遊戲流程邏輯設計與開發',
@@ -141,6 +147,20 @@ const projects: Types.Project[] = [
             { text: 'Cloudflare', icon: 'mdi-cloud-outline' },
         ],
         linkUrl: 'https://logicard-duel.pages.dev/',
+    },
+    {
+        title: 'IKEA 活動網頁切版',
+        time: '2021',
+        subtitle: '前端開發',
+        items: [
+            '前端 RWD 網頁開發',
+        ],
+        techStacks: [
+            { text: 'HTML', icon: 'mdi-language-html5' },
+            { text: 'CSS', icon: 'mdi-language-css3' },
+            { text: 'JavaScript', icon: 'mdi-language-javascript' },
+        ],
+        linkUrl: 'https://demo-2021-ikea-csr-campaign.pages.dev',
     },
 ];
 </script>

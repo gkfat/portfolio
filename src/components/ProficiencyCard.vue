@@ -19,6 +19,18 @@
             <v-divider />
 
             <v-card-text class="px-0">
+                <!-- <p
+                    v-for="item of proficiency.items"
+                    :key="item"
+                    class="text-wrap text-body-2 text-white"
+                >
+                    <v-icon
+                        icon="mdi-check-circle-outline"
+                        size="18"
+                    />
+                    {{ item }}
+                </p> -->
+
                 <v-list-item
                     v-for="item of proficiency.items"
                     :key="item"

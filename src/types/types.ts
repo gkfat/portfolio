@@ -2,6 +2,7 @@ export namespace Types {
 
     export interface Project {
         title: string;
+        time: string;
         subtitle: string;
         items: string[];
         techStacks: {

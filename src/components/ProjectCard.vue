@@ -8,26 +8,40 @@
             class="w-100 flex-grow-1 d-flex"
             style="flex-direction: column;"
         >
-            <v-card-title class="text-primary">
-                {{ project.title }}
-            </v-card-title>
-
-            <v-card-subtitle class="text-secondary mb-5">
-                {{ project.subtitle }}
-            </v-card-subtitle>
-
-            <div class="mb-5 flex-grow-1">
-                <p
-                    v-for="item of project.items"
-                    :key="item"
+            <div class="d-flex justify-end">
+                <v-chip
+                    color="secondary"
+                    density="compact"
                 >
-                    <v-icon
-                        icon="mdi-check-circle-outline"
-                        size="18"
-                    />
-                    {{ item }}
-                </p>
+                    {{ project.time }}
+                </v-chip>
             </div>
+
+            <v-card-text
+                class="flex-grow-1 d-flex mb-5"
+                style="flex-direction: column;"
+            >
+                <v-card-title class="text-primary text-wrap px-0">
+                    {{ project.title }}
+                </v-card-title>
+
+                <v-card-subtitle class="text-secondary px-0 mb-5">
+                    {{ project.subtitle }}
+                </v-card-subtitle>
+
+                <div>
+                    <p
+                        v-for="item of project.items"
+                        :key="item"
+                    >
+                        <v-icon
+                            icon="mdi-check-circle-outline"
+                            size="18"
+                        />
+                        {{ item }}
+                    </p>
+                </div>
+            </v-card-text>
 
             <div>
                 <Chip
