@@ -4,7 +4,7 @@
         class="mb-10"
         fluid
     >
-        <v-row class="flex-wrap mb-14">
+        <v-row class="mb-14">
             <v-col cols="12">
                 <p class="text-h5 text-center font-weight-medium">
                     {{ t('nav.' + NavItems.About) }}
@@ -27,10 +27,11 @@
                 cols="auto"
                 sm="2"
             >
-                <v-avatar size="100">
+                <v-avatar size="110">
                     <v-img
+                        :aspect-ratio="1/1"
                         src="/gkfat.png"
-                        cover
+                        contain
                     />
                 </v-avatar>
             </v-col>
@@ -39,13 +40,13 @@
                 cols="auto"
                 sm="10"
             >
-                <h5 class="text-h5 mb-3 text-primary">
+                <h5 class="text-h5 mb-3 text-primary font-weight-bold">
                     王哲楷 | Gk Wang
                 </h5>
 
                 <v-chip
                     color="secondary"
-                    class="mb-8"
+                    class="rounded-xl mb-8"
                     label
                 >
                     Full-stack developer

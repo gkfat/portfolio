@@ -18,7 +18,7 @@
             </v-col>
         </v-row>
 
-        <v-row class="align-stretch flex-wrap">
+        <v-row>
             <v-col
                 v-for="proficiency of proficiencys"
                 :key="proficiency.title"
