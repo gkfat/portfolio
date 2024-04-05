@@ -61,7 +61,7 @@
                 :href="project.linkUrl"
                 color="primary"
                 target="_blank"
-                class="text-capitalize w-100"
+                class="text-capitalize w-100 rounded-xl"
                 append-icon="mdi-open-in-new"
             >
                 View Site

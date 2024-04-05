@@ -73,8 +73,11 @@ const projects: Types.Project[] = [
             { text: 'HTML', icon: 'mdi-language-html5' },
             { text: 'CSS', icon: 'mdi-language-css3' },
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
         ],
-        linkUrl: 'https://demo-thlk.pages.dev/',
+        linkUrl: 'https://www.thlk.com.tw',
     },
     {
         title: 'Atrustek Fintech SaaS',
