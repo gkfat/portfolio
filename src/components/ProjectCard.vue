@@ -54,10 +54,9 @@
             </div>
         </v-card-text>
 
-        <v-card-actions class="w-100 flex-wrap align-self-end">
+        <v-card-actions class="w-100 flex-wrap align-self-end" v-if="project.linkUrl">
             <v-divider class="w-100 mb-1" />
             <v-btn
-                v-if="project.linkUrl"
                 :href="project.linkUrl"
                 color="primary"
                 target="_blank"

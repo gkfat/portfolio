@@ -61,12 +61,13 @@ const projects: Types.Project[] = [
     },
     {
         title: '海禾通商',
-        time: '2022~2023',
+        time: '2022~2024',
         subtitle: '網站改版 & RWD',
         items: [
             '靜態網站改版為 RWD 網站',
             '程式碼重構與整理',
             '部署與維護',
+            '新增文章結構與上稿維護'
         ],
         techStacks: [
             { text: 'HTML', icon: 'mdi-language-html5' },
@@ -161,6 +162,69 @@ const projects: Types.Project[] = [
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
         ],
         linkUrl: 'https://demo-2021-ikea-csr-campaign.pages.dev',
+    },
+    {
+        title: '遊戲後台全端開發',
+        time: '2023~2024',
+        subtitle: '全端開發',
+        items: [
+            '帳號＆權限系統',
+            '遊戲管理功能',
+            '帳務報表＆ELK 查詢',
+            '會員管理功能',
+            '活動管理功能',
+            '道具管理功能',
+            '跑馬燈管理功能',
+            '系統維護排程功能',
+            'Cronjob'
+        ],
+        techStacks: [
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+            { text: 'NodeJS', icon: 'mdi-nodejs' },
+            { text: 'Fastify', icon: 'mdi-nodejs' },
+            { text: 'Mysql', icon: 'mdi-database' },
+            { text: 'ELK', icon: 'mdi-magnify' },
+        ],
+        linkUrl: undefined,
+    },
+    {
+        title: 'CNC MES 系統',
+        time: '2024',
+        subtitle: '前端開發',
+        items: [
+            '帳號＆權限',
+            '客戶＆供應商管理',
+            '料件管理',
+            '報價單＆訂單＆採購單管理',
+            'MES 管理'
+        ],
+        techStacks: [
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+        ],
+        linkUrl: undefined,
+    },
+    {
+        title: '派車系統',
+        time: '2024',
+        subtitle: '前端開發',
+        items: [
+            '個案＆司機管理',
+            '主控版卡片式呈現',
+            '報價單管理',
+        ],
+        techStacks: [
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+        ],
+        linkUrl: undefined,
     },
 ];
 </script>

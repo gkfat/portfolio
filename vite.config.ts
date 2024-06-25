@@ -1,6 +1,6 @@
 import {
-	fileURLToPath,
-	URL,
+    fileURLToPath,
+    URL,
 } from 'node:url';
 
 import ViteFonts from 'unplugin-fonts/vite';
@@ -12,7 +12,7 @@ import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
     plugins: [
         vue({
             template: { transformAssetUrls },
@@ -41,4 +41,5 @@ export default defineConfig({
         ],
         extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
     },
-});
+    envDir: './'
+}));
