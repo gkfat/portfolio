@@ -4,7 +4,7 @@
         class="mb-10"
         fluid
     >
-        <v-row class="flex-wrap mb-8">
+        <v-row class="mb-8">
             <v-col cols="12">
                 <p class="text-h5 text-center font-weight-medium">
                     {{ t('nav.' + NavItems.Project) }}
@@ -19,7 +19,7 @@
         </v-row>
 
         <!-- 專案 -->
-        <v-row class="align-stretch flex-wrap">
+        <v-row>
             <v-col
                 v-for="project of projects"
                 :key="project.title"
@@ -64,17 +64,20 @@ const projects: Types.Project[] = [
         time: '2022~2024',
         subtitle: '網站改版 & RWD',
         items: [
-            '靜態網站改版為 RWD 網站',
-            '程式碼重構與整理',
+            '靜態網站加上 RWD',
             '部署與維護',
-            '新增文章結構與上稿維護'
+            '使用 Vue3 + TypeScript 重構網站',
+            '開發基於 md 檔的文章系統',
         ],
         techStacks: [
             { text: 'HTML', icon: 'mdi-language-html5' },
             { text: 'CSS', icon: 'mdi-language-css3' },
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
         ],
-        linkUrl: 'https://demo-thlk.pages.dev/',
+        linkUrl: 'https://www.thlk.com.tw',
     },
     {
         title: 'Atrustek Fintech SaaS',

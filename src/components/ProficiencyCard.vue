@@ -1,54 +1,40 @@
 <template>
     <v-card
         color="primary"
-        class="h-100 d-flex flex-wrap rounded-xl gradient justify-start"
-        style="flex-direction: column;"
+        class="h-100 rounded-xl gradient"
         hover
     >
-        <v-card-item>
-            <v-card-title class="text-center mb-3">
-                <v-icon
-                    class="mb-1"
-                    :icon="proficiency.icon"
-                    size="24"
-                />
-                <br>
-                {{ proficiency.title }}
-            </v-card-title>
+        <v-card-title class="text-center mb-3">
+            <v-icon
+                class="my-2"
+                :icon="proficiency.icon"
+                size="28"
+            />
+            <br>
+            {{ proficiency.title }}
+        </v-card-title>
 
-            <v-divider />
+        <v-divider />
 
-            <v-card-text class="px-0">
-                <!-- <p
-                    v-for="item of proficiency.items"
-                    :key="item"
-                    class="text-wrap text-body-2 text-white"
-                >
+        <v-card-text>
+            <v-list-item
+                v-for="item of proficiency.items"
+                :key="item"
+                class="pa-0"
+            >
+                <template #prepend>
                     <v-icon
-                        icon="mdi-check-circle-outline"
-                        size="18"
+                        icon="mdi-label"
+                        style="margin-right: -20px; opacity: 100;"
+                        color="light"
+                        size="20"
                     />
+                </template>
+                <v-list-item-title class="text-wrap text-body-2 text-white">
                     {{ item }}
-                </p> -->
-
-                <v-list-item
-                    v-for="item of proficiency.items"
-                    :key="item"
-                    class="pa-0"
-                >
-                    <template #prepend>
-                        <v-icon
-                            icon="mdi-check-circle-outline"
-                            style="margin-right: -20px;"
-                            size="20"
-                        />
-                    </template>
-                    <v-list-item-title class="text-wrap text-body-2 text-white">
-                        {{ item }}
-                    </v-list-item-title>
-                </v-list-item>
-            </v-card-text>
-        </v-card-item>
+                </v-list-item-title>
+            </v-list-item>
+        </v-card-text>
     </v-card>
 </template>
 
@@ -67,5 +53,13 @@ defineProps<{
         rgba(var(--v-theme-secondary), 0.5) 0%,
         rgb(var(--v-theme-primary)) 80%
     );
+}
+:deep(.v-list-item__prepend) {
+    height: 100%;
+    align-items: start;
+}
+:deep(.v-list-item__content) {
+    height: 100%;
+    align-items: start;
 }
 </style>
