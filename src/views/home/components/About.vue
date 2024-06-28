@@ -45,8 +45,9 @@
                 </h5>
 
                 <v-chip
-                    color="secondary"
+                    color="warning"
                     class="rounded-xl mb-8"
+                    variant="flat"
                     label
                 >
                     Full-stack developer
@@ -61,95 +62,28 @@
 
                 <!-- Social media -->
                 <div class="d-flex justify-center justify-sm-start ga-3 mb-5">
-                    <!-- Resume -->
-                    <v-tooltip
-                        text="Resume"
-                        location="bottom"
+                    <template
+                        v-for="(item, i) of socialMedias"
+                        :key="i"
                     >
-                        <template #activator="{ props }">
-                            <v-btn
-                                icon
-                                color="primary"
-                                v-bind="props"
-                                href="https://www.cakeresume.com/s--nFb6N436eKp-1VNtf_cmSg--/gk-wang"
-                                target="_blank"
-                            >
-                                <v-icon>mdi-file-account</v-icon>
-                            </v-btn>
-                        </template>
-                    </v-tooltip>
+                        <v-tooltip
+                            :text="item.title"
 
-                    <!-- Github -->
-                    <v-tooltip
-                        text="Github"
-                        location="bottom"
-                    >
-                        <template #activator="{ props }">
-                            <v-btn
-                                icon
-                                color="primary"
-                                v-bind="props"
-                                href="https://github.com/gkfat"
-                                target="_blank"
-                            >
-                                <v-icon>mdi-github</v-icon>
-                            </v-btn>
-                        </template>
-                    </v-tooltip>
-
-                    <!-- LinkedIn -->
-                    <v-tooltip
-                        text="LinkedIn"
-                        location="bottom"
-                    >
-                        <template #activator="{ props }">
-                            <v-btn
-                                icon
-                                color="primary"
-                                v-bind="props"
-                                href="https://www.linkedin.com/in/gkgkwang"
-                                target="_blank"
-                            >
-                                <v-icon>mdi-linkedin</v-icon>
-                            </v-btn>
-                        </template>
-                    </v-tooltip>
-
-                    <!-- Email -->
-                    <v-tooltip
-                        text="Email"
-                        location="bottom"
-                    >
-                        <template #activator="{ props }">
-                            <v-btn
-                                icon
-                                color="primary"
-                                v-bind="props"
-                                href="mailto:gkgkdesign@gmail.com"
-                                target="_blank"
-                            >
-                                <v-icon>mdi-email</v-icon>
-                            </v-btn>
-                        </template>
-                    </v-tooltip>
-
-                    <!-- Blog -->
-                    <v-tooltip
-                        text="Blog"
-                        location="bottom"
-                    >
-                        <template #activator="{ props }">
-                            <v-btn
-                                icon
-                                color="primary"
-                                v-bind="props"
-                                href="https://gkfat.github.io/"
-                                target="_blank"
-                            >
-                                <v-icon>mdi-note</v-icon>
-                            </v-btn>
-                        </template>
-                    </v-tooltip>
+                            location="bottom"
+                        >
+                            <template #activator="{ props }">
+                                <v-btn
+                                    icon
+                                    color="primary"
+                                    v-bind="props"
+                                    :href="item.link"
+                                    target="_blank"
+                                >
+                                    <v-icon>{{ item.icon }}</v-icon>
+                                </v-btn>
+                            </template>
+                        </v-tooltip>
+                    </template>
                 </div>
 
                 <!-- 技術棧 -->
@@ -177,6 +111,34 @@ import { NavItems } from '@/enums/nav-items';
 import { Types } from '@/types/types';
 
 const { t } = useI18n();
+
+const socialMedias: { title: string; link: string; icon: string; }[] = [
+    {
+        title: 'Resume',
+        link: 'https://www.cakeresume.com/s--nFb6N436eKp-1VNtf_cmSg--/gk-wang',
+        icon: 'mdi-file-account',
+    },
+    {
+        title: 'Github',
+        link: 'https://github.com/gkfat',
+        icon: 'mdi-github',
+    },
+    {
+        title: 'LinkedIn',
+        link: 'https://www.linkedin.com/in/gkgkwang',
+        icon: 'mdi-linkedin',
+    },
+    {
+        title: 'Email',
+        link: 'mailto:gkgkdesign@gmail.com',
+        icon: 'mdi-email',
+    },
+    {
+        title: 'Blog',
+        link: 'https://gkfat.github.io',
+        icon: 'mdi-note',
+    },
+];
 
 const skills: Types.Skill[] = [
     {

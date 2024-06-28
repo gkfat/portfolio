@@ -1,7 +1,8 @@
 <template>
     <v-chip
-        color="primary"
+        :color="color ?? 'primary'"
         density="compact"
+        :variant="variant ?? 'outlined'"
         link
     >
         <v-icon
@@ -16,7 +17,9 @@
 
 <script lang="ts" setup>
 defineProps<{
+    color?: string;
     text: string;
     icon?: string;
+    variant?: string;
 }>();
 </script>

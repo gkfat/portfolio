@@ -2,7 +2,7 @@
     <v-card
         class="h-100 d-flex flex-wrap rounded-xl"
         style="flex-direction: column;"
-        hover
+        variant="tonal"
     >
         <v-card-text
             class="w-100 flex-grow-1 d-flex"
@@ -10,8 +10,9 @@
         >
             <div class="d-flex justify-end">
                 <v-chip
-                    color="secondary"
+                    color="primary"
                     density="compact"
+                    variant="flat"
                 >
                     {{ project.time }}
                 </v-chip>
@@ -21,11 +22,11 @@
                 class="flex-grow-1 d-flex mb-5"
                 style="flex-direction: column;"
             >
-                <v-card-title class="text-primary text-wrap px-0">
+                <v-card-title class="text-h6 font-weight-bold text-primary text-wrap px-0">
                     {{ project.title }}
                 </v-card-title>
 
-                <v-card-subtitle class="text-secondary px-0 mb-5">
+                <v-card-subtitle class="text-warning px-0 mb-5">
                     {{ project.subtitle }}
                 </v-card-subtitle>
 
@@ -52,20 +53,21 @@
                     :icon="tech.icon"
                 />
             </div>
-        </v-card-text>
 
-        <v-card-actions class="w-100 flex-wrap align-self-end" v-if="project.linkUrl">
-            <v-divider class="w-100 mb-1" />
-            <v-btn
-                :href="project.linkUrl"
-                color="primary"
-                target="_blank"
-                class="text-capitalize w-100 rounded-xl"
-                append-icon="mdi-open-in-new"
+            <div
+                v-if="project.linkUrl"
+                class="mt-3 align-self-end"
             >
-                View Site
-            </v-btn>
-        </v-card-actions>
+                <v-btn
+                    :href="project.linkUrl"
+                    color="primary"
+                    variant="flat"
+                    target="_blank"
+                    class="rounded-xl"
+                    icon="mdi-arrow-right"
+                />
+            </div>
+        </v-card-text>
     </v-card>
 </template>
 
@@ -78,3 +80,6 @@ defineProps<{
     project: Types.Project;
 }>();
 </script>
+<style lang="scss" scoped>
+
+</style>

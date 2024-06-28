@@ -1,13 +1,16 @@
 <template>
-    <v-card class="h-100 rounded-xl">
-        <v-card-title class="text-primary">
+    <v-card
+        class="h-100 rounded-xl"
+        variant="tonal"
+    >
+        <v-card-title class="text-primary text-h6 font-weight-bold">
             {{ skill.title }}
         </v-card-title>
-        <v-divider />
         <v-card-text>
             <Chip
                 v-for="item of skill.items"
                 :key="item.text"
+                :color="'secondary'"
                 class="ma-1"
                 :text="item.text"
                 :icon="item.icon"

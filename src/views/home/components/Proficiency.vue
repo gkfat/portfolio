@@ -29,60 +29,6 @@
                 <ProficiencyCard :proficiency="proficiency" />
             </v-col>
         </v-row>
-
-        <!-- <v-carousel
-            cycle
-            hide-delimiters
-            show-arrows="hover"
-            height="300px"
-        >
-            <v-carousel-item
-                v-for="pro of proficiency"
-                :key="pro.title"
-            >
-                <v-sheet
-                    height="100%"
-                    class="overflow-hidden"
-                    color="primary"
-                    rounded="lg"
-                >
-                    <v-row class="justify-center pa-4">
-                        <v-col
-                            cols="12"
-                            md="8"
-                        >
-                            <h4 class="text-h6 text-center w-100">
-                                <v-icon
-                                    class="mb-1"
-                                    :icon="pro.icon"
-                                    size="36"
-                                />
-                                <br>
-                                {{ pro.title }}
-                            </h4>
-
-                            <v-divider class="my-5" />
-
-                            <v-list-item
-                                v-for="item of pro.items"
-                                :key="item"
-                                class="text-body-2 w-100"
-                            >
-                                <template #prepend>
-                                    <v-icon
-                                        icon="mdi-check-circle-outline"
-                                        size="18"
-                                    />
-                                </template>
-                                <v-list-item-title class="text-wrap">
-                                    {{ item }}
-                                </v-list-item-title>
-                            </v-list-item>
-                        </v-col>
-                    </v-row>
-                </v-sheet>
-            </v-carousel-item>
-        </v-carousel> -->
     </v-container>
 </template>
 

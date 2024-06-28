@@ -1,17 +1,21 @@
 <template>
     <v-card
-        color="primary"
+        color="warning"
         class="h-100 rounded-xl gradient"
         hover
     >
-        <v-card-title class="text-center mb-3">
-            <v-icon
-                class="my-2"
+        <v-card-title class="mb-3 d-flex align-center">
+            <span class="text-h6 font-weight-bold">
+                {{ proficiency.title }}
+            </span>
+
+            <v-btn
+                variant="flat"
+                color="primary"
+                class="ml-auto"
+                size="small"
                 :icon="proficiency.icon"
-                size="28"
             />
-            <br>
-            {{ proficiency.title }}
         </v-card-title>
 
         <v-divider />
@@ -30,7 +34,7 @@
                         size="20"
                     />
                 </template>
-                <v-list-item-title class="text-wrap text-body-2 text-white">
+                <v-list-item-title class="text-wrap text-body-2">
                     {{ item }}
                 </v-list-item-title>
             </v-list-item>
@@ -50,8 +54,8 @@ defineProps<{
 .gradient {
     background: linear-gradient(
         45deg,
-        rgba(var(--v-theme-secondary), 0.5) 0%,
-        rgb(var(--v-theme-primary)) 80%
+        rgba(var(--v-theme-warning), 0.5) 0%,
+        rgb(var(--v-theme-white)) 80%
     );
 }
 :deep(.v-list-item__prepend) {
