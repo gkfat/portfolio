@@ -6,18 +6,20 @@
     </v-container>
 
     <!-- Go Top Button -->
-    <v-btn
-        v-show="passScrollToTopThreshold"
-        v-scroll="onScroll"
-        color="primary"
-        position="fixed"
-        location="right bottom"
-        class="ma-6"
-        icon
-        @click="goTo(0)"
-    >
-        <v-icon>mdi-chevron-up</v-icon>
-    </v-btn>
+    <v-scale-transition>
+        <v-btn
+            v-show="passScrollToTopThreshold"
+            v-scroll="onScroll"
+            color="primary"
+            position="fixed"
+            location="right bottom"
+            class="ma-6"
+            icon
+            @click="goTo(0)"
+        >
+            <v-icon>mdi-chevron-up</v-icon>
+        </v-btn>
+    </v-scale-transition>
 </template>
 
 <script lang="ts" setup>

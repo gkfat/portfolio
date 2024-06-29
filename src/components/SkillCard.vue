@@ -10,7 +10,7 @@
             <Chip
                 v-for="item of skill.items"
                 :key="item.text"
-                :color="'secondary'"
+                :color="'primary'"
                 class="ma-1"
                 :text="item.text"
                 :icon="item.icon"

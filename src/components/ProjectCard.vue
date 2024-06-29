@@ -1,50 +1,54 @@
 <template>
     <v-card
-        class="h-100 d-flex flex-wrap rounded-xl"
-        style="flex-direction: column;"
+        class="rounded-xl fill-height"
         variant="tonal"
     >
-        <v-card-text
-            class="w-100 flex-grow-1 d-flex"
+        <v-row
             style="flex-direction: column;"
+            class="fill-height align-items-stretch ma-0"
         >
-            <div class="d-flex justify-end">
-                <v-chip
-                    color="primary"
-                    density="compact"
-                    variant="flat"
-                >
-                    {{ project.time }}
-                </v-chip>
-            </div>
-
-            <v-card-text
-                class="flex-grow-1 d-flex mb-5"
-                style="flex-direction: column;"
+            <v-col
+                cols="auto"
+                class="pa-0"
             >
-                <v-card-title class="text-h6 font-weight-bold text-primary text-wrap px-0">
-                    {{ project.title }}
-                </v-card-title>
-
-                <v-card-subtitle class="text-warning px-0 mb-5">
-                    {{ project.subtitle }}
-                </v-card-subtitle>
-
-                <div>
-                    <p
-                        v-for="item of project.items"
-                        :key="item"
+                <v-row class="flex-no-wrap ma-0">
+                    <v-col
+                        cols="auto"
+                        class="text-warning pb-0"
                     >
-                        <v-icon
-                            icon="mdi-check-circle-outline"
-                            size="18"
+                        {{ project.subtitle }}
+                    </v-col>
+                    <v-col
+                        cols="auto"
+                        class="ml-auto pb-0"
+                    >
+                        <Chip
+                            :color="'warning'"
+                            :variant="'flat'"
+                            :text="project.time"
                         />
-                        {{ item }}
-                    </p>
-                </div>
-            </v-card-text>
+                    </v-col>
+                </v-row>
+            </v-col>
 
-            <div>
+            <v-col cols="auto">
+                <p class="text-h6 font-weight-bold text-primary">
+                    {{ project.title }}
+                </p>
+            </v-col>
+
+            <v-col class="px-5">
+                <p
+                    v-for="item of project.items"
+                    :key="item"
+                >
+                    <v-icon
+                        icon="mdi-check-circle-outline"
+                        size="18"
+                    />
+                    {{ item }}
+                </p>
+                <v-spacer class="mb-3" />
                 <Chip
                     v-for="tech of project.techStacks"
                     :key="tech.text"
@@ -52,11 +56,12 @@
                     :text="tech.text"
                     :icon="tech.icon"
                 />
-            </div>
+            </v-col>
 
-            <div
+            <v-col
                 v-if="project.linkUrl"
-                class="mt-3 align-self-end"
+                cols="auto"
+                class="text-right mt-3"
             >
                 <v-btn
                     :href="project.linkUrl"
@@ -66,8 +71,8 @@
                     class="rounded-xl"
                     icon="mdi-arrow-right"
                 />
-            </div>
-        </v-card-text>
+            </v-col>
+        </v-row>
     </v-card>
 </template>
 

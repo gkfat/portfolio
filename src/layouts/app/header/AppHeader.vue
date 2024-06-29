@@ -28,7 +28,7 @@
                     v-for="nav of navItems"
                     :key="nav"
                     :ripple="false"
-                    variant="text"
+                    variant="plain"
                     class="text-primary"
                     @click="goToSection(nav)"
                 >
@@ -65,15 +65,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref } from "vue";
 
-import { useI18n } from 'vue-i18n';
+import { useI18n } from "vue-i18n";
 import {
     useDisplay,
     useTheme,
-} from 'vuetify';
+} from "vuetify";
 
-import { NavItems } from '@/enums/nav-items';
+import { NavItems } from "@/enums/nav-items";
 
 const { t } = useI18n();
 const theme = useTheme();

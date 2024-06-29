@@ -19,7 +19,7 @@
         </v-row>
 
         <!-- 專案 -->
-        <v-row>
+        <v-row class="align-stretch">
             <v-col
                 v-for="project of projects"
                 :key="project.title"
@@ -179,7 +179,7 @@ const projects: Types.Project[] = [
             '道具管理功能',
             '跑馬燈管理功能',
             '系統維護排程功能',
-            'Cronjob'
+            'Cronjob',
         ],
         techStacks: [
             { text: 'Vue', icon: 'mdi-vuejs' },
@@ -202,7 +202,7 @@ const projects: Types.Project[] = [
             '客戶＆供應商管理',
             '料件管理',
             '報價單＆訂單＆採購單管理',
-            'MES 管理'
+            'MES 管理',
         ],
         techStacks: [
             { text: 'Vue', icon: 'mdi-vuejs' },
