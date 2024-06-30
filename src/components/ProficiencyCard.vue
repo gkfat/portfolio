@@ -2,7 +2,6 @@
     <v-card
         color="warning"
         class="h-100 rounded-xl gradient"
-        hover
     >
         <v-card-title class="mb-3 d-flex align-center">
             <span class="text-h6 font-weight-bold">

@@ -3,6 +3,7 @@
         :color="color ?? 'primary'"
         density="compact"
         :variant="variant ?? 'outlined'"
+        :size="size ?? 'default'"
         link
     >
         <v-icon
@@ -21,5 +22,6 @@ defineProps<{
     text: string;
     icon?: string;
     variant?: string;
+    size?: string;
 }>();
 </script>

@@ -61,41 +61,23 @@
                 </p>
 
                 <!-- Social media -->
-                <div class="d-flex justify-center justify-sm-start ga-3 mb-5">
-                    <template
+                <v-row class="mx-0 my-5 ga-1">
+                    <v-col
                         v-for="(item, i) of socialMedias"
                         :key="i"
+                        cols="auto"
+                        class="pa-1"
                     >
-                        <v-tooltip
-                            :text="item.title"
-
-                            location="bottom"
+                        <v-btn
+                            color="primary"
+                            :href="item.link"
+                            target="_blank"
+                            variant="outlined"
+                            class="text-none"
+                            :prepend-icon="item.icon"
                         >
-                            <template #activator="{ props }">
-                                <v-btn
-                                    icon
-                                    color="primary"
-                                    v-bind="props"
-                                    :href="item.link"
-                                    target="_blank"
-                                >
-                                    <v-icon>{{ item.icon }}</v-icon>
-                                </v-btn>
-                            </template>
-                        </v-tooltip>
-                    </template>
-                </div>
-
-                <!-- 技術棧 -->
-                <v-row class="align-stretch flex-wrap">
-                    <v-col
-                        v-for="skill of skills"
-                        :key="skill.title"
-                        cols="12"
-                        sm="6"
-                        md="4"
-                    >
-                        <SkillCard :skill="skill" />
+                            {{ item.title }}
+                        </v-btn>
                     </v-col>
                 </v-row>
             </v-col>
@@ -106,9 +88,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 
-import SkillCard from '@/components/SkillCard.vue';
 import { NavItems } from '@/enums/nav-items';
-import { Types } from '@/types/types';
 
 const { t } = useI18n();
 
@@ -134,47 +114,10 @@ const socialMedias: { title: string; link: string; icon: string; }[] = [
         icon: 'mdi-email',
     },
     {
-        title: 'Blog',
+        title: 'Tech Blog',
         link: 'https://gkfat.github.io',
         icon: 'mdi-note',
     },
 ];
 
-const skills: Types.Skill[] = [
-    {
-        title: t('skills.frontend'),
-        items: [
-            { text: 'HTML', icon: 'mdi-language-html5' },
-            { text: 'CSS', icon: 'mdi-language-css3' },
-            { text: 'JavaScript', icon: 'mdi-language-javascript' },
-            { text: 'TypeScript', icon: 'mdi-language-typescript' },
-            { text: 'Vue', icon: 'mdi-vuejs' },
-            { text: 'Angular', icon: 'mdi-angular' },
-            { text: 'SCSS', icon: 'mdi-language-css3' },
-            { text: 'Vuetify', icon: 'mdi-vuetify' },
-            { text: 'Bootstrap', icon: 'mdi-bootstrap' },
-        ],
-    },
-    {
-        title: t('skills.backend'),
-        items: [
-            { text: 'Node.js', icon: 'mdi-nodejs' },
-            { text: 'Python', icon: 'mdi-language-python' },
-            { text: 'Mysql', icon: 'mdi-database' },
-            { text: 'MongoDB', icon: 'mdi-database' },
-            { text: 'Firebase', icon: 'mdi-firebase' },
-            { text: 'CloudStorage', icon: 'mdi-cloud-outline' },
-        ],
-    },
-    {
-        title: t('skills.devops'),
-        items: [
-            { text: 'Docker', icon: 'mdi-docker' },
-            { text: 'Linux', icon: 'mdi-linux' },
-            { text: 'GCP GKE', icon: 'mdi-google' },
-            { text: 'AWS EC2', icon: 'mdi-aws' },
-            { text: 'Cloudflare', icon: 'mdi-cloud-outline' },
-        ],
-    },
-];
 </script>

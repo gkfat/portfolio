@@ -16,6 +16,9 @@ export namespace Types {
     export interface ChipItem {
         text: string;
         icon: string;
+        size?: string;
+        color?: string;
+        variant?: string;
     }
 
     export interface Skill {

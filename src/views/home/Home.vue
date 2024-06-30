@@ -1,6 +1,7 @@
 <template>
     <v-container style="max-width: 1000px">
         <About />
+        <Skills />
         <Proficiency />
         <Project />
     </v-container>
@@ -28,6 +29,7 @@ import { ref } from 'vue';
 import About from './components/About.vue';
 import Proficiency from './components/Proficiency.vue';
 import Project from './components/Project.vue';
+import Skills from './components/Skills.vue';
 
 const goTo = (y: number) => {
     window.scrollTo({
