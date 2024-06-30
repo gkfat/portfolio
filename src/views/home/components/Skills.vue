@@ -107,18 +107,13 @@ const skills: Types.Skill[] = [
 
 const skillsDescription = [
     {
-        title: '前端開發',
+        title: t('skills.developing'),
         descriptions: [
-            '基於 OOP 概念，設計方便擴充與測試的程式碼結構',
-            '具備設計系經驗，自我美感要求高，不跑版與 RWD 是基本，畫面與配色應更有要求',
-            '熟悉 Docker 打包',
-        ],
-    },
-    {
-        title: '後端開發',
-        descriptions: [
-            '熟悉系統後端服務設計，串接各種第三方服務如 SMTP、NAS、ERP、Firebase、ELK、GCP 等',
+            '基於 OOP 概念與 SOLID 原則，設計便於擴充、低耦合、可複用的程式碼結構',
+            '具備設計經驗，對美感所要求，不跑版與 RWD 是基本，更能進一步安排畫面與配色',
+            '熟悉串接各種第三方服務如 SMTP、NAS、ERP、Firebase、ELK、GCP 等',
             '熟悉多種溝通協定如：Http、WebSocket、gRPC、Ice',
+            '能夠考量效能，設計優質的 Resetful API',
             '熟悉 Docker 打包',
         ],
     },
@@ -126,7 +121,16 @@ const skillsDescription = [
         title: '部署維運',
         descriptions: [
             '具備在 AWS EC2 上安裝環境到建置部署流程的架站經驗',
-            '具備在 GKE 上部署 Docker Image Pods 的經驗',
+            '熟練使用 firebase / linux / GCP',
+            '具備在 GKE 上部署 Docker image pods 的經驗',
+        ],
+    },
+    {
+        title: '協同作業',
+        descriptions: [
+            '程式碼具備清楚的備註與說明文件，便於交接',
+            '熟練使用版控工具如 Git / Github / Gitlab / Azure DevOps',
+            '具備系統設計領域知識 SA / SD',
         ],
     },
 ];

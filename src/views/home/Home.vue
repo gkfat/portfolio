@@ -3,6 +3,7 @@
         <About />
         <Skills />
         <Proficiency />
+        <CareerProject />
         <Project />
     </v-container>
 
@@ -27,6 +28,7 @@
 import { ref } from 'vue';
 
 import About from './components/About.vue';
+import CareerProject from './components/CareerProject.vue';
 import Proficiency from './components/Proficiency.vue';
 import Project from './components/Project.vue';
 import Skills from './components/Skills.vue';
