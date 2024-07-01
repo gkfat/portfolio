@@ -57,7 +57,8 @@ const projects: Types.Project[] = [
             { text: 'CSS', icon: 'mdi-language-css3' },
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
         ],
-        linkUrl: 'https://demo-tsmc-art-festival-2021.pages.dev',
+        websiteUrl: 'https://demo-tsmc-art-festival-2021.pages.dev',
+        githubUrl: 'https://github.com/gkfat/tsmc-art-festival-2021',
     },
     {
         title: '海禾通商',
@@ -77,7 +78,8 @@ const projects: Types.Project[] = [
             { text: 'VueX', icon: 'mdi-vuejs' },
             { text: 'TypeScript', icon: 'mdi-language-typescript' },
         ],
-        linkUrl: 'https://www.thlk.com.tw',
+        websiteUrl: 'https://www.thlk.com.tw',
+        githubUrl: 'https://github.com/gkfat/thlk',
     },
     {
         title: '齊柏林基金會 EDM',
@@ -89,7 +91,8 @@ const projects: Types.Project[] = [
         techStacks: [
             { text: 'HTML', icon: 'mdi-language-html5' },
         ],
-        linkUrl: 'https://demo-cpf-edm.pages.dev/edm.html',
+        websiteUrl: 'https://demo-cpf-edm.pages.dev/edm.html',
+        githubUrl: 'https://github.com/gkfat/cpf-edm',
     },
     {
         title: 'Logicard Duel',
@@ -108,7 +111,8 @@ const projects: Types.Project[] = [
             { text: 'TypeScript', icon: 'mdi-language-typescript' },
             { text: 'Cloudflare', icon: 'mdi-cloud-outline' },
         ],
-        linkUrl: 'https://logicard-duel.pages.dev/',
+        websiteUrl: 'https://logicard-duel.pages.dev/',
+        githubUrl: 'https://github.com/gkfat/logicard-duel',
     },
     {
         title: 'IKEA 活動網頁切版',
@@ -122,7 +126,8 @@ const projects: Types.Project[] = [
             { text: 'CSS', icon: 'mdi-language-css3' },
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
         ],
-        linkUrl: 'https://demo-2021-ikea-csr-campaign.pages.dev',
+        websiteUrl: 'https://demo-2021-ikea-csr-campaign.pages.dev',
+        githubUrl: 'https://github.com/gkfat/2021-ikea-csr-campaign',
     },
     {
         title: 'CNC MES 系統',
@@ -141,7 +146,7 @@ const projects: Types.Project[] = [
             { text: 'Vuetify', icon: 'mdi-vuetify' },
             { text: 'TypeScript', icon: 'mdi-language-typescript' },
         ],
-        linkUrl: undefined,
+        githubUrl: 'https://github.com/gkfat/cnc-mes-frontend',
     },
     {
         title: '派車系統',
@@ -158,7 +163,23 @@ const projects: Types.Project[] = [
             { text: 'Vuetify', icon: 'mdi-vuetify' },
             { text: 'TypeScript', icon: 'mdi-language-typescript' },
         ],
-        linkUrl: undefined,
+        githubUrl: 'https://github.com/gkfat/welcab-saas-frontend',
+    },
+    {
+        title: '派車系統 Line Liff 服務',
+        time: '2024',
+        subtitle: '前端開發',
+        items: [
+            '表單驗證服務',
+            '串接 Line Auth 服務',
+        ],
+        techStacks: [
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'VueX', icon: 'mdi-vuejs' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+        ],
+        githubUrl: 'https://github.com/gkfat/welcab-line-reservation',
     },
 ];
 </script>

@@ -10,7 +10,8 @@ export namespace Types {
             icon: string;
         }[];
         imagesUrls?: string[];
-        linkUrl?: string;
+        websiteUrl?: string;
+        githubUrl?: string;
     }
 
     export interface ChipItem {

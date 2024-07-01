@@ -60,7 +60,7 @@ const projects: Types.Project[] = [
             { text: 'NgRx', icon: 'mdi-angular' },
             { text: 'TypeScript', icon: 'mdi-language-typescript' },
             { text: 'Linux', icon: 'mdi-linux' }],
-        linkUrl: 'https://www.atrustek.com/cis/home',
+        websiteUrl: 'https://www.atrustek.com/cis/home',
     },
     {
         title: 'Asink EIP',
@@ -83,7 +83,7 @@ const projects: Types.Project[] = [
             { text: 'Flask', icon: 'mdi-language-python' },
             { text: 'Linux', icon: 'mdi-linux' },
         ],
-        linkUrl: 'https://www.atrustek.com/cis/home',
+        websiteUrl: 'https://www.atrustek.com/cis/home',
     },
     {
         title: '遊戲後台全端開發',
@@ -110,7 +110,6 @@ const projects: Types.Project[] = [
             { text: 'Mysql', icon: 'mdi-database' },
             { text: 'ELK', icon: 'mdi-magnify' },
         ],
-        linkUrl: undefined,
     },
 ];
 </script>

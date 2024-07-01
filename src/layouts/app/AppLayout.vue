@@ -1,10 +1,10 @@
 <template>
-    <v-layout>
+    <div>
         <AppHeader />
         <v-main>
             <router-view />
         </v-main>
-    </v-layout>
+    </div>
 </template>
 
 <script lang="ts" setup>
