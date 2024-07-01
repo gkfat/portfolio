@@ -85,7 +85,11 @@
 
         <!-- Dialog -->
         <template #default="{ isActive }">
-            <v-card class="rounded-xl">
+            <v-card
+                class="rounded-xl mx-auto"
+                :width="'100%'"
+                :max-width="1000"
+            >
                 <!-- 無預覽圖或網頁 -->
                 <v-card-text v-if="!project.websiteUrl && !project.imagesUrls">
                     <p class="text-warning text-center py-3">
