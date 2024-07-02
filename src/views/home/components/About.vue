@@ -65,10 +65,12 @@
                     <v-col
                         v-for="(item, i) of socialMedias"
                         :key="i"
-                        cols="auto"
+                        cols="12"
+                        sm="auto"
                         class="pa-1"
                     >
                         <v-btn
+                            block
                             color="primary"
                             :href="item.link"
                             target="_blank"
