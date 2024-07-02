@@ -64,21 +64,6 @@
                             :icon="tech.icon"
                         />
                     </v-col>
-
-                <!-- <v-col
-                    v-if="project.websiteUrl"
-                    cols="auto"
-                    class="text-right mt-3"
-                >
-                    <v-btn
-                        :href="project.websiteUrl"
-                        color="primary"
-                        variant="flat"
-                        target="_blank"
-                        class="rounded-xl"
-                        icon="mdi-arrow-right"
-                    />
-                </v-col> -->
                 </v-row>
             </v-card>
         </template>
@@ -168,6 +153,16 @@
                         class="rounded-xl"
                         icon="mdi-refresh"
                         @click="reloadWebsite"
+                    />
+                    <!-- website -->
+                    <v-btn
+                        v-if="project.websiteUrl"
+                        :href="project.websiteUrl"
+                        color="secondary"
+                        variant="flat"
+                        target="_blank"
+                        class="rounded-xl"
+                        icon="mdi-link-variant"
                     />
                     <!-- github -->
                     <v-btn
