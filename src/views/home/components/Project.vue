@@ -199,5 +199,21 @@ const projects: Types.Project[] = [
         websiteUrl: 'https://dice-roller-cuq.pages.dev/',
         githubUrl: 'https://github.com/gkfat/dice-roller',
     },
+    {
+        title: 'Simple Todo List',
+        time: '2024',
+        subtitle: '前端開發',
+        items: [
+            '極簡待辦 app',
+        ],
+        techStacks: [
+            { text: 'Vue', icon: 'mdi-vuejs' },
+            { text: 'CSS', icon: 'mdi-language-css3' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+        ],
+        websiteUrl: 'https://simple-todo-list.pages.dev',
+        githubUrl: 'https://github.com/gkfat/simple-todo-list',
+    },
 ];
 </script>
