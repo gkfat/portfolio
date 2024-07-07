@@ -2,6 +2,13 @@
     "app": {
         "title": "About GK"
     },
+    "banner": {
+        "item_1": "全端工程師",
+        "item_2": "問題解決者",
+        "item_3": "對美感有堅持",
+        "item_4": "文件寫清楚！",
+        "title": "一句話形容我"
+    },
     "nav": {
         "about": "關於我",
         "career_project": "職涯作品",

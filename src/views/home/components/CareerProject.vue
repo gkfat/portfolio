@@ -1,8 +1,7 @@
 <template>
     <v-container
-        :id="NavItems.Project"
-        class="mb-10"
-        fluid
+        :id="NavItems.CareerProject"
+        :max-width="1000"
     >
         <v-row class="mb-8">
             <v-col cols="12">

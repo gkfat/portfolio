@@ -1,10 +1,9 @@
 <template>
     <v-container
-        :id="NavItems.About"
-        class="mb-10"
-        fluid
+        :max-width="1000"
+        class="pt-10"
     >
-        <v-row class="mb-14">
+        <!--<v-row class="mb-14">
             <v-col cols="12">
                 <p class="text-h5 text-center font-weight-medium">
                     {{ t('nav.' + NavItems.About) }}
@@ -16,7 +15,7 @@
                     class="w-25 mx-auto"
                 />
             </v-col>
-        </v-row>
+        </v-row>-->
 
         <v-row
             justify="center"
@@ -88,12 +87,6 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-
-import { NavItems } from '@/enums/nav-items';
-
-const { t } = useI18n();
-
 const socialMedias: { title: string; link: string; icon: string; }[] = [
     {
         title: 'Resume',
@@ -121,5 +114,4 @@ const socialMedias: { title: string; link: string; icon: string; }[] = [
         icon: 'mdi-note',
     },
 ];
-
 </script>

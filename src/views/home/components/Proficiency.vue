@@ -1,8 +1,7 @@
 <template>
     <v-container
         :id="NavItems.Proficiency"
-        class="mb-10"
-        fluid
+        :max-width="1000"
     >
         <v-row class="flex-wrap mb-8">
             <v-col cols="12">

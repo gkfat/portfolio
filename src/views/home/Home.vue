@@ -1,11 +1,20 @@
 <template>
-    <v-container style="max-width: 1000px">
+    <Banner />
+    <div class="section">
         <About />
+    </div>
+    <div class="section">
         <Skills />
+    </div>
+    <div class="section">
         <Proficiency />
+    </div>
+    <div class="section">
         <CareerProject />
+    </div>
+    <div class="section">
         <Project />
-    </v-container>
+    </div>
 
     <!-- Go Top Button -->
     <v-scale-transition>
@@ -28,6 +37,7 @@
 import { ref } from 'vue';
 
 import About from './components/About.vue';
+import Banner from './components/Banner.vue';
 import CareerProject from './components/CareerProject.vue';
 import Proficiency from './components/Proficiency.vue';
 import Project from './components/Project.vue';
@@ -49,3 +59,9 @@ const onScroll = (e: any) => {
     passScrollToTopThreshold.value = top >= threshold;
 };
 </script>
+<style lang="scss" scoped>
+.section {
+    padding-bottom: 100px;
+    background-color: rgb(var(--v-theme-background));
+}
+</style>
