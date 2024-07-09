@@ -3,18 +3,15 @@
         color="warning"
         class="h-100 rounded-xl gradient"
     >
-        <v-card-title class="mb-3 d-flex align-center">
-            <span class="text-h6 font-weight-bold">
-                {{ proficiency.title }}
-            </span>
-
-            <v-btn
+        <v-card-title class="py-3 d-flex align-center ga-3">
+            <v-icon
                 variant="flat"
-                color="primary"
-                class="ml-auto"
                 size="small"
                 :icon="proficiency.icon"
             />
+            <span class="text-h6 font-weight-medium">
+                {{ proficiency.title }}
+            </span>
         </v-card-title>
 
         <v-divider />

@@ -18,10 +18,11 @@
                         cols="auto"
                         class="pa-0"
                     >
-                        <v-row class="flex-no-wrap ma-0">
+                        <v-row class="flex-nowrap ma-0">
                             <v-col
                                 cols="auto"
                                 class="text-warning pb-0"
+                                style="word-break: break-all; max-width: 70%;"
                             >
                                 {{ project.subtitle }}
                             </v-col>
@@ -31,6 +32,7 @@
                             >
                                 <Chip
                                     :color="'warning'"
+                                    :size="'small'"
                                     :variant="'flat'"
                                     :text="project.time"
                                 />

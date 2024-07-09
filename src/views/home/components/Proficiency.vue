@@ -3,19 +3,7 @@
         :id="NavItems.Proficiency"
         :max-width="1000"
     >
-        <v-row class="flex-wrap mb-8">
-            <v-col cols="12">
-                <p class="text-h5 text-center font-weight-medium">
-                    {{ t('nav.' + NavItems.Proficiency) }}
-                </p>
-            </v-col>
-            <v-col col="12">
-                <v-divider
-                    thickness="3"
-                    class="w-25 mx-auto"
-                />
-            </v-col>
-        </v-row>
+        <BlockTitle :title="t('nav.' + NavItems.Proficiency)" />
 
         <v-row>
             <v-col
@@ -34,6 +22,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 
+import BlockTitle from '@/components/BlockTitle.vue';
 import ProficiencyCard from '@/components/ProficiencyCard.vue';
 import { NavItems } from '@/enums/nav-items';
 import { Types } from '@/types/types';

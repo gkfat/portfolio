@@ -39,13 +39,17 @@
                 cols="auto"
                 sm="10"
             >
-                <h5 class="text-h5 mb-3 text-primary font-weight-bold">
+                <h5
+                    class="text-h5 mb-3 text-primary font-weight-bold"
+                    style="letter-spacing: 1px !important;"
+                >
                     王哲楷 | Gk Wang
                 </h5>
 
                 <v-chip
                     color="warning"
                     class="rounded-xl mb-8"
+                    style="letter-spacing: 1px;"
                     variant="flat"
                     label
                 >

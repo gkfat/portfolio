@@ -3,19 +3,7 @@
         :id="NavItems.About"
         :max-width="1000"
     >
-        <v-row class="mb-14">
-            <v-col cols="12">
-                <p class="text-h5 text-center font-weight-medium">
-                    {{ t('nav.' + NavItems.Skills) }}
-                </p>
-            </v-col>
-            <v-col col="12">
-                <v-divider
-                    thickness="3"
-                    class="w-25 mx-auto"
-                />
-            </v-col>
-        </v-row>
+        <BlockTitle :title="t('nav.' + NavItems.Skills)" />
 
         <!-- 技術棧 -->
         <v-row class="align-stretch flex-wrap">
@@ -60,6 +48,7 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 
+import BlockTitle from '@/components/BlockTitle.vue';
 import SkillCard from '@/components/SkillCard.vue';
 import { NavItems } from '@/enums/nav-items';
 import { Types } from '@/types/types';
