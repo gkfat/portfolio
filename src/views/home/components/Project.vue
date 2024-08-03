@@ -3,8 +3,7 @@
         :id="NavItems.Project"
         :max-width="1000"
     >
-    <BlockTitle :title="t('nav.' + NavItems.Project)" />
-
+        <BlockTitle :title="t('nav.' + NavItems.Project)" />
 
         <!-- 專案 -->
         <v-row class="align-stretch">

@@ -62,18 +62,18 @@ const skills: Types.Skill[] = [
             { text: 'HTML', icon: 'mdi-language-html5' },
             { text: 'CSS', icon: 'mdi-language-css3' },
             { text: 'JavaScript', icon: 'mdi-language-javascript' },
-            { text: 'TypeScript', icon: 'mdi-language-typescript', variant: 'flat' },
-            { text: 'Vue', icon: 'mdi-vuejs', variant: 'flat' },
+            { text: 'TypeScript', icon: 'mdi-language-typescript' },
+            { text: 'Vue', icon: 'mdi-vuejs' },
             { text: 'Angular', icon: 'mdi-angular' },
             { text: 'SCSS', icon: 'mdi-language-css3' },
-            { text: 'Vuetify', icon: 'mdi-vuetify', variant: 'flat' },
+            { text: 'Vuetify', icon: 'mdi-vuetify' },
             { text: 'Bootstrap', icon: 'mdi-bootstrap' },
         ],
     },
     {
         title: t('skills.backend'),
         items: [
-            { text: 'Node.js', icon: 'mdi-nodejs', variant: 'flat' },
+            { text: 'Node.js', icon: 'mdi-nodejs' },
             { text: 'Python', icon: 'mdi-language-python' },
             { text: 'Mysql', icon: 'mdi-database' },
             { text: 'MongoDB', icon: 'mdi-database' },
@@ -84,7 +84,7 @@ const skills: Types.Skill[] = [
     {
         title: t('skills.devops'),
         items: [
-            { text: 'Docker', icon: 'mdi-docker', variant: 'flat' },
+            { text: 'Docker', icon: 'mdi-docker' },
             { text: 'Linux', icon: 'mdi-linux' },
             { text: 'GCP GKE', icon: 'mdi-google' },
             { text: 'AWS EC2', icon: 'mdi-aws' },
@@ -99,7 +99,7 @@ const skillsDescription = [
         descriptions: [
             '基於 OOP 概念與 SOLID 原則，設計便於擴充、低耦合、可複用的程式碼結構',
             '具備設計經驗，對美感所要求，不跑版與 RWD 是基本，更能進一步安排畫面與配色',
-            '熟悉串接各種第三方服務如 SMTP、NAS、ERP、Firebase、ELK、GCP 等',
+            '熟悉串接各種第三方服務如 SMTP、NAS、ERP、Firebase、Elastic Search、GCP 等',
             '熟悉多種溝通協定如：Http、WebSocket、gRPC、Ice',
             '能夠考量效能，設計優質的 Resetful API',
             '熟悉 Docker 打包',
