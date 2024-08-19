@@ -114,7 +114,7 @@ const socialMedias: { title: string; link: string; icon: string; }[] = [
     },
     {
         title: 'Tech Blog',
-        link: 'https://gkfat.github.io',
+        link: 'https://gk-blog.pages.dev/',
         icon: 'mdi-note',
     },
 ];

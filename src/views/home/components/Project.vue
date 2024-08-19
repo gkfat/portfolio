@@ -203,5 +203,18 @@ const projects: Types.Project[] = [
         websiteUrl: 'https://simple-todo-list.pages.dev',
         githubUrl: 'https://github.com/gkfat/simple-todo-list',
     },
+    {
+        title: 'Tech blog',
+        time: '2024',
+        subtitle: '前端開發',
+        items: [
+            '技術筆記',
+        ],
+        techStacks: [
+            { text: 'VitePress', icon: 'mdi-vuejs' },
+        ],
+        websiteUrl: 'https://gk-blog.pages.dev',
+        githubUrl: 'https://github.com/gkfat/gk-blog',
+    },
 ];
 </script>
