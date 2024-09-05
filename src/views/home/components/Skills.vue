@@ -1,6 +1,6 @@
 <template>
     <v-container
-        :id="NavItems.About"
+        :id="NavItems.Skills"
         :max-width="1000"
     >
         <BlockTitle :title="t('nav.' + NavItems.Skills)" />
