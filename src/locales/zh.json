@@ -1,25 +1,26 @@
 {
-    "app": {
-        "title": "About GK"
-    },
-    "banner": {
-        "item_1": "全端工程師",
-        "item_2": "問題解決者",
-        "item_3": "美感很重要",
-        "item_4": "文件寫清楚！",
-        "title": "一句話形容我"
-    },
-    "nav": {
-        "about": "關於我",
-        "career_project": "職涯作品",
-        "proficiency": "專業能力",
-        "project": "其他專案",
-        "skills": "專業技能"
-    },
-    "skills": {
-        "backend": "後端開發",
-        "developing": "全端開發",
-        "devops": "部署維運",
-        "frontend": "前端開發"
-    }
+  "app": {
+    "appearance": "主題",
+    "title": "About GK"
+  },
+  "banner": {
+    "item_1": "全端工程師",
+    "item_2": "問題解決者",
+    "item_3": "美感很重要",
+    "item_4": "文件寫清楚！",
+    "title": "一句話形容我"
+  },
+  "nav": {
+    "about": "關於我",
+    "career_project": "職涯作品",
+    "proficiency": "專業能力",
+    "project": "其他專案",
+    "skills": "專業技能"
+  },
+  "skills": {
+    "backend": "後端開發",
+    "developing": "全端開發",
+    "devops": "部署維運",
+    "frontend": "前端開發"
+  }
 }

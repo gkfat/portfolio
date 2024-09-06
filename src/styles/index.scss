@@ -1,5 +1,13 @@
 @import './vuetify.scss';
 
-*, html, body {
-    font-family: "Noto Sans", sans-serif !important;
+:root {
+    --font-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+* {
+    font-size: 14px;
+}
+
+.v-application {
+    font-family: var(--font-monospace);
 }

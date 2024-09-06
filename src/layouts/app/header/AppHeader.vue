@@ -1,55 +1,72 @@
 <template>
     <v-app-bar
+        class="px-3 border-b-thin"
         flat
-        style="position:fixed;"
     >
-        <v-app-bar-title
-            class="logo text-primary"
-            @click="goTop()"
+        <v-btn
+            class="text-primary text-title opacity-100"
+            variant="plain"
+            :ripple="false"
+            @click="goTop"
         >
             {{ t('app.title') }}
-        </v-app-bar-title>
+        </v-btn>
 
-        <v-spacer />
+        <v-spacer class="ml-auto" />
 
-        <div class="d-flex align-center">
-            <v-btn
-                v-model="isDark"
-                variant="plain"
-                :icon="isDark ? 'mdi-weather-night' : 'mdi-white-balance-sunny'"
-                @click.prevent="changeTheme()"
+        <div
+            v-if="mdAndUp"
+            class="d-flex align-center"
+        >
+            <v-divider
+                vertical
+                inset
+                class="mx-3"
             />
 
-            <v-btn-toggle
-                v-if="!xs"
-                class="ml-3"
+            <AppearanceSwitcher />
+
+            <v-divider
+                vertical
+                inset
+                class="mx-3"
+            />
+
+            <v-btn
+                v-for="(item, i) of socialMedias"
+                :key="i"
+                color="primary"
+                :href="item.link"
+                target="_blank"
+                :size="32"
+                icon
+                flat
             >
-                <v-btn
-                    v-for="nav of navItems"
-                    :key="nav"
-                    :ripple="false"
-                    variant="plain"
-                    class="text-primary"
-                    @click="goToSection(nav)"
-                >
-                    {{ t('nav.' + nav) }}
-                </v-btn>
-            </v-btn-toggle>
+                <v-icon
+                    :icon="item.icon"
+                    :size="24"
+                />
+            </v-btn>
+        </div>
+
+        <v-app-bar-actions v-if="!mdAndUp">
             <v-app-bar-nav-icon
-                v-if="xs"
+                icon="mdi-dots-horizontal"
+                :ripple="false"
+                variant="plain"
                 @click.stop="drawer = !drawer"
             />
-        </div>
+        </v-app-bar-actions>
     </v-app-bar>
 
     <!-- 側邊欄 -->
     <v-navigation-drawer
-        v-if="xs"
         v-model="drawer"
         location="right"
     >
         <v-list
             nav
+            density="compact"
         >
             <v-list-item
                 v-for="nav of navItems"
@@ -60,6 +77,55 @@
                     {{ t('nav.' + nav) }}
                 </v-list-item-title>
             </v-list-item>
+            <v-divider />
+        </v-list>
+
+        <v-list>
+            <v-list-item>
+                <v-list-item-title>
+                    <v-row class="align-center">
+                        <v-col>
+                            {{ t('app.appearance') }}
+                        </v-col>
+                        <v-col>
+                            <AppearanceSwitcher />
+                        </v-col>
+                    </v-row>
+                </v-list-item-title>
+            </v-list-item>
+        </v-list>
+
+        <v-divider />
+
+        <v-list>
+            <v-list-item>
+                <v-list-item-title>
+                    <v-row>
+                        <v-col
+                            v-for="(item, i) of socialMedias"
+                            :key="i"
+                            cols="auto"
+                            class="pa-1"
+                        >
+                            <v-btn
+                                :href="item.link"
+                                target="_blank"
+                                :ripple="false"
+                                color="primary"
+                                variant="plain"
+                                class="opacity-100"
+                                :size="40"
+                                icon
+                            >
+                                <v-icon
+                                    :icon="item.icon"
+                                    :size="28"
+                                />
+                            </v-btn>
+                        </v-col>
+                    </v-row>
+                </v-list-item-title>
+            </v-list-item>
         </v-list>
     </v-navigation-drawer>
 </template>
@@ -68,33 +134,20 @@
 import { ref } from 'vue';
 
 import { useI18n } from 'vue-i18n';
-import {
-    useDisplay,
-    useTheme,
-} from 'vuetify';
+import { useDisplay } from 'vuetify';
 
+import { SocialMedias } from '@/data/social-media';
 import { NavItems } from '@/enums/nav-items';
 
-const { t } = useI18n();
-const theme = useTheme();
+import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
 
-const { xs } = useDisplay();
+const { t } = useI18n();
+
+const { mdAndUp } = useDisplay();
 const drawer = ref(false);
 const navItems: string[] = Object.values(NavItems);
 
-const isDark = ref(false);
-
-/** 切換主題 */
-function changeTheme() {
-    isDark.value = !isDark.value;
-    const themeName = isDark.value ? 'dark' : 'light';
-
-    document.documentElement.setAttribute(
-        'data-color-theme',
-        themeName,
-    );
-    theme.global.name.value = themeName;
-}
+const socialMedias = SocialMedias.filter((item) => item.showInNav);
 
 function goTop() {
     window.scrollTo({
@@ -112,8 +165,3 @@ function goToSection(nav: string) {
     drawer.value = false;
 }
 </script>
-<style lang="scss">
-.logo {
-    cursor: pointer;
-}
-</style>

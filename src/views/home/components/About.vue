@@ -66,7 +66,7 @@
                 <!-- Social media -->
                 <v-row class="mx-0 my-5 ga-1">
                     <v-col
-                        v-for="(item, i) of socialMedias"
+                        v-for="(item, i) of SocialMedias"
                         :key="i"
                         cols="12"
                         sm="auto"
@@ -91,31 +91,5 @@
 </template>
 
 <script lang="ts" setup>
-const socialMedias: { title: string; link: string; icon: string; }[] = [
-    {
-        title: 'Resume',
-        link: 'https://www.cakeresume.com/s--nFb6N436eKp-1VNtf_cmSg--/gk-wang',
-        icon: 'mdi-file-account',
-    },
-    {
-        title: 'Github',
-        link: 'https://github.com/gkfat',
-        icon: 'mdi-github',
-    },
-    {
-        title: 'LinkedIn',
-        link: 'https://www.linkedin.com/in/gkgkwang',
-        icon: 'mdi-linkedin',
-    },
-    {
-        title: 'Email',
-        link: 'mailto:gkgkdesign@gmail.com',
-        icon: 'mdi-email',
-    },
-    {
-        title: 'Tech Blog',
-        link: 'https://gk-blog.pages.dev/',
-        icon: 'mdi-note',
-    },
-];
+import { SocialMedias } from '@/data/social-media';
 </script>
