@@ -1,3 +1,10 @@
+import { ConfigType } from 'dayjs';
+
+import { EnumJobTitle } from '@/enums/job-title';
+import { EnumProficiency } from '@/enums/proficiency';
+import { EnumProject } from '@/enums/projects';
+import { EnumSkill } from '@/enums/skill';
+
 export namespace Types {
 
     export interface Project {
@@ -5,31 +12,30 @@ export namespace Types {
         time: string;
         subtitle: string;
         items: string[];
-        techStacks: {
-            text: string;
-            icon: string;
-        }[];
+        tags: string[];
         imagesUrls?: string[];
         websiteUrl?: string;
         githubUrl?: string;
     }
 
-    export interface ChipItem {
-        text: string;
-        icon: string;
-        size?: string;
-        color?: string;
-        variant?: string;
-    }
-
     export interface Skill {
-        title: string;
-        items: ChipItem[];
+        category: EnumSkill;
+        items: string[];
     }
 
     export interface Proficiency {
-        title: string;
-        icon: string;
+        category: EnumProficiency;
         items: string[];
+    }
+
+    export interface Career {
+        timeRange: {
+            startDate: ConfigType;
+            endDate: ConfigType;
+        };
+        company: string;
+        jobTitle: EnumJobTitle;
+        items: string[];
+        projects: EnumProject[];
     }
 }

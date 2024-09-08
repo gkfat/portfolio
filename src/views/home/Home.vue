@@ -1,20 +1,20 @@
 <template>
-    <Banner />
-    <div class="section">
+    <!-- <Banner /> -->
+    <v-container
+        class="bg-background"
+        :max-width="1000"
+    >
         <About />
-    </div>
-    <div class="section">
-        <Skills />
-    </div>
-    <div class="section">
+
+        <v-spacer class="my-5" />
+
+        <Skill />
         <Proficiency />
-    </div>
-    <div class="section">
-        <CareerProject />
-    </div>
-    <div class="section">
+        <Career />
         <Project />
-    </div>
+    </v-container>
+
+    <ProjectDialog />
 
     <!-- Go Top Button -->
     <v-scale-transition>
@@ -36,12 +36,14 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
-import About from './components/About.vue';
-import Banner from './components/Banner.vue';
-import CareerProject from './components/CareerProject.vue';
-import Proficiency from './components/Proficiency.vue';
-import Project from './components/Project.vue';
-import Skills from './components/Skills.vue';
+import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
+
+import About from './about/About.vue';
+import Career from './career/Career.vue';
+import Proficiency from './proficiency/Proficiency.vue';
+// import Banner from './components/Banner.vue';
+import Project from './project/Project.vue';
+import Skill from './skill/Skill.vue';
 
 const goTo = (y: number) => {
     window.scrollTo({
@@ -60,8 +62,5 @@ const onScroll = (e: any) => {
 };
 </script>
 <style lang="scss" scoped>
-.section {
-    padding-bottom: 100px;
-    background-color: rgb(var(--v-theme-background));
-}
+
 </style>

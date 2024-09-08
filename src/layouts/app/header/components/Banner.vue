@@ -1,6 +1,5 @@
 <template>
     <div
-        :id="NavItems.About"
         class="bg-primary py-10"
     >
         <v-container>
@@ -48,8 +47,6 @@ import {
 
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify/lib/framework.mjs';
-
-import { NavItems } from '@/enums/nav-items';
 
 const { xs } = useDisplay();
 const { t } = useI18n();

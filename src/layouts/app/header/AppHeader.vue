@@ -18,6 +18,16 @@
             v-if="mdAndUp"
             class="d-flex align-center"
         >
+            <TextBtn
+                :title="t('common.resume')"
+                :link-url="URL_SOURCE.socialMedias.resume"
+            />
+
+            <TextBtn
+                :title="t('common.tech_blog')"
+                :link-url="URL_SOURCE.socialMedias.techBlog"
+            />
+
             <v-divider
                 vertical
                 inset
@@ -32,21 +42,7 @@
                 class="mx-3"
             />
 
-            <v-btn
-                v-for="(item, i) of socialMedias"
-                :key="i"
-                color="primary"
-                :href="item.link"
-                target="_blank"
-                :size="32"
-                icon
-                flat
-            >
-                <v-icon
-                    :icon="item.icon"
-                    :size="24"
-                />
-            </v-btn>
+            <SocialMediaGroup />
         </div>
 
         <v-app-bar-actions v-if="!mdAndUp">
@@ -64,28 +60,12 @@
         v-model="drawer"
         location="right"
     >
-        <v-list
-            nav
-            density="compact"
-        >
-            <v-list-item
-                v-for="nav of navItems"
-                :key="nav"
-                @click="goToSection(nav)"
-            >
-                <v-list-item-title>
-                    {{ t('nav.' + nav) }}
-                </v-list-item-title>
-            </v-list-item>
-            <v-divider />
-        </v-list>
-
         <v-list>
             <v-list-item>
                 <v-list-item-title>
                     <v-row class="align-center">
-                        <v-col>
-                            {{ t('app.appearance') }}
+                        <v-col class="text-primary font-weight-bold">
+                            {{ t('common.appearance') }}
                         </v-col>
                         <v-col>
                             <AppearanceSwitcher />
@@ -99,31 +79,30 @@
 
         <v-list>
             <v-list-item>
+                <TextBtn
+                    :title="t('common.resume')"
+                    :link-url="URL_SOURCE.socialMedias.resume"
+                />
+            </v-list-item>
+        </v-list>
+
+        <v-divider />
+
+        <v-list>
+            <v-list-item>
+                <TextBtn
+                    :title="t('common.tech_blog')"
+                    :link-url="URL_SOURCE.socialMedias.techBlog"
+                />
+            </v-list-item>
+        </v-list>
+
+        <v-divider />
+
+        <v-list>
+            <v-list-item>
                 <v-list-item-title>
-                    <v-row>
-                        <v-col
-                            v-for="(item, i) of socialMedias"
-                            :key="i"
-                            cols="auto"
-                            class="pa-1"
-                        >
-                            <v-btn
-                                :href="item.link"
-                                target="_blank"
-                                :ripple="false"
-                                color="primary"
-                                variant="plain"
-                                class="opacity-100"
-                                :size="40"
-                                icon
-                            >
-                                <v-icon
-                                    :icon="item.icon"
-                                    :size="28"
-                                />
-                            </v-btn>
-                        </v-col>
-                    </v-row>
+                    <SocialMediaGroup :justify="'start'" />
                 </v-list-item-title>
             </v-list-item>
         </v-list>
@@ -131,13 +110,17 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import {
+    ref,
+    watch,
+} from 'vue';
 
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
-import { SocialMedias } from '@/data/social-media';
-import { NavItems } from '@/enums/nav-items';
+import TextBtn from '@/components/btn/TextBtn.vue';
+import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
+import { URL_SOURCE } from '@/data/url-source';
 
 import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
 
@@ -145,23 +128,20 @@ const { t } = useI18n();
 
 const { mdAndUp } = useDisplay();
 const drawer = ref(false);
-const navItems: string[] = Object.values(NavItems);
 
-const socialMedias = SocialMedias.filter((item) => item.showInNav);
+watch(
+    mdAndUp,
+    () => {
+        if (mdAndUp.value) {
+            drawer.value = false;
+        }
+    },
+);
 
 function goTop() {
     window.scrollTo({
         top: 0,
         behavior: 'smooth',
     });
-}
-
-function goToSection(nav: string) {
-    const { offsetTop } = document.getElementById(nav)!;
-    window.scrollTo({
-        top: offsetTop - 100,
-        behavior: 'smooth',
-    });
-    drawer.value = false;
 }
 </script>

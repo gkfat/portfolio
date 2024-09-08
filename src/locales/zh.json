@@ -1,6 +1,5 @@
 {
   "app": {
-    "appearance": "主題",
     "title": "About GK"
   },
   "banner": {
@@ -10,16 +9,31 @@
     "item_4": "文件寫清楚！",
     "title": "一句話形容我"
   },
-  "nav": {
-    "about": "關於我",
-    "career_project": "職涯作品",
-    "proficiency": "專業能力",
-    "project": "其他專案",
-    "skills": "專業技能"
+  "common": {
+    "appearance": "主題",
+    "career": "職涯",
+    "current": "現在",
+    "month": "月",
+    "proficiency": "專業",
+    "project": "專案",
+    "resume": "履歷",
+    "skill": "技能",
+    "tech_blog": "技術筆記",
+    "year": "年"
   },
-  "skills": {
+  "job_title": {
+    "account_executive": "專案執行",
+    "copy_writing": "文案企劃",
+    "frontend_developer": "前端工程師",
+    "principle_engineer": "主任程式設計師"
+  },
+  "proficiency": {
+    "copy_writing": "文案撰寫",
+    "full_stack_development": "全端開發",
+    "system_analysis": "系統分析"
+  },
+  "skill": {
     "backend": "後端開發",
-    "developing": "全端開發",
     "devops": "部署維運",
     "frontend": "前端開發"
   }
