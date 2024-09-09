@@ -17,10 +17,11 @@
 </template>
 <script lang="ts" setup>
 const props = withDefaults(defineProps<{
-    linkUrl: string;
+    linkUrl?: string;
     icon: string;
     iconSize?: string;
 }>(), {
+    linkUrl: undefined,
     iconSize: 'default',
 });
 </script>

@@ -6,11 +6,10 @@
         :ripple="false"
         @click="setActiveProject"
     >
-        <p class="d-flex align-start">
+        <p class="d-flex align-center ga-1">
             {{ project.title }}
             <v-icon
-                color="white"
-                icon="mdi-arrow-top-right"
+                icon="mdi-eye"
                 size="14"
             />
         </p>

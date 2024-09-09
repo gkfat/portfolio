@@ -42,16 +42,75 @@
 
             <v-divider />
 
-            <v-card-text>
-                <p
-                    v-for="(item, i) of project.items"
-                    :key="i"
+            <v-card-text class="overflow-y-auto">
+                <!-- 無預覽圖或網頁 -->
+                <v-card-text v-if="!project.websiteUrl && !project.imagesUrls">
+                    <p class="text-warning text-center py-3">
+                        無預覽圖或網頁。
+                    </p>
+                </v-card-text>
+
+                <!-- iframe 網頁呈現 -->
+                <v-card-text
+                    v-if="project.websiteUrl"
+                    class="fill-height pa-3"
                 >
-                    - {{ item }}
-                </p>
+                    <v-row v-if="loading">
+                        <v-col
+                            cols="auto"
+                            class="py-5 mx-auto"
+                        >
+                            <v-progress-circular
+                                indeterminate
+                                :size="40"
+                                :width="5"
+                                color="warning"
+                            />
+                        </v-col>
+                    </v-row>
+
+                    <p
+                        v-if="!loading && loadingError"
+                        class="text-warning text-center py-3"
+                    >
+                        無法載入內容，請重新整理網頁。
+                    </p>
+
+                    <div
+                        v-else
+                        class="iframe-container"
+                    >
+                        <iframe
+                            :key="reloadKey"
+                            :src="project.websiteUrl"
+                            class="bg-white border rounded-xl"
+                            :style="{ display: loading ? 'none' : 'block' }"
+                            allowfullscreen
+                            @error="handleError"
+                            @load="handleOnLoad"
+                        />
+                    </div>
+                </v-card-text>
+
+                <v-divider />
+
+                <!-- 專案描述 -->
+                <v-card-text>
+                    <p
+                        v-for="(item, i) of project.items"
+                        :key="i"
+                    >
+                        - {{ item }}
+                    </p>
+                </v-card-text>
             </v-card-text>
 
             <v-card-actions class="px-3 flex-wrap ga-1">
+                <IconBtn
+                    :icon="'mdi-refresh'"
+                    @click="reloadWebsite"
+                />
+                <v-spacer class="ml-auto" />
                 <p
                     v-for="(tag, i) in project.tags"
                     :key="i"
@@ -64,13 +123,49 @@
     </v-dialog>
 </template>
 <script lang="ts" setup>
-import { computed } from 'vue';
+import {
+    computed,
+    ref,
+} from 'vue';
 
+import IconBtn from '@/components/btn/IconBtn.vue';
 import TextBtn from '@/components/btn/TextBtn.vue';
 import { useAppStore } from '@/store/app';
 
 const appStore = useAppStore();
 
+const loading = ref(true);
+const loadingError = ref(false);
+const reloadKey = ref(0);
+
 const project = computed(() => appStore.activeProject);
 
+const handleError = () => {
+    loadingError.value = true;
+};
+
+const handleOnLoad = () => {
+    loading.value = false;
+    loadingError.value = false;
+};
+
+const reloadWebsite = () => {
+    reloadKey.value += 1;
+};
 </script>
+<style lang="scss" scoped>
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+</style>

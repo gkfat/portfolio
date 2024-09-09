@@ -46,7 +46,7 @@
             <v-divider />
 
             <v-card-text class="pa-1">
-                <v-row class="ma-0">
+                <v-row class="ma-0 align-center">
                     <v-col
                         v-for="(key, i) in props.career.projects"
                         :key="i"
