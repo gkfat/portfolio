@@ -1,42 +1,38 @@
 <template>
-    <div
-        class="bg-primary py-10"
-    >
-        <v-container>
-            <v-row class="ma-0 justify-center align-center">
-                <v-col
-                    cols="12"
-                    sm="auto"
-                    class="py-0"
+    <v-container>
+        <v-row class="ma-0 justify-center align-center">
+            <v-col
+                cols="12"
+                sm="auto"
+                class="py-0"
+            >
+                <p
+                    class="text-h5 ma-0"
+                    :class="{ 'text-center': xs }"
                 >
-                    <p
-                        class="text-h5 ma-0"
-                        :class="{ 'text-center': xs }"
-                    >
-                        {{ t('banner.title') }}
-                    </p>
-                </v-col>
-                <v-col
-                    class="text-slider py-0"
-                    cols="12"
-                    sm="auto"
+                    {{ t('banner.title') }}
+                </p>
+            </v-col>
+            <v-col
+                class="text-slider py-0"
+                cols="12"
+                sm="auto"
+            >
+                <p
+                    v-for="(item, i) of textSliderItems"
+                    :key="i"
+                    :class="{
+                        'active': currentIndex === i,
+                        'previous': leavingIndex === i,
+                        'text-center': xs
+                    }"
+                    class="text-h4 ma-0 text-no-wrap text-slider-item"
                 >
-                    <p
-                        v-for="(item, i) of textSliderItems"
-                        :key="i"
-                        :class="{
-                            'active': currentIndex === i,
-                            'previous': leavingIndex === i,
-                            'text-center': xs
-                        }"
-                        class="text-h4 ma-0 text-no-wrap text-slider-item"
-                    >
-                        {{ item }}
-                    </p>
-                </v-col>
-            </v-row>
-        </v-container>
-    </div>
+                    {{ item }}
+                </p>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script lang="ts" setup>

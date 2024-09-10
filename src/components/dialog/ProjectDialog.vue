@@ -29,7 +29,7 @@
                         />
                         <TextBtn
                             v-if="project.websiteUrl"
-                            :title="'Link'"
+                            :title="'Site'"
                             :link-url="project.websiteUrl"
                         />
                     </v-col>

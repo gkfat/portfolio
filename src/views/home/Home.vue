@@ -1,5 +1,4 @@
 <template>
-    <!-- <Banner /> -->
     <v-container
         class="bg-background"
         :max-width="1000"
@@ -41,7 +40,6 @@ import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
 import About from './about/About.vue';
 import Career from './career/Career.vue';
 import Proficiency from './proficiency/Proficiency.vue';
-// import Banner from './components/Banner.vue';
 import Project from './project/Project.vue';
 import Skill from './skill/Skill.vue';
 

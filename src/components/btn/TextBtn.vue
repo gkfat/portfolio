@@ -7,12 +7,12 @@
         class="opacity-100 px-0 ma-0 text-body-1"
         :ripple="false"
     >
-        <p class="d-flex align-start">
+        <p class="d-flex align-center">
             {{ props.title }}
             <v-icon
                 v-if="props.linkUrl"
                 color="lightgrey"
-                icon="mdi-arrow-top-right"
+                icon="mdi-open-in-new"
                 size="14"
             />
         </p>

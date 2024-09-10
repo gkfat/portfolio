@@ -10,6 +10,10 @@
             'pa-4': !mdAndUp
         }"
     >
+        <!-- <v-card-title class="text-right">
+            <Banner />
+        </v-card-title> -->
+
         <v-card-text class="text-center">
             <v-avatar :size="mdAndUp ? 160 : 120">
                 <v-img
@@ -43,6 +47,8 @@ import { useDisplay } from 'vuetify';
 
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
 import { URL_SOURCE } from '@/data/url-source';
+
+// import Banner from './components/Banner.vue';
 
 const { mdAndUp } = useDisplay();
 </script>
