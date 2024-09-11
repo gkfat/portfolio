@@ -48,6 +48,7 @@
                     >
                         <v-img
                             :src="toImageUrl(imgUrl)"
+                            :lazy-src="getPlaceholderImage()"
                             contain
                         />
                     </div>
@@ -105,7 +106,10 @@ import {
 
 import TextBtn from '@/components/btn/TextBtn.vue';
 import { useAppStore } from '@/store/app';
-import { toImageUrl } from '@/utils/image';
+import {
+    getPlaceholderImage,
+    toImageUrl,
+} from '@/utils/image';
 
 const appStore = useAppStore();
 
