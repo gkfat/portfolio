@@ -18,6 +18,13 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://demo-tsmc-art-festival-2021.pages.dev',
         githubUrl: 'https://github.com/gkfat/tsmc-art-festival-2021',
+        imagesUrls: [
+            '/img/project/tsmc/1.png',
+            '/img/project/tsmc/2.png',
+            '/img/project/tsmc/3.png',
+            '/img/project/tsmc/4.png',
+            '/img/project/tsmc/5.png',
+        ],
     },
     [EnumProject.THLK]: {
         title: '海禾通商',
@@ -38,6 +45,12 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://www.thlk.com.tw',
         githubUrl: 'https://github.com/gkfat/thlk',
+        imagesUrls: [
+            '/img/project/thlk/1.png',
+            '/img/project/thlk/2.png',
+            '/img/project/thlk/3.png',
+            '/img/project/thlk/4.png',
+        ],
     },
     [EnumProject.CpfEdm]: {
         title: '齊柏林基金會 EDM',
@@ -51,6 +64,10 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://demo-cpf-edm.pages.dev/edm.html',
         githubUrl: 'https://github.com/gkfat/cpf-edm',
+        imagesUrls: [
+            '/img/project/cpf-edm/1.png',
+            '/img/project/cpf-edm/2.png',
+        ],
     },
     [EnumProject.LogicardDuel]: {
         title: 'Logicard Duel',
@@ -71,6 +88,9 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://logicard-duel.pages.dev/',
         githubUrl: 'https://github.com/gkfat/logicard-duel',
+        imagesUrls: [
+            '/img/project/logicard-duel/1.png',
+        ],
     },
     [EnumProject.Ikea]: {
         title: 'IKEA 活動網頁切版',
@@ -86,6 +106,13 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://demo-2021-ikea-csr-campaign.pages.dev',
         githubUrl: 'https://github.com/gkfat/2021-ikea-csr-campaign',
+        imagesUrls: [
+            '/img/project/ikea/1.png',
+            '/img/project/ikea/2.png',
+            '/img/project/ikea/3.png',
+            '/img/project/ikea/4.png',
+            '/img/project/ikea/5.png',
+        ],
     },
     [EnumProject.CNCMes]: {
         title: 'CNC MES 系統',
@@ -106,6 +133,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Vitest',
         ],
         githubUrl: 'https://github.com/gkfat/cnc-mes-frontend',
+        imagesUrls: [],
     },
     [EnumProject.WelcabBackStage]: {
         title: '派車系統',
@@ -124,6 +152,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Vitest',
         ],
         githubUrl: 'https://github.com/gkfat/welcab-saas-frontend',
+        imagesUrls: [],
     },
     [EnumProject.WelcabLineLiff]: {
         title: '派車系統 Line Liff 服務',
@@ -141,6 +170,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Vitest',
         ],
         githubUrl: 'https://github.com/gkfat/welcab-line-reservation',
+        imagesUrls: [],
     },
     [EnumProject.DiceRoller]: {
         title: 'Dice Roller',
@@ -159,6 +189,9 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://dice-roller-cuq.pages.dev/',
         githubUrl: 'https://github.com/gkfat/dice-roller',
+        imagesUrls: [
+            '/img/project/dice-roller/1.png',
+        ],
     },
     [EnumProject.SimpleTodoList]: {
         title: 'Simple Todo List',
@@ -175,6 +208,9 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://simple-todo-list.pages.dev',
         githubUrl: 'https://github.com/gkfat/simple-todo-list',
+        imagesUrls: [
+            '/img/project/simple-todo-list/1.png',
+        ],
     },
     [EnumProject.TechBlog]: {
         title: 'Tech blog',
@@ -188,6 +224,9 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://gk-blog.pages.dev',
         githubUrl: 'https://github.com/gkfat/gk-blog',
+        imagesUrls: [
+            '/img/project/tech-blog/1.png',
+        ],
     },
     [EnumProject.HTGameBackend]: {
         title: '遊戲後端開發',
@@ -201,10 +240,11 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'MongoDB',
             'GKE',
         ],
+        imagesUrls: [],
     },
     [EnumProject.HTGameBackstage]: {
         title: '遊戲專案後台全端開發',
-        time: '2023 ~ 2024',
+        time: '2023~2024',
         subtitle: '全端開發',
         items: [
             '帳號權限系統',
@@ -226,10 +266,14 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Firebase',
             'ELK',
         ],
+        imagesUrls: [
+            '/img/project/ht-game-backstage/1.png',
+            '/img/project/ht-game-backstage/2.png',
+        ],
     },
     [EnumProject.AsinkEIP]: {
         title: 'Asink EIP',
-        time: '2021 ~ 2022',
+        time: '2021~2022',
         subtitle: '全端開發',
         items: [
             '帳號權限系統',
@@ -247,10 +291,11 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Apache',
         ],
         websiteUrl: 'https://www.atrustek.com/cis/home',
+        imagesUrls: [],
     },
     [EnumProject.AtrustekWeb]: {
         title: 'Atrustek Fintech Saas',
-        time: '2019 ~ 2021',
+        time: '2019~2021',
         subtitle: '前端開發',
         items: [
             '會員系統',
@@ -267,5 +312,6 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Linux',
         ],
         websiteUrl: 'https://www.atrustek.com/cis/home',
+        imagesUrls: [],
     },
 };

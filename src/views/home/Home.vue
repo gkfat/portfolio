@@ -1,7 +1,7 @@
 <template>
     <v-container
         class="bg-background"
-        :max-width="1000"
+        style="max-width: 1000px !important;"
     >
         <About />
 

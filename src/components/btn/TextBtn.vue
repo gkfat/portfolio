@@ -7,8 +7,8 @@
         class="opacity-100 px-0 ma-0 text-body-1"
         :ripple="false"
     >
-        <p class="d-flex align-center">
-            {{ props.title }}
+        <p class="d-flex align-center ga-1">
+            <span>{{ props.title }}</span>
             <v-icon
                 v-if="props.linkUrl"
                 color="lightgrey"

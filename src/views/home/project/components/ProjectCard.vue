@@ -2,55 +2,63 @@
     <v-card
         rounded="xl"
         color="white"
-        class="py-4 border fill-height"
-        hover
-        @click="setActiveProject"
+        class="border fill-height"
     >
-        <v-card-subtitle class="text-warning">
-            <v-row>
-                <v-col class="font-weight-bold">
-                    {{ props.project.subtitle }}
-                </v-col>
-                <v-col
-                    cols="auto"
-                    class="ml-auto"
+        <div class="d-flex flex-column fill-height">
+            <v-img
+                class="align-end"
+                :height="mdAndUp ? 180 : 120"
+                :lazy-src="getPlaceholderImage()"
+                :src="getProjectImage"
+                cover
+            />
+
+            <v-card-title class="text-primary text-wrap text-h6">
+                {{ props.project.title }}
+            </v-card-title>
+
+            <v-card-text class="px-3 d-flex justify-space-between">
+                <span class="text-warning">{{ props.project.subtitle }}</span>
+                <span>{{ props.project.time }}</span>
+            </v-card-text>
+
+            <v-card-text class="px-3 d-flex flex-wrap ga-1 fill-height">
+                <p
+                    v-for="(tag, i) in props.project.tags"
+                    :key="i"
+                    class="text-caption text-decoration-underline cursor-pointer"
                 >
-                    <v-icon icon="mdi-eye" />
-                </v-col>
-            </v-row>
-        </v-card-subtitle>
+                    {{ `#${tag}` }}
+                </p>
+            </v-card-text>
 
-        <v-card-title class="text-primary text-wrap text-h6">
-            {{ props.project.title }}
-        </v-card-title>
-
-        <v-divider />
-
-        <v-card-text>
-            <p
-                v-for="(item, i) of props.project.items"
-                :key="i"
-            >
-                - {{ item }}
-            </p>
-        </v-card-text>
-
-        <v-card-actions class="px-3 flex-wrap ga-1">
-            <p
-                v-for="(tag, i) in props.project.tags"
-                :key="i"
-                class="text-caption text-decoration-underline cursor-pointer me-2"
-            >
-                {{ `#${tag}` }}
-            </p>
-        </v-card-actions>
+            <v-card-actions class="justify-end">
+                <TextBtn
+                    :title="t('common.browse') + t('common.project')"
+                    @click="setActiveProject"
+                />
+            </v-card-actions>
+        </div>
     </v-card>
 </template>
 <script lang="ts" setup>
+import { computed } from 'vue';
+
+import { useI18n } from 'vue-i18n';
+import { useDisplay } from 'vuetify';
+
+import TextBtn from '@/components/btn/TextBtn.vue';
 import { useAppStore } from '@/store/app';
 import { Types } from '@/types/types';
+import {
+    getPlaceholderImage,
+    toImageUrl,
+} from '@/utils/image';
 
 const appStore = useAppStore();
+const { t } = useI18n();
+
+const { mdAndUp } = useDisplay();
 
 const props = defineProps<{
     project: Types.Project;
@@ -59,4 +67,12 @@ const props = defineProps<{
 const setActiveProject = () => {
     appStore.setActiveProject(props.project);
 };
+
+const getProjectImage = computed(() => {
+    if (props.project.imagesUrls?.length) {
+        return toImageUrl(props.project.imagesUrls[0]);
+    }
+
+    return getPlaceholderImage();
+});
 </script>

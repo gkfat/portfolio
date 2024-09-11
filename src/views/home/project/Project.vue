@@ -35,6 +35,11 @@ import ProjectCard from './components/ProjectCard.vue';
 const { t } = useI18n();
 
 const projects = [
+    EnumProject.AtrustekWeb,
+    EnumProject.AsinkEIP,
+    EnumProject.HTGameBackstage,
+    EnumProject.HTGameBackend,
+
     EnumProject.TSMC,
     EnumProject.THLK,
     EnumProject.CpfEdm,
