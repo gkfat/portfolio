@@ -49,7 +49,9 @@
                         <v-img
                             :src="toImageUrl(imgUrl)"
                             :lazy-src="getPlaceholderImage()"
-                            contain
+                            :contain="isImageLoaded"
+                            :cover="!isImageLoaded"
+                            @load="onImageLoadUpdate"
                         />
                     </div>
                 </v-carousel-item>
@@ -116,14 +118,20 @@ const appStore = useAppStore();
 const project = computed(() => appStore.activeProject);
 
 const activeIndex = ref(0);
+const isImageLoaded = ref(false);
 
 const setActiveImage = (index: number) => {
     activeIndex.value = index;
 };
 
+const onImageLoadUpdate = () => {
+    isImageLoaded.value = true;
+};
+
 watch(
     () => appStore.activeProject,
     () => {
+        isImageLoaded.value = false;
         if (project.value?.imagesUrls.length) {
             setActiveImage(0);
         }
