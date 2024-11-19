@@ -14,10 +14,10 @@
     "dayjs": "^1.11.13",
     "pinia": "^2.1.7",
     "roboto-fontface": "^0.10.0",
-    "vue": "^3.4.31",
+    "vue": "^3.5.13",
     "vue-i18n": "^9.13.1",
     "vue-router": "^4.4.0",
-    "vuetify": "^3.6.10"
+    "vuetify": "^3.7.4"
   },
   "devDependencies": {
     "@babel/types": "^7.24.7",

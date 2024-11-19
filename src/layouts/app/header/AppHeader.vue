@@ -4,19 +4,26 @@
         flat
     >
         <v-btn
-            class="text-primary text-title opacity-100"
-            variant="plain"
+            flat
             :ripple="false"
+            variant="plain"
+            class="opacity-100"
+            :height="40"
             @click="goTop"
         >
-            {{ t('app.title') }}
+            <v-img
+                src="/icon-512.png"
+                :max-width="40"
+                :width="40"
+                contain
+            />
         </v-btn>
 
         <v-spacer class="ml-auto" />
 
         <div
             v-if="mdAndUp"
-            class="d-flex align-center"
+            class="d-flex align-center ga-1"
         >
             <TextBtn
                 :title="t('common.resume')"
@@ -50,93 +57,26 @@
                 icon="mdi-dots-horizontal"
                 :ripple="false"
                 variant="plain"
-                @click.stop="drawer = !drawer"
+                @click.stop="appStore.isMobileDrawerOpen = !appStore.isMobileDrawerOpen"
             />
         </v-app-bar-actions>
     </v-app-bar>
-
-    <!-- 側邊欄 -->
-    <v-navigation-drawer
-        v-model="drawer"
-        location="right"
-    >
-        <v-list>
-            <v-list-item>
-                <v-list-item-title>
-                    <v-row class="align-center">
-                        <v-col class="text-primary font-weight-bold">
-                            {{ t('common.appearance') }}
-                        </v-col>
-                        <v-col>
-                            <AppearanceSwitcher />
-                        </v-col>
-                    </v-row>
-                </v-list-item-title>
-            </v-list-item>
-        </v-list>
-
-        <v-divider />
-
-        <v-list>
-            <v-list-item>
-                <TextBtn
-                    :title="t('common.resume')"
-                    :link-url="URL_SOURCE.socialMedias.resume"
-                />
-            </v-list-item>
-        </v-list>
-
-        <v-divider />
-
-        <v-list>
-            <v-list-item>
-                <TextBtn
-                    :title="t('common.tech_blog')"
-                    :link-url="URL_SOURCE.socialMedias.techBlog"
-                />
-            </v-list-item>
-        </v-list>
-
-        <v-divider />
-
-        <v-list>
-            <v-list-item>
-                <v-list-item-title>
-                    <SocialMediaGroup :justify="'start'" />
-                </v-list-item-title>
-            </v-list-item>
-        </v-list>
-    </v-navigation-drawer>
 </template>
 
 <script lang="ts" setup>
-import {
-    ref,
-    watch,
-} from 'vue';
-
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
 import TextBtn from '@/components/btn/TextBtn.vue';
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
 import { URL_SOURCE } from '@/data/url-source';
+import { useAppStore } from '@/store/app';
 
 import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
 
 const { t } = useI18n();
-
 const { mdAndUp } = useDisplay();
-const drawer = ref(false);
-
-watch(
-    mdAndUp,
-    () => {
-        if (mdAndUp.value) {
-            drawer.value = false;
-        }
-    },
-);
+const appStore = useAppStore();
 
 function goTop() {
     window.scrollTo({
