@@ -29,7 +29,7 @@ const routes: RouteRecordRaw[] = [
     },
     {
         path: '/:catchAll(.*)*',
-        redirect: '/home',
+        redirect: '/about',
     },
 ];
 
