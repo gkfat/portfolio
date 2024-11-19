@@ -1,8 +1,8 @@
 <template>
-    <PageHeader :title="t('common.project')" />
     <v-card
+        id="projects"
         :max-width="1000"
-        class="mx-auto"
+        class="mx-auto bg-transparent py-10"
         flat
     >
         <v-card-text>
@@ -22,15 +22,10 @@
 </template>
 
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
-
 import { Projects } from '@/data/project';
 import { EnumProject } from '@/enums/projects';
-import PageHeader from '@/layouts/panel/PageHeader.vue';
 
 import ProjectCard from './components/ProjectCard.vue';
-
-const { t } = useI18n();
 
 const projects = [
     EnumProject.AtrustekWeb,

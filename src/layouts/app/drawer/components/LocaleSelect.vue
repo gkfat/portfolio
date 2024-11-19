@@ -27,7 +27,9 @@ import { useI18n } from 'vue-i18n';
 
 import { useAppStore } from '@/store/app';
 
-const { t, locale } = useI18n();
+const {
+    t, locale, 
+} = useI18n();
 
 const appStore = useAppStore();
 const currentLocale = computed(() => locale.value);

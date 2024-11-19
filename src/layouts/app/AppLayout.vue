@@ -41,9 +41,9 @@ const goTo = (y: number) => {
 
 const passScrollToTopThreshold = ref(false);
 
-const onScroll = (e: any) => {
+const onScroll = () => {
     if (typeof window === 'undefined') return;
-    const top = window.scrollY || e.target.scrollTop || 0;
+    const top = window.scrollY || 0;
     const threshold = Math.ceil(window.innerHeight * 0.2);
     passScrollToTopThreshold.value = top >= threshold;
 };

@@ -21,23 +21,16 @@
     </v-btn>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { computed } from 'vue';
 
-import { useTheme } from 'vuetify';
+import { useAppStore } from '@/store/app';
 
-const theme = useTheme();
+const appStore = useAppStore();
 
-const isDark = ref(false);
+const isDark = computed(() => appStore.state.darkTheme);
 
 function changeTheme() {
-    isDark.value = !isDark.value;
-    const themeName = isDark.value ? 'dark' : 'light';
-
-    document.documentElement.setAttribute(
-        'data-color-theme',
-        themeName,
-    );
-    theme.global.name.value = themeName;
+    appStore.switchTheme(!isDark.value);
 }
 </script>
 <style lang="scss" scoped>

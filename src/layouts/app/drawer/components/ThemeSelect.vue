@@ -36,8 +36,7 @@ const themes = [
     {
         theme: 'dark',
         icon: 'mdi-weather-night',
-    },
-    {
+    }, {
         theme: 'light',
         icon: 'mdi-white-balance-sunny',
     },

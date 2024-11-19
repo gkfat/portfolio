@@ -1,4 +1,4 @@
-/* eslint-disable no-unused-vars */
+ 
 export enum EnumJobTitle {
     AccountExecutive = 'account_executive',
     CopyWriting = 'copy_writing',

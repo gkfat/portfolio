@@ -10,7 +10,7 @@ export namespace Types {
     export interface Project {
         title: string;
         time: string;
-        subtitle: string;
+        techStacks: string[];
         items: string[];
         tags: string[];
         imagesUrls: string[];

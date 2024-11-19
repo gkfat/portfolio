@@ -1,5 +1,10 @@
 <template>
-    <v-row class="align-center fill-height">
+    <v-row
+        class="align-center border"
+        :style="{
+            height: '80vh'
+        }"
+    >
         <v-col
             cols="12"
         >
@@ -19,18 +24,19 @@
                     'text-h6': !smAndUp
                 }"
             >
-                I'm a Web Developer
+                A Web Developer
             </p>
 
             <p class="text-center">
                 <v-btn
-                    to="/projects"
                     flat
                     color="secondary"
                     class="text-none"
+                    rounded="lg"
                     size="x-large"
+                    @click="scrollToProjects"
                 >
-                    See Project
+                    See Projects
                 </v-btn>
             </p>
         </v-col>
@@ -42,4 +48,15 @@ import { useDisplay } from 'vuetify';
 
 const { smAndUp } = useDisplay();
 
+const scrollToProjects = () => {
+    const element = document.getElementById('projects');
+
+    if (element) {
+        const top = element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+            top: top - 100,
+            behavior: 'smooth', 
+        });
+    }
+};
 </script>

@@ -16,10 +16,7 @@ export const Careers: Types.Career[] = [
             '遊戲後台專案全端開發',
             '其他部門報表功能開發',
         ],
-        projects: [
-            EnumProject.HTGameBackend,
-            EnumProject.HTGameBackstage,
-        ],
+        projects: [EnumProject.HTGameBackend, EnumProject.HTGameBackstage],
     },
     {
         timeRange: {
@@ -34,10 +31,7 @@ export const Careers: Types.Career[] = [
             '管理專案開發時程',
             '需求訪談、系統分析、開發項目規劃、全端開發',
         ],
-        projects: [
-            EnumProject.AtrustekWeb,
-            EnumProject.AsinkEIP,
-        ],
+        projects: [EnumProject.AtrustekWeb, EnumProject.AsinkEIP],
     },
     {
         timeRange: {
@@ -60,10 +54,7 @@ export const Careers: Types.Career[] = [
         },
         company: '橘子磨坊數位創意溝通股份有限公司',
         jobTitle: EnumJobTitle.AccountExecutive,
-        items: [
-            '整合設計、創意、程式部門與客戶，確保專案順利完成',
-            '提案、review、maintain 長期專案',
-        ],
+        items: ['整合設計、創意、程式部門與客戶，確保專案順利完成', '提案、review、maintain 長期專案'],
         projects: [],
     },
 ];

@@ -7,8 +7,7 @@ export const SocialMedias: {
     {
         link: URL_SOURCE.socialMedias.github,
         icon: 'mdi-github',
-    },
-    {
+    }, {
         link: URL_SOURCE.socialMedias.linkedIn,
         icon: 'mdi-linkedin',
     },

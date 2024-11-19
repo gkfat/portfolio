@@ -16,7 +16,6 @@
             </v-card-title>
 
             <v-card-subtitle class="font-weight-bold mb-3">
-                <span class="text-warning me-3">{{ project.subtitle }}</span>
                 <em class="text-caption">{{ project.time }}</em>
             </v-card-subtitle>
 

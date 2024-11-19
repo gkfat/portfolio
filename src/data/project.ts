@@ -5,7 +5,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.TSMC]: {
         title: '台積心築藝術季',
         time: '2021',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '網站視覺與流程設計',
             'Motion vision 製作',
@@ -29,7 +29,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.THLK]: {
         title: '海禾通商',
         time: '2022~2024',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '靜態網站加上 RWD',
             '部署與維護',
@@ -55,24 +55,17 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.CpfEdm]: {
         title: '齊柏林基金會 EDM',
         time: '2021',
-        subtitle: 'EDM 切版',
-        items: [
-            'EDM 模板設計',
-        ],
-        tags: [
-            'HTML',
-        ],
+        techStacks: ['FE'],
+        items: ['EDM 模板設計'],
+        tags: ['HTML'],
         websiteUrl: 'https://demo-cpf-edm.pages.dev/edm.html',
         githubUrl: 'https://github.com/gkfat/cpf-edm',
-        imagesUrls: [
-            '/img/project/cpf-edm/1.png',
-            '/img/project/cpf-edm/2.png',
-        ],
+        imagesUrls: ['/img/project/cpf-edm/1.png', '/img/project/cpf-edm/2.png'],
     },
     [EnumProject.LogicardDuel]: {
         title: 'Logicard Duel',
         time: '2023',
-        subtitle: '前端遊戲規劃 & 開發',
+        techStacks: ['FE'],
         items: [
             '遊戲流程邏輯設計與開發',
             '前端視覺設計與開發',
@@ -88,17 +81,13 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://logicard-duel.pages.dev/',
         githubUrl: 'https://github.com/gkfat/logicard-duel',
-        imagesUrls: [
-            '/img/project/logicard-duel/1.png',
-        ],
+        imagesUrls: ['/img/project/logicard-duel/1.png'],
     },
     [EnumProject.Ikea]: {
         title: 'IKEA 活動網頁切版',
         time: '2021',
-        subtitle: '前端開發',
-        items: [
-            '前端 RWD 網頁開發',
-        ],
+        techStacks: ['FE'],
+        items: ['前端 RWD 網頁開發'],
         tags: [
             'HTML',
             'CSS',
@@ -117,7 +106,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.CNCMes]: {
         title: 'CNC MES 系統',
         time: '2024',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '帳號＆權限',
             '客戶＆供應商管理',
@@ -138,7 +127,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.WelcabBackStage]: {
         title: '派車系統',
         time: '2024',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '個案＆司機管理',
             '主控版卡片式呈現',
@@ -157,11 +146,8 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.WelcabLineLiff]: {
         title: '派車系統 Line Liff 服務',
         time: '2024',
-        subtitle: '前端開發',
-        items: [
-            '表單驗證服務',
-            '串接 Line Auth 服務',
-        ],
+        techStacks: ['FE'],
+        items: ['表單驗證服務', '串接 Line Auth 服務'],
         tags: [
             'Vue',
             'Vuex',
@@ -175,7 +161,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.DiceRoller]: {
         title: 'Dice Roller',
         time: '2024',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '3D 骰子切版',
             '擲骰子動畫',
@@ -189,17 +175,13 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://dice-roller-cuq.pages.dev/',
         githubUrl: 'https://github.com/gkfat/dice-roller',
-        imagesUrls: [
-            '/img/project/dice-roller/1.png',
-        ],
+        imagesUrls: ['/img/project/dice-roller/1.png'],
     },
     [EnumProject.SimpleTodoList]: {
         title: 'Simple Todo List',
         time: '2024',
-        subtitle: '前端開發',
-        items: [
-            '極簡待辦 app',
-        ],
+        techStacks: ['FE'],
+        items: ['極簡待辦 app'],
         tags: [
             'Vue',
             'Css',
@@ -208,33 +190,23 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         websiteUrl: 'https://simple-todo-list.pages.dev',
         githubUrl: 'https://github.com/gkfat/simple-todo-list',
-        imagesUrls: [
-            '/img/project/simple-todo-list/1.png',
-        ],
+        imagesUrls: ['/img/project/simple-todo-list/1.png'],
     },
     [EnumProject.TechBlog]: {
         title: 'Tech blog',
         time: '2024',
-        subtitle: '前端開發',
-        items: [
-            '技術筆記',
-        ],
-        tags: [
-            'VitePress',
-        ],
+        techStacks: ['FE'],
+        items: ['技術筆記'],
+        tags: ['VitePress'],
         websiteUrl: 'https://gk-blog.pages.dev',
         githubUrl: 'https://github.com/gkfat/gk-blog',
-        imagesUrls: [
-            '/img/project/tech-blog/1.png',
-        ],
+        imagesUrls: ['/img/project/tech-blog/1.png'],
     },
     [EnumProject.HTGameBackend]: {
         title: '遊戲後端開發',
         time: '2023',
-        subtitle: '後端開發',
-        items: [
-            'API 接口',
-        ],
+        techStacks: ['BE'],
+        items: ['API 接口'],
         tags: [
             'Node.js',
             'MongoDB',
@@ -245,7 +217,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.HTGameBackstage]: {
         title: '遊戲專案後台全端開發',
         time: '2023~2024',
-        subtitle: '全端開發',
+        techStacks: ['FE','BE'],
         items: [
             '帳號權限系統',
             '遊戲、會員管理功能',
@@ -266,15 +238,12 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Firebase',
             'ELK',
         ],
-        imagesUrls: [
-            '/img/project/ht-game-backstage/1.png',
-            '/img/project/ht-game-backstage/2.png',
-        ],
+        imagesUrls: ['/img/project/ht-game-backstage/1.png', '/img/project/ht-game-backstage/2.png'],
     },
     [EnumProject.AsinkEIP]: {
         title: 'Asink EIP',
         time: '2021~2022',
-        subtitle: '全端開發',
+        techStacks: ['FE','BE'],
         items: [
             '帳號權限系統',
             '部門管理系統',
@@ -296,7 +265,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.AtrustekWeb]: {
         title: 'Atrustek Fintech Saas',
         time: '2019~2021',
-        subtitle: '前端開發',
+        techStacks: ['FE'],
         items: [
             '會員系統',
             '多語系重構',

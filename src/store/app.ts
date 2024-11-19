@@ -2,8 +2,8 @@ import { ref } from 'vue';
 
 import { defineStore } from 'pinia';
 
-import { useLocalStorage } from '@vueuse/core';
 import { Types } from '@/types/types';
+import { useLocalStorage } from '@vueuse/core';
 
 function createDefaultState() {
     return {

@@ -7,29 +7,22 @@ import {
 const routes: RouteRecordRaw[] = [
     {
         path: '',
-        redirect: '/about',
+        redirect: '/home',
         component: () => import('@/layouts/app/AppLayout.vue'),
         children: [
             {
-                path: '/about',
-                name: 'About',
-                component: () => import('@/views/about/About.vue'),
-            },
-            {
+                path: '/home',
+                name: 'Home',
+                component: () => import('@/views/home/Home.vue'),
+            }, {
                 path: '/career',
                 name: 'Career',
                 component: () => import('@/views/career/Career.vue'),
             },
-            {
-                path: '/projects',
-                name: 'Projects',
-                component: () => import('@/views/project/Project.vue'),
-            },
         ],
-    },
-    {
+    }, {
         path: '/:catchAll(.*)*',
-        redirect: '/about',
+        redirect: '/home',
     },
 ];
 

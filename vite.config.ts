@@ -14,15 +14,11 @@ import vue from '@vitejs/plugin-vue';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
     plugins: [
-        vue({
-            template: { transformAssetUrls },
-        }),
+        vue({ template: { transformAssetUrls } }),
         // https://github.com/vuetifyjs/vuetify-loader/tree/master/packages/vite-plugin#readme
         vuetify({
             autoImport: true,
-            styles: {
-                configFile: 'src/styles/vuetify.scss',
-            },
+            styles: { configFile: 'src/styles/vuetify.scss' },
         }),
         ViteFonts({
             google: {
@@ -37,9 +33,19 @@ export default defineConfig(({ mode }) => ({
     ],
     resolve: {
         alias: [
-            { find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)) },
+            {
+                find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)), 
+            },
         ],
-        extensions: ['.js', '.json', '.jsx', '.mjs', '.ts', '.tsx', '.vue'],
+        extensions: [
+            '.js',
+            '.json',
+            '.jsx',
+            '.mjs',
+            '.ts',
+            '.tsx',
+            '.vue',
+        ],
     },
-    envDir: './'
+    envDir: './',
 }));

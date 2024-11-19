@@ -6,12 +6,6 @@
         <Logo />
 
         <v-btn
-            :text="t('common.project')"
-            to="/projects"
-            color="primary"
-        />
-
-        <v-btn
             :text="t('common.career')"
             to="/career"
             color="primary"

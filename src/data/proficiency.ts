@@ -25,9 +25,6 @@ export const Proficiencys: Types.Proficiency[] = [
     },
     {
         category: EnumProficiency.CopyWriting,
-        items: [
-            '基於文案寫作經驗，文件可大幅提升協作效率',
-            '聽說讀寫溝通無礙的英文能力',
-        ],
+        items: ['基於文案寫作經驗，文件可大幅提升協作效率', '聽說讀寫溝通無礙的英文能力'],
     },
 ];
