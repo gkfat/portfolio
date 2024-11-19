@@ -1,7 +1,9 @@
 <template>
-    <v-app>
+    <v-app class="bg-background fill-height">
         <router-view />
     </v-app>
+
+    <ProjectDialog />
 </template>
 <script lang="ts" setup>
 import {
@@ -11,6 +13,8 @@ import {
 } from 'vue';
 
 import { useTheme } from 'vuetify';
+
+import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
 
 import { useAppStore } from './store/app';
 

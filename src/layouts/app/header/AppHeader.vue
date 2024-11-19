@@ -11,6 +11,12 @@
             color="primary"
         />
 
+        <v-btn
+            :text="t('common.career')"
+            to="/career"
+            color="primary"
+        />
+
         <v-spacer class="ml-auto" />
 
         <!-- desktop -->

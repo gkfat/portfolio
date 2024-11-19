@@ -7,13 +7,18 @@ import {
 const routes: RouteRecordRaw[] = [
     {
         path: '',
-        redirect: '/home',
+        redirect: '/about',
         component: () => import('@/layouts/app/AppLayout.vue'),
         children: [
             {
-                path: '/home',
-                name: 'Home',
-                component: () => import('@/views/home/Home.vue'),
+                path: '/about',
+                name: 'About',
+                component: () => import('@/views/about/About.vue'),
+            },
+            {
+                path: '/career',
+                name: 'Career',
+                component: () => import('@/views/career/Career.vue'),
             },
             {
                 path: '/projects',

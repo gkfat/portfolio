@@ -1,13 +1,10 @@
 <template>
+    <PageHeader :title="t('common.project')" />
     <v-card
-        rounded="xl"
+        :max-width="1000"
+        class="mx-auto"
         flat
-        variant="transparent"
     >
-        <v-card-title class="text-center text-primary mb-3">
-            {{ t('common.project') }}
-        </v-card-title>
-
         <v-card-text>
             <v-row>
                 <v-col
@@ -29,6 +26,7 @@ import { useI18n } from 'vue-i18n';
 
 import { Projects } from '@/data/project';
 import { EnumProject } from '@/enums/projects';
+import PageHeader from '@/layouts/panel/PageHeader.vue';
 
 import ProjectCard from './components/ProjectCard.vue';
 

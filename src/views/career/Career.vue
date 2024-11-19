@@ -1,13 +1,10 @@
 <template>
+    <PageHeader :title="t('common.career')" />
+
     <v-card
         rounded="xl"
         flat
-        variant="transparent"
     >
-        <v-card-title class="text-center text-primary mb-3">
-            {{ t('common.career') }}
-        </v-card-title>
-
         <v-card-text>
             <v-timeline
                 :justify="xs ? 'start' : 'center'"
@@ -40,6 +37,7 @@ import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
 import { Careers } from '@/data/career';
+import PageHeader from '@/layouts/panel/PageHeader.vue';
 
 import CareerCard from './components/CareerCard.vue';
 import TimeRangeText from './components/TimeRangeText.vue';

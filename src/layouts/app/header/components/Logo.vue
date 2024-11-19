@@ -21,9 +21,7 @@ import { useRouter } from 'vue-router';
 const router = useRouter();
 
 function homeTop() {
-    router.push({
-        name: 'Home',
-    });
+    router.push('/');
 
     window.scrollTo({
         top: 0,
