@@ -2,9 +2,19 @@ import { ref } from 'vue';
 
 import { defineStore } from 'pinia';
 
+import { useLocalStorage } from '@vueuse/core';
 import { Types } from '@/types/types';
 
+function createDefaultState() {
+    return {
+        appTitle: import.meta.env.VITE_APP_TITLE || 'Gk\'s Portfolio',
+        darkTheme: true,
+        locale: 'zh',
+    };
+}
+
 export const useAppStore = defineStore('app', () => {
+    const state = useLocalStorage('gk-portfolio', createDefaultState(), { mergeDefaults: true });
     const isMobileDrawerOpen = ref(false);
     const activeProject = ref(null as Types.Project | null);
     const isOpenDialog = ref(false);
@@ -14,10 +24,21 @@ export const useAppStore = defineStore('app', () => {
         isOpenDialog.value = true;
     };
 
+    const switchTheme = (isDark: boolean) => {
+        state.value.darkTheme = isDark;
+    };
+
+    const setLocale = (newLocale: string) => {
+        state.value.locale = newLocale;
+    };
+
     return {
+        state,
         isMobileDrawerOpen,
         activeProject,
         isOpenDialog,
         setActiveProject,
+        switchTheme,
+        setLocale,
     };
 });

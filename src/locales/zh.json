@@ -23,11 +23,18 @@
     "tech_blog": "技術筆記",
     "year": "年"
   },
+  "config": {
+    "locale": "語言設定",
+    "theme": "主題設定"
+  },
   "job_title": {
     "account_executive": "專案執行",
     "copy_writing": "文案企劃",
     "frontend_developer": "前端工程師",
     "principle_engineer": "主任程式設計師"
+  },
+  "locale": {
+    "zh": "繁體中文"
   },
   "proficiency": {
     "copy_writing": "文案撰寫",
@@ -38,5 +45,9 @@
     "backend": "後端開發",
     "devops": "部署維運",
     "frontend": "前端開發"
+  },
+  "theme": {
+    "dark": "黑暗模式",
+    "light": "明亮模式"
   }
 }

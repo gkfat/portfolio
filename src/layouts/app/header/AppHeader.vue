@@ -3,62 +3,73 @@
         class="px-3 border-b-thin"
         flat
     >
+        <Logo />
+
         <v-btn
-            flat
-            :ripple="false"
-            variant="plain"
-            class="opacity-100"
-            :height="40"
-            @click="goTop"
-        >
-            <v-img
-                src="/icon-512.png"
-                :max-width="40"
-                :width="40"
-                contain
-            />
-        </v-btn>
+            :text="t('common.project')"
+            to="/projects"
+            color="primary"
+        />
 
         <v-spacer class="ml-auto" />
 
-        <div
-            v-if="mdAndUp"
-            class="d-flex align-center ga-1"
-        >
-            <TextBtn
-                :title="t('common.resume')"
-                :link-url="URL_SOURCE.socialMedias.resume"
-            />
+        <!-- desktop -->
+        <v-app-bar-actions v-if="mdAndUp">
+            <v-row class="align-center ma-0">
+                <v-btn
+                    :text="t('common.resume')"
+                    :href="URL_SOURCE.socialMedias.resume"
+                    target="_blank"
+                    color="primary"
+                    append-icon="mdi-open-in-new"
+                />
 
-            <TextBtn
-                :title="t('common.tech_blog')"
-                :link-url="URL_SOURCE.socialMedias.techBlog"
-            />
+                <v-btn
+                    :text="t('common.tech_blog')"
+                    :href="URL_SOURCE.socialMedias.techBlog"
+                    target="_blank"
+                    color="primary"
+                    append-icon="mdi-open-in-new"
+                />
 
-            <v-divider
-                vertical
-                inset
-                class="mx-3"
-            />
+                <v-divider
+                    vertical
+                    inset
+                    class="mx-3"
+                />
 
-            <AppearanceSwitcher />
+                <AppearanceSwitcher />
 
-            <v-divider
-                vertical
-                inset
-                class="mx-3"
-            />
+                <v-divider
+                    vertical
+                    inset
+                    class="mx-3"
+                />
 
-            <SocialMediaGroup />
-        </div>
+                <SocialMediaGroup />
+            </v-row>
+        </v-app-bar-actions>
 
+        <!-- mobile -->
         <v-app-bar-actions v-if="!mdAndUp">
-            <v-app-bar-nav-icon
-                icon="mdi-dots-horizontal"
-                :ripple="false"
-                variant="plain"
-                @click.stop="appStore.isMobileDrawerOpen = !appStore.isMobileDrawerOpen"
-            />
+            <v-hover>
+                <template #default="{isHovering, props}">
+                    <v-app-bar-nav-icon
+                        v-bind="props"
+                        :class="{
+                            'rotate': isHovering
+                        }"
+                        color="primary"
+                        icon="mdi-cog"
+                        :ripple="false"
+                        variant="plain"
+                        :style="{
+                            transition: 'all 0.3s'
+                        }"
+                        @click.stop="appStore.isMobileDrawerOpen = !appStore.isMobileDrawerOpen"
+                    />
+                </template>
+            </v-hover>
         </v-app-bar-actions>
     </v-app-bar>
 </template>
@@ -67,21 +78,19 @@
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
-import TextBtn from '@/components/btn/TextBtn.vue';
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
 import { URL_SOURCE } from '@/data/url-source';
 import { useAppStore } from '@/store/app';
 
 import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
+import Logo from './components/Logo.vue';
 
 const { t } = useI18n();
 const { mdAndUp } = useDisplay();
 const appStore = useAppStore();
-
-function goTop() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth',
-    });
-}
 </script>
+<style lang="scss" scoped>
+.rotate {
+    transform: rotate(135deg);
+}
+</style>

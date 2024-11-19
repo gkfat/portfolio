@@ -43,6 +43,11 @@ import Proficiency from './proficiency/Proficiency.vue';
 import Project from './project/Project.vue';
 import Skill from './skill/Skill.vue';
 
+// I build web applications with a focus on providing an excellent user experience.
+// I optimize the performance of API servers.
+// I solve problems.
+// I deliver aesthetically pleasing and localized UI/UX designs.
+
 const goTo = (y: number) => {
     window.scrollTo({
         top: y,
