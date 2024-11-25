@@ -7,6 +7,6 @@
 </template>
 
 <script lang="ts" setup>
-import Greetings from './components/Greetings.vue';
+import Greetings from './greetings/Greetings.vue';
 import Projects from './projects/Projects.vue';
 </script>

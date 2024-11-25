@@ -1,6 +1,6 @@
 <template>
     <v-row
-        class="align-center border"
+        class="align-center"
         :style="{
             height: '80vh'
         }"
@@ -9,7 +9,7 @@
             cols="12"
         >
             <p
-                class="text-center text-primary mb-3"
+                class="text-center text-primary text-montserrat font-weight-bold mb-3"
                 :class="{
                     'text-h4': smAndUp,
                     'text-h6': !smAndUp
@@ -18,7 +18,7 @@
                 Hello, I'm Gk Wang
             </p>
             <p
-                class="text-center text-primary mb-5"
+                class="text-center text-primary text-montserrat font-weight-bold mb-5"
                 :class="{
                     'text-h4': smAndUp,
                     'text-h6': !smAndUp
@@ -31,7 +31,7 @@
                 <v-btn
                     flat
                     color="secondary"
-                    class="text-none"
+                    class="text-none text-montserrat font-weight-bold"
                     rounded="lg"
                     size="x-large"
                     @click="scrollToProjects"

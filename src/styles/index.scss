@@ -2,6 +2,7 @@
 
 :root {
     --font-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    --font-montserrat: 'Montserrat', sans-serif;
 }
 
 * {
@@ -10,4 +11,8 @@
 
 .v-application {
     font-family: var(--font-monospace);
+    
+    .text-montserrat {
+        font-family: var(--font-montserrat);
+    }
 }
