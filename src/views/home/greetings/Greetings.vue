@@ -1,13 +1,9 @@
 <template>
     <v-row
-        class="align-center"
-        :style="{
-            height: '80vh'
-        }"
+        class="justify-center align-end"
+        :style="{ height: '70vh' }"
     >
-        <v-col
-            cols="12"
-        >
+        <v-col cols="auto">
             <p
                 class="text-center text-primary text-montserrat font-weight-bold mb-3"
                 :class="{
@@ -27,18 +23,39 @@
                 A Web Developer
             </p>
 
-            <p class="text-center">
+            <!-- <p class="text-center">
                 <v-btn
                     flat
                     color="secondary"
                     class="text-none text-montserrat font-weight-bold"
                     rounded="lg"
                     size="x-large"
-                    @click="scrollToProjects"
+                    @click="scrollToServices"
                 >
-                    See Projects
+                    What I provide
                 </v-btn>
-            </p>
+            </p> -->
+        </v-col>
+        <v-col
+            cols="12"
+            class="d-flex justify-center"
+        >
+            <v-btn
+                flat
+                variant="plain"
+                :ripple="false"
+                block
+                size="120"
+              
+                @click="scrollToServices"
+            >
+                <v-icon
+                    color="secondary"
+                    icon="mdi-chevron-down"
+                    flat
+                    size="120"
+                />
+            </v-btn>
         </v-col>
     </v-row>
 </template>
@@ -48,8 +65,8 @@ import { useDisplay } from 'vuetify';
 
 const { smAndUp } = useDisplay();
 
-const scrollToProjects = () => {
-    const element = document.getElementById('projects');
+const scrollToServices = () => {
+    const element = document.getElementById('services');
 
     if (element) {
         const top = element.getBoundingClientRect().top + window.scrollY;

@@ -6,6 +6,11 @@ import { EnumProject } from '@/enums/projects';
 import { EnumSkill } from '@/enums/skill';
 
 export namespace Types {
+    export interface Service {
+        title: string;
+        serviceItems: string[];
+        additionals: string[];
+    }
 
     export interface Project {
         title: string;

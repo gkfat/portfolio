@@ -1,4 +1,5 @@
 import vueLint from 'eslint-plugin-vue';
+import globals from 'globals';
 import tslint from 'typescript-eslint';
 import vueParser from 'vue-eslint-parser';
 
@@ -64,16 +65,17 @@ export default [
                 },
             ],
             'array-element-newline': ['error', { minItems: 3 }],
+            '@typescript-eslint/no-namespace': 'off',
         },
     },
 
     // config envs
-    // {
-    //     languageOptions: {
-    //         globals: {
-    //             ...globals.browser,
-    //             ...globals.node,
-    //         },
-    //     },
-    // },
+    {
+        languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.node,
+            },
+        },
+    },
 ];

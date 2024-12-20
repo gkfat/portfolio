@@ -1,9 +1,6 @@
 {
     "recommendations": [
         "lokalise.i18n-ally",
-        "dozerg.tsimportsorter",
-        "antfu.vite",
-        "editorconfig.editorconfig",
-        "vue.volar"
+        "dbaeumer.vscode-eslint",
     ]
 }
