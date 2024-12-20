@@ -22,19 +22,6 @@
             >
                 A Web Developer
             </p>
-
-            <!-- <p class="text-center">
-                <v-btn
-                    flat
-                    color="secondary"
-                    class="text-none text-montserrat font-weight-bold"
-                    rounded="lg"
-                    size="x-large"
-                    @click="scrollToServices"
-                >
-                    What I provide
-                </v-btn>
-            </p> -->
         </v-col>
         <v-col
             cols="12"
@@ -66,7 +53,7 @@ import { useDisplay } from 'vuetify';
 const { smAndUp } = useDisplay();
 
 const scrollToServices = () => {
-    const element = document.getElementById('services');
+    const element = document.getElementById('projects');
 
     if (element) {
         const top = element.getBoundingClientRect().top + window.scrollY;
