@@ -1,6 +1,7 @@
 <template>
     <v-card
         rounded="lg"
+        class="fill-height"
         :title="service.title"
     >
         <v-divider />

@@ -23,7 +23,7 @@
                         </v-card-subtitle>
 
                         <v-card-text>
-                            <v-row>
+                            <v-row class="align-items-stretch">
                                 <v-col
                                     cols="12"
                                     sm="4"
