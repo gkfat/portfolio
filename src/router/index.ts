@@ -10,7 +10,7 @@ const routes: RouteRecordRaw[] = [
         component: () => import('@/layouts/app/AppLayout.vue'),
     }, {
         path: '/:catchAll(.*)*',
-        redirect: '/home',
+        redirect: '/',
     },
 ];
 

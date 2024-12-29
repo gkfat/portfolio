@@ -52,7 +52,7 @@
         <div
             class="w-100 d-flex align-center justify-center position-absolute mx-auto"
             :style="{
-                bottom: '30px',
+                bottom: '80px',
             }"
         >
             <v-icon

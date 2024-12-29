@@ -8,7 +8,7 @@
             flat
             class="bg-transparent mb-5"
         >
-            <v-card-title class="text-h4 text-dark text-capitalize">
+            <v-card-title class="text-h5 text-center text-dark text-capitalize">
                 {{ t('common.project') }}
             </v-card-title>
         </v-card>

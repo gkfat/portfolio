@@ -66,3 +66,9 @@ export const getRelativeRangeOfDay = (offset: number = 0): {
         to,
     };
 };
+
+export const sleepSeconds = (seconds: number) => new Promise(
+    (resolve) => {
+        setTimeout(() => resolve(null), seconds * 1000);
+    },
+);
