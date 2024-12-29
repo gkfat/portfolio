@@ -1,9 +1,7 @@
 <template>
-    <v-app class="bg-background fill-height">
+    <v-app class="bg-background">
         <router-view />
     </v-app>
-
-    <ProjectDialog />
 </template>
 <script lang="ts" setup>
 import {
@@ -12,15 +10,16 @@ import {
     watch,
 } from 'vue';
 
+import { useI18n } from 'vue-i18n';
 import { useTheme } from 'vuetify';
-
-import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
 
 import { useAppStore } from './store/app';
 
 const appStore = useAppStore();
 const theme = useTheme();
+const { locale } = useI18n();
 const currentTheme = computed(() => (appStore.state.darkTheme ? 'dark' : 'light'));
+const currentLang = computed(() => appStore.state.locale);
 
 const setTheme = (themeValue: 'dark'|'light') => {
     document.documentElement.setAttribute(
@@ -32,10 +31,15 @@ const setTheme = (themeValue: 'dark'|'light') => {
     theme.global.name.value = themeValue;
 };
 
-// Set theme when theme changed
+const setI18nLocale = (lang: string) => {
+    locale.value = lang;
+};
+
 watch((currentTheme), () => setTheme(currentTheme.value));
+watch((locale), () => appStore.setLocale(locale.value));
 
 onMounted(async () => {
     setTheme(currentTheme.value);
+    setI18nLocale(currentLang.value);
 });
 </script>

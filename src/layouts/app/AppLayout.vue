@@ -1,12 +1,13 @@
 <template>
-    <div class="fill-height">
-        <AppHeader />
-        <AppDrawer />
+    <Landing />
 
-        <v-main class="fill-height">
-            <router-view />
-        </v-main>
-    </div>
+    <Projects />
+
+    <AppDrawer />
+    <AppHeader />
+    <AppFooter />
+
+    <ProjectDialog />
 
     <!-- Go Top Button -->
     <v-scale-transition>
@@ -28,9 +29,13 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 
+import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
 import AppHeader from '@/layouts/app/header/AppHeader.vue';
+import Landing from '@/views/landing/Landing.vue';
+import Projects from '@/views/projects/Projects.vue';
 
 import AppDrawer from './drawer/AppDrawer.vue';
+import AppFooter from './footer/AppFooter.vue';
 
 const goTo = (y: number) => {
     window.scrollTo({

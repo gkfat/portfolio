@@ -1,8 +1,7 @@
 <template>
-    <!-- 側邊欄 -->
     <v-navigation-drawer
         v-model="appStore.isMobileDrawerOpen"
-        location="right"
+        location="bottom"
         disable-resize-watcher
     >
         <v-list nav>
@@ -15,7 +14,23 @@
 
         <template #append>
             <v-divider />
+
             <SocialMedia />
+
+            <v-btn
+                block
+                flat
+                tile
+                :ripple="false"
+                size="x-large"
+                @click="appStore.isMobileDrawerOpen = false"
+            >
+                <v-icon
+                    size="40"
+                    color="primary"
+                    icon="mdi-chevron-down"
+                />
+            </v-btn>
         </template>
     </v-navigation-drawer>
 </template>

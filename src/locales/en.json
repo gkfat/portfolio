@@ -1,24 +1,24 @@
 {
   "app": {
-    "title": "Gk's Portfolio"
+    "title": "GK's Portfolio"
   },
   "common": {
-    "appearance": "主題",
-    "browse": "瀏覽",
-    "career": "職涯",
-    "current": "現在",
-    "month": "月",
-    "proficiency": "專業",
-    "project": "專案",
-    "refresh": "更新",
-    "resume": "履歷",
-    "skill": "技能",
-    "tech_blog": "技術筆記",
-    "year": "年"
+    "appearance": "appearance",
+    "browse": "browse",
+    "career": "career",
+    "current": "current",
+    "month": "month",
+    "proficiency": "proficiency",
+    "project": "project",
+    "refresh": "refresh",
+    "resume": "resume",
+    "skill": "skill",
+    "tech_blog": "tech blog",
+    "year": "year"
   },
   "config": {
-    "locale": "語言設定",
-    "theme": "主題設定"
+    "locale": "Language",
+    "theme": "Theme"
   },
   "job_title": {
     "account_executive": "專案執行",
@@ -41,7 +41,7 @@
     "frontend": "前端開發"
   },
   "theme": {
-    "dark": "深色模式",
-    "light": "淺色模式"
+    "dark": "dark",
+    "light": "light"
   }
 }

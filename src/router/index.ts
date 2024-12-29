@@ -6,16 +6,8 @@ import {
 
 const routes: RouteRecordRaw[] = [
     {
-        path: '',
-        redirect: '/home',
+        path: '/',
         component: () => import('@/layouts/app/AppLayout.vue'),
-        children: [
-            {
-                path: '/home',
-                name: 'Home',
-                component: () => import('@/views/home/Home.vue'),
-            },
-        ],
     }, {
         path: '/:catchAll(.*)*',
         redirect: '/home',

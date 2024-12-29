@@ -1,27 +1,46 @@
 <template>
-    <v-list-group>
-        <template #activator="{ props }">
-            <v-list-item
-                v-bind="props"
-                prepend-icon="mdi-translate"
-                :title="t('config.locale')"
-            />
-        </template>
-
+    <v-item-group
+        v-model="localeSelect"
+        mandatory
+        selected-class="primary"
+    >
         <v-list-item
-            v-for="lang in locales"
-            :key="lang"
-            :value="lang"
-            :active="lang === currentLocale"
-            color="primary"
-            @click="setLocale(lang)"
-        >
-            <v-list-item-title>{{ t(`locale.${lang}`) }}</v-list-item-title>
-        </v-list-item>
-    </v-list-group>
+            prepend-icon="mdi-translate"
+            :title="t('config.locale')"
+        />
+
+        <v-container>
+            <v-row class="flex-nowrap align-cetner">
+                <v-col
+                    v-for="(lang, i) of locales"
+                    :key="i"
+                >
+                    <v-item
+                        v-slot="{isSelected, toggle}"
+                        :value="lang"
+                    >
+                        <v-card
+                            :class="isSelected ? 'bg-primary': 'border border-primary'"
+                            class="d-flex align-center border border-primary justify-center"
+                            flat
+                            rounded
+                            @click="toggle"
+                        >
+                            <v-card-text class="text-center text-no-wrap">
+                                {{ t(`locale.${lang}`) }}
+                            </v-card-text>
+                        </v-card>
+                    </v-item>
+                </v-col>
+            </v-row>
+        </v-container>
+    </v-item-group>
 </template>
 <script lang="ts" setup>
-import { computed } from 'vue';
+import {
+    ref,
+    watch,
+} from 'vue';
 
 import { useI18n } from 'vue-i18n';
 
@@ -32,11 +51,15 @@ const {
 } = useI18n();
 
 const appStore = useAppStore();
-const currentLocale = computed(() => locale.value);
-const locales = ['zh'];
+const locales = ['zh', 'en'];
 
-const setLocale = (val: string) => {
-    locale.value = val;
-    appStore.setLocale(val);
-};
+const localeSelect = ref(locale.value);
+
+watch(
+    () => localeSelect.value,
+    () => {
+        locale.value = localeSelect.value;
+        appStore.setLocale(localeSelect.value);
+    },
+);
 </script>

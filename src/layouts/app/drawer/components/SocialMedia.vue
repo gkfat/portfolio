@@ -1,22 +1,26 @@
 <template>
     <v-list nav>
         <v-list-item
-            class="text-primary"
-            :title="t('common.resume')"
             :href="URL_SOURCE.socialMedias.resume"
             target="_blank"
             append-icon="mdi-open-in-new"
-        />
+        >
+            <v-list-item-title class="text-primary text-capitalize">
+                {{ t('common.resume') }}
+            </v-list-item-title>
+        </v-list-item>
 
         <v-divider />
 
         <v-list-item
-            class="text-primary"
-            :title="t('common.tech_blog')"
             :href="URL_SOURCE.socialMedias.techBlog"
             target="_blank"
             append-icon="mdi-open-in-new"
-        />
+        >
+            <v-list-item-title class="text-primary text-capitalize">
+                {{ t('common.tech_blog') }}
+            </v-list-item-title>
+        </v-list-item>
 
         <v-divider />
 
