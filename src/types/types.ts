@@ -14,6 +14,7 @@ export namespace Types {
 
     export interface Project {
         title: string;
+        description: string;
         time: string;
         techStacks: string[];
         items: string[];

@@ -1,7 +1,10 @@
 <template>
     <Landing />
 
-    <Projects />
+    <v-main>
+        <About />
+        <Projects />
+    </v-main>
 
     <AppDrawer />
     <AppHeader />
@@ -31,6 +34,7 @@ import { ref } from 'vue';
 
 import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
 import AppHeader from '@/layouts/app/header/AppHeader.vue';
+import About from '@/views/about/About.vue';
 import Landing from '@/views/landing/Landing.vue';
 import Projects from '@/views/projects/Projects.vue';
 

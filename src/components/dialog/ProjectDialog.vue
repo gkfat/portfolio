@@ -7,17 +7,29 @@
     >
         <v-card
             v-if="project"
-            rounded="xl"
-            class="py-3"
+            rounded="lg"
             color="white"
         >
-            <v-card-title class="text-primary text-wrap">
-                {{ project.title }}
-            </v-card-title>
+            <v-row class="align-center ma-0">
+                <v-col cols="auto">
+                    <v-card-title class="text-primary text-wrap">
+                        {{ project.title }}
+                    </v-card-title>
+                    <v-card-subtitle class="font-weight-bold">
+                        <em class="text-caption">{{ project.time }}</em>
+                    </v-card-subtitle>
+                </v-col>
 
-            <v-card-subtitle class="font-weight-bold mb-3">
-                <em class="text-caption">{{ project.time }}</em>
-            </v-card-subtitle>
+                <v-col cols="auto" class="ml-auto">
+                    <v-btn
+                        flat
+                        variant="text"
+                        color="grey"
+                        icon="mdi-close"
+                        @click="appStore.isOpenDialog = false"
+                    ></v-btn>
+                </v-col>
+            </v-row>
 
             <v-divider />
 
@@ -60,6 +72,7 @@
 
             <!-- 專案描述 -->
             <v-card-text>
+                <p class="mb-3" :style="{ fontSize: '1.1rem' }">專案描述</p>
                 <p
                     v-for="(item, i) of project.items"
                     :key="i"
@@ -69,19 +82,23 @@
             </v-card-text>
 
             <v-card-text class="py-1 d-flex flex-wrap ga-1">
-                <p
+                <v-chip
                     v-for="(tag, i) in project.tags"
                     :key="i"
-                    class="text-caption text-decoration-underline cursor-pointer me-2"
+                    size="x-small"
                 >
-                    {{ `#${tag}` }}
-                </p>
+                    <span :style="{
+                        fontSize: '0.7rem'
+                    }">
+                        {{ tag }}
+                    </span>
+                </v-chip>
             </v-card-text>
 
             <template v-if="project.githubUrl || project.websiteUrl">
-                <v-divider />
+                <v-divider class="mt-3" />
 
-                <v-card-actions class="px-3">
+                <v-card-actions class="px-5">
                     <TextBtn
                         v-if="project.githubUrl"
                         :title="'Github'"
@@ -100,16 +117,16 @@
 </template>
 <script lang="ts" setup>
 import {
-    computed,
-    ref,
-    watch,
+  computed,
+  ref,
+  watch,
 } from 'vue';
 
 import TextBtn from '@/components/btn/TextBtn.vue';
 import { useAppStore } from '@/store/app';
 import {
-    getPlaceholderImage,
-    toImageUrl,
+  getPlaceholderImage,
+  toImageUrl,
 } from '@/utils/image';
 
 const appStore = useAppStore();

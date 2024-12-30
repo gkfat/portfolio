@@ -4,6 +4,7 @@ import { Types } from '@/types/types';
 export const Projects: Record<EnumProject, Types.Project> = {
     [EnumProject.TSMC]: {
         title: '台積心築藝術季',
+        description: '重新定義台積電藝術文教基金會 2021 策展網站，以該年主視覺設計 UI，讓瀏覽網站的過程與看表演有同等的沉浸式體驗。',
         time: '2021',
         techStacks: ['FE'],
         items: [
@@ -28,6 +29,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.THLK]: {
         title: '海禾通商',
+        description: '重新構建網站，於第三方平台託管網站，增加安全性及提升整體形象。',
         time: '2022~2024',
         techStacks: ['FE'],
         items: [
@@ -54,6 +56,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.CpfEdm]: {
         title: '齊柏林基金會 EDM',
+        description: '',
         time: '2021',
         techStacks: ['FE'],
         items: ['EDM 模板設計'],
@@ -64,6 +67,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.LogicardDuel]: {
         title: 'Logicard Duel',
+        description: '從單純的撲克比大小邏輯延伸發展出的卡牌對戰遊戲，代入 RPG 元素，讓玩家以擊敗敵人，獲得戰利品及經驗值為角色升級為動力，引發遊玩興趣。',
         time: '2023',
         techStacks: ['FE'],
         items: [
@@ -78,13 +82,22 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'TypeScript',
             'Vue',
             'Cloudflare',
+            'Supabase'
         ],
         websiteUrl: 'https://logicard-duel.pages.dev/',
         githubUrl: 'https://github.com/gkfat/logicard-duel',
-        imagesUrls: ['/img/project/logicard-duel/1.png'],
+        imagesUrls: [
+            '/img/project/logicard-duel/1.png',
+            '/img/project/logicard-duel/2.png',
+            '/img/project/logicard-duel/3.png',
+            '/img/project/logicard-duel/4.png',
+            '/img/project/logicard-duel/5.png',
+            '/img/project/logicard-duel/6.png',
+        ],
     },
     [EnumProject.Ikea]: {
         title: 'IKEA 活動網頁切版',
+        description: '純前端 RWD 網頁開發。',
         time: '2021',
         techStacks: ['FE'],
         items: ['前端 RWD 網頁開發'],
@@ -105,6 +118,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.CNCMes]: {
         title: 'CNC MES 系統',
+        description: '整合 MES 加工/製造/生產管理的控制後台，現場可掃描 QRCode 登錄資料進後台，即時追蹤工單狀況。',
         time: '2024',
         techStacks: ['FE'],
         items: [
@@ -126,12 +140,13 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.WelcabBackStage]: {
         title: '派車系統',
+        description: '解決長照預約派車管控問題的後台，讓車行安排車趟更便利，提升管理效率。',
         time: '2024',
         techStacks: ['FE'],
         items: [
             '個案＆司機管理',
-            '主控版卡片式呈現',
-            '報價單管理',
+            '長照派車調度單管理與指派',
+            '核銷報表試算工具'
         ],
         tags: [
             'Vue',
@@ -141,10 +156,18 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Vitest',
         ],
         githubUrl: 'https://github.com/gkfat/welcab-saas-frontend',
-        imagesUrls: [],
+        imagesUrls: [
+            '/img/project/welcab-backoffice/1.png',
+            '/img/project/welcab-backoffice/2.png',
+            '/img/project/welcab-backoffice/3.png',
+            '/img/project/welcab-backoffice/4.png',
+            '/img/project/welcab-backoffice/5.png',
+            '/img/project/welcab-backoffice/6.png',
+        ],
     },
     [EnumProject.WelcabLineLiff]: {
         title: '派車系統 Line Liff 服務',
+        description: '解決長照預約麻煩問題，需求者可透過 Line Liff 表單預約，需求單直接串接到後台，消弭資訊落差。',
         time: '2024',
         techStacks: ['FE'],
         items: ['表單驗證服務', '串接 Line Auth 服務'],
@@ -156,10 +179,15 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Vitest',
         ],
         githubUrl: 'https://github.com/gkfat/welcab-line-reservation',
-        imagesUrls: [],
+        imagesUrls: [
+            '/img/project/welcab-line-liff/1.png',
+            '/img/project/welcab-line-liff/2.png',
+            '/img/project/welcab-line-liff/3.png',
+        ],
     },
     [EnumProject.DiceRoller]: {
         title: 'Dice Roller',
+        description: '',
         time: '2024',
         techStacks: ['FE'],
         items: [
@@ -179,6 +207,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.SimpleTodoList]: {
         title: 'Simple Todo List',
+        description: '',
         time: '2024',
         techStacks: ['FE'],
         items: ['極簡待辦 app'],
@@ -194,6 +223,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.TechBlog]: {
         title: 'Tech blog',
+        description: '技術筆記部落格。',
         time: '2024',
         techStacks: ['FE'],
         items: ['技術筆記'],
@@ -204,6 +234,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.HTGameBackend]: {
         title: '遊戲後端開發',
+        description: '',
         time: '2023',
         techStacks: ['BE'],
         items: ['API 接口'],
@@ -216,6 +247,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.HTGameBackstage]: {
         title: '遊戲專案後台全端開發',
+        description: '遊戲商後台，包含會員/道具/活動控制，另有排程服務，即時管理活動進行狀態。',
         time: '2023~2024',
         techStacks: ['FE','BE'],
         items: [
@@ -242,6 +274,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.AsinkEIP]: {
         title: 'Asink EIP',
+        description: '公司內部入口網站，串連工廠 ERP 系統，快速掌握工單進度狀況及產線人力分配。',
         time: '2021~2022',
         techStacks: ['FE','BE'],
         items: [
@@ -264,6 +297,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.AtrustekWeb]: {
         title: 'Atrustek Fintech Saas',
+        description: '個人金融顧問網站，從 KYC 分析到股票、外匯投資理財管理，一應俱全。',
         time: '2019~2021',
         techStacks: ['FE'],
         items: [
@@ -281,6 +315,46 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Linux',
         ],
         websiteUrl: 'https://www.atrustek.com/cis/home',
-        imagesUrls: [],
+        imagesUrls: [
+            '/img/project/atrustek-web/1.png',
+            '/img/project/atrustek-web/2.png',
+            '/img/project/atrustek-web/3.png',
+            '/img/project/atrustek-web/4.png',
+        ],
     },
+    [EnumProject.InvestmentPortfolio]: {
+        title: '個人投資組合績效管理 App',
+        description: '紀錄個人交易紀錄，掌握投資組合績效狀況，掌握市場即時報價。',
+        time: '2024',
+        techStacks: ['FE','BE'],
+        items: [
+            '會員系統',
+            'RBAC 角色權限管理',
+            '投資組合管理',
+            '交易記錄管理',
+            '金融即時報價'
+        ],
+        tags: [
+            'Vue3',
+            'Vuetify',
+            'TypeScript',
+            'Redis',
+            'Postgres',
+            'Nest.js',
+            'Render',
+            'Swagger',
+            'Google OAuth'
+        ],
+        githubUrl: 'https://github.com/gkfat/gk-app',
+        websiteUrl: 'https://gk-app-client.onrender.com',
+        imagesUrls: [
+            '/img/project/investment-portfolio/1.png',
+            '/img/project/investment-portfolio/2.png',
+            '/img/project/investment-portfolio/3.png',
+            '/img/project/investment-portfolio/4.png',
+            '/img/project/investment-portfolio/5.png',
+            '/img/project/investment-portfolio/6.png',
+            '/img/project/investment-portfolio/7.png',
+        ],
+    }
 };

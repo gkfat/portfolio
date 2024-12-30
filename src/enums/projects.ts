@@ -15,4 +15,5 @@ export enum EnumProject {
     HTGameBackstage,
     AtrustekWeb,
     AsinkEIP,
+    InvestmentPortfolio
 }
