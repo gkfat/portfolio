@@ -5,9 +5,9 @@
         color="primary"
         class="position-relative"
         :style="{
-            height: '100vh',
-            width: '100vw',
-            zIndex: 9
+            height: `${height}px`,
+            width: `${width}px`,
+            zIndex: 9,
         }"
     >
         <v-row
@@ -18,41 +18,49 @@
             }"
         >
             <v-col cols="auto">
-                <p class="text-h5 text-center text-white text-montserrat font-weight-bold mb-3">
-                    Hi, I'm Gk Wang
-                </p>
-                <p class="text-h5 text-center text-white text-montserrat font-weight-bold mb-5">
-                    A Web Developer
-                </p>
+                <Slogan />
+            </v-col>
+            <v-col
+                cols="auto"
+                :style="{transform: smAndDown ? `translateX(-10%)` : `translateY(20%)`}"
+            >
+                <DemoCardGroup />
+            </v-col>
 
-                <v-spacer class="mb-10" />
-                
-                <div class="d-flex justify-center align-center ga-3">
+            <!-- <v-col
+                cols="auto"
+                class="d-flex justify-center align-center flex-wrap"
+            >
+                <v-col cols="12">
                     <v-btn
                         :text="t('common.resume')"
                         :href="URL_SOURCE.socialMedias.resume"
                         flat
-                        color="dark"
                         class="text-capitalize"
+                        variant="outlined"
                         target="_blank"
+                        block
                         append-icon="mdi-open-in-new"
                     />
+                </v-col>
+                <v-col cols="12">
                     <v-btn
                         text="Github"
                         :href="URL_SOURCE.socialMedias.github"
-                        color="dark"
                         flat
+                        variant="outlined"
                         target="_blank"
+                        block
                         append-icon="mdi-open-in-new"
                     />
-                </div>
-            </v-col>
+                </v-col>
+            </v-col> -->
         </v-row>
-
+    
         <div
             class="w-100 d-flex align-center justify-center position-absolute mx-auto"
             :style="{
-                bottom: '80px',
+                bottom: '60px',
             }"
         >
             <v-icon
@@ -66,11 +74,17 @@
     </v-card>
 </template>
 <script lang="ts" setup>
-import { useI18n } from 'vue-i18n';
+import { useDisplay } from 'vuetify/lib/framework.mjs';
 
-import { URL_SOURCE } from '@/data/url-source';
+import { useWindowSize } from '@vueuse/core';
 
-const { t } = useI18n();
+import DemoCardGroup from './components/DemoCardGroup.vue';
+import Slogan from './components/Slogan.vue';
+
+const { smAndDown } = useDisplay();
+const {
+    height, width, 
+} = useWindowSize();
 
 const scrollDown = () => {
     window.scrollTo({

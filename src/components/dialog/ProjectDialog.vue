@@ -20,14 +20,17 @@
                     </v-card-subtitle>
                 </v-col>
 
-                <v-col cols="auto" class="ml-auto">
+                <v-col
+                    cols="auto"
+                    class="ml-auto"
+                >
                     <v-btn
                         flat
                         variant="text"
                         color="grey"
                         icon="mdi-close"
                         @click="appStore.isOpenDialog = false"
-                    ></v-btn>
+                    />
                 </v-col>
             </v-row>
 
@@ -72,7 +75,12 @@
 
             <!-- 專案描述 -->
             <v-card-text>
-                <p class="mb-3" :style="{ fontSize: '1.1rem' }">專案描述</p>
+                <p
+                    class="mb-3"
+                    :style="{ fontSize: '1.1rem' }"
+                >
+                    專案描述
+                </p>
                 <p
                     v-for="(item, i) of project.items"
                     :key="i"
@@ -87,9 +95,11 @@
                     :key="i"
                     size="x-small"
                 >
-                    <span :style="{
-                        fontSize: '0.7rem'
-                    }">
+                    <span
+                        :style="{
+                            fontSize: '0.7rem'
+                        }"
+                    >
                         {{ tag }}
                     </span>
                 </v-chip>

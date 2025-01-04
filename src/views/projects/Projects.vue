@@ -33,7 +33,11 @@
                     cols="4"
                 >
                     <v-row>
-                        <v-col v-for="(key, _i) in _projects" cols="12">
+                        <v-col
+                            v-for="(key, _i) in _projects"
+                            :key="_i"
+                            cols="12"
+                        >
                             <ProjectCard :project="Projects[key]" />
                         </v-col>
                     </v-row>
@@ -49,7 +53,11 @@
                     cols="6"
                 >
                     <v-row>
-                        <v-col v-for="(key, _i) in _projects" cols="12">
+                        <v-col
+                            v-for="(key, _i) in _projects"
+                            :key="_i"
+                            cols="12"
+                        >
                             <ProjectCard :project="Projects[key]" />
                         </v-col>
                     </v-row>
@@ -70,7 +78,9 @@ import { EnumProject } from '@/enums/projects';
 
 import ProjectCard from './components/ProjectCard.vue';
 
-const { xs, smAndDown, mdAndUp } = useDisplay()
+const {
+    xs, mdAndUp, 
+} = useDisplay();
 const { t } = useI18n();
 
 const projects = [
@@ -94,20 +104,17 @@ const projects = [
 ];
 
 const projectsIn2Chunks = computed(() => {
-    const half = Math.floor(projects.length / 2)
-    return [
-        projects.slice(0, half),
-        projects.slice(half)
-    ]
-})
+    const half = Math.floor(projects.length / 2);
+    return [projects.slice(0, half), projects.slice(half)];
+});
 
 const projectsIn3Chunks = computed(() => {
-    const third = Math.floor(projects.length / 3)
+    const third = Math.floor(projects.length / 3);
 
     return [
         projects.slice(0, third),
         projects.slice(third, third * 2),
-        projects.slice(third * 2)
-    ]
-})
+        projects.slice(third * 2),
+    ];
+});
 </script>

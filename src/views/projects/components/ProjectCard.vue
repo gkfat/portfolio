@@ -19,8 +19,11 @@
             {{ project.title }}
         </v-card-title>
 
-        <v-card-subtitle v-if="project.description" class="text-wrap mb-1">
-            {{project.description}}
+        <v-card-subtitle
+            v-if="project.description"
+            class="text-wrap mb-1"
+        >
+            {{ project.description }}
         </v-card-subtitle>
 
         <v-card-actions class="align-start flex-wrap">
@@ -29,11 +32,13 @@
                 :key="i"
                 size="x-small"
             >
-            <span :style="{
-                fontSize: '0.7rem'
-            }">
-                {{ tag }}
-            </span>
+                <span
+                    :style="{
+                        fontSize: '0.7rem'
+                    }"
+                >
+                    {{ tag }}
+                </span>
             </v-chip>
         </v-card-actions>
     </v-card>
