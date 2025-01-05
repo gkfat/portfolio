@@ -1,6 +1,6 @@
 import {
-    fileURLToPath,
-    URL,
+  fileURLToPath,
+  URL,
 } from 'node:url';
 
 import ViteFonts from 'unplugin-fonts/vite';
@@ -35,6 +35,9 @@ export default defineConfig(({ mode }) => ({
         alias: [
             {
                 find: '@', replacement: fileURLToPath(new URL('./src', import.meta.url)), 
+            }, {
+                find: 'vue-easy-lightbox$',
+                replacement: 'vue-easy-lightbox/dist/external-css/vue-easy-lightbox.esm.min.js',
             },
         ],
         extensions: [
