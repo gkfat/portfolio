@@ -1,45 +1,29 @@
 {
-  "app": {
-    "title": "Gk's Portfolio"
+  "button": {
+    "view_project": "查看專案"
   },
   "common": {
-    "about": "關於我",
     "appearance": "主題",
-    "browse": "瀏覽",
-    "career": "職涯",
-    "current": "現在",
-    "month": "月",
-    "proficiency": "專業",
-    "project": "專案",
-    "refresh": "更新",
     "resume": "履歷",
-    "skill": "技能",
-    "tech_blog": "技術筆記",
-    "year": "年"
+    "tech_blog": "技術筆記"
   },
   "config": {
     "locale": "語言設定",
     "theme": "主題設定"
   },
-  "job_title": {
-    "account_executive": "專案執行",
-    "copy_writing": "文案企劃",
-    "frontend_developer": "前端工程師",
-    "principle_engineer": "主任程式設計師"
-  },
   "locale": {
     "en": "English",
     "zh": "繁體中文"
   },
-  "proficiency": {
-    "copy_writing": "文案撰寫",
-    "full_stack_development": "全端開發",
-    "system_analysis": "系統分析"
-  },
-  "skill": {
-    "backend": "後端開發",
-    "devops": "部署維運",
-    "frontend": "前端開發"
+  "project": {
+    "label_investment_portfolio": "投資組合管理平台",
+    "label_investment_portfolio_intro": "視覺化管理投資組合，統計交易紀錄追蹤績效，即時市場資料",
+    "label_tsmc": "2021 台積心築藝術季官網",
+    "label_tsmc_intro": "重新定義網站結構，依主視覺設計 UI",
+    "label_welcab": "長照派車系統後台 & Line Liff",
+    "label_welcab_intro": "串接 Line Liff 表單收集派車需求，後台視覺化呈現管理調度",
+    "title_all_projects": "所有專案",
+    "title_feature_projects": "精選專案"
   },
   "theme": {
     "dark": "深色模式",

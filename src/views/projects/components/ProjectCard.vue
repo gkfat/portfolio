@@ -1,10 +1,8 @@
 <template>
     <v-card
         rounded="lg"
-        class="border"
-        :min-height="200"
         hover
-        flat
+        elevation="8"
         @click="setActiveProject"
     >
         <v-img

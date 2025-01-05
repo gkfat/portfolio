@@ -1,5 +1,9 @@
 <template>
-    <v-navigation-drawer v-model="appStore.isMobileDrawerOpen" disable-resize-watcher location="bottom">
+    <v-navigation-drawer
+        v-model="appStore.isMobileDrawerOpen"
+        disable-resize-watcher
+        location="bottom"
+    >
         <v-card
             flat
             class="bg-transparent"
@@ -59,5 +63,5 @@ watch(
 
 const closeDrawer = () => {
     appStore.isMobileDrawerOpen = false;
-}
+};
 </script>

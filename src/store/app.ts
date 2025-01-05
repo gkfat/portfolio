@@ -18,6 +18,11 @@ export const useAppStore = defineStore('app', () => {
     const isMobileDrawerOpen = ref(false);
     const activeProject = ref(null as Types.Project | null);
     const isOpenDialog = ref(false);
+    const lightboxConfig = ref({
+        imgs: [] as string[],
+        activeIndex: 0,
+        isOpen: false,
+    });
 
     const setActiveProject = (project: Types.Project) => {
         activeProject.value = project;
@@ -37,6 +42,7 @@ export const useAppStore = defineStore('app', () => {
         isMobileDrawerOpen,
         activeProject,
         isOpenDialog,
+        lightboxConfig,
         setActiveProject,
         switchTheme,
         setLocale,

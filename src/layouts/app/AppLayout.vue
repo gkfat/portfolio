@@ -2,7 +2,7 @@
     <Landing />
 
     <v-main>
-        <About />
+        <Features />
         <Projects />
     </v-main>
 
@@ -11,6 +11,7 @@
     <AppFooter />
 
     <ProjectDialog />
+    <Lightbox />
 
     <!-- Go Top Button -->
     <v-scale-transition>
@@ -33,8 +34,9 @@
 import { ref } from 'vue';
 
 import ProjectDialog from '@/components/dialog/ProjectDialog.vue';
+import Lightbox from '@/components/lightbox/Lightbox.vue';
 import AppHeader from '@/layouts/app/header/AppHeader.vue';
-import About from '@/views/about/About.vue';
+import Features from '@/views/features/Features.vue';
 import Landing from '@/views/landing/Landing.vue';
 import Projects from '@/views/projects/Projects.vue';
 

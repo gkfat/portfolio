@@ -11,17 +11,19 @@
             color="white"
         >
             <v-row class="align-center ma-0">
-                <v-col cols="auto">
+                <v-col
+                    cols="10"
+                    sm="auto"
+                >
                     <v-card-title class="text-primary text-wrap">
                         {{ project.title }}
+                        <em class="ml-3 text-caption">{{ project.time }}</em>
                     </v-card-title>
-                    <v-card-subtitle class="font-weight-bold">
-                        <em class="text-caption">{{ project.time }}</em>
-                    </v-card-subtitle>
                 </v-col>
 
                 <v-col
-                    cols="auto"
+                    cols="2"
+                    sm="auto"
                     class="ml-auto"
                 >
                     <v-btn
@@ -34,8 +36,6 @@
                 </v-col>
             </v-row>
 
-            <v-divider />
-
             <!-- 預覽圖 -->
             <v-card-text v-if="!project.imagesUrls.length">
                 <p class="text-warning text-center py-3">
@@ -43,35 +43,25 @@
                 </p>
             </v-card-text>
 
-            <v-carousel
-                v-model="activeIndex"
-                :show-arrows="project.imagesUrls.length > 1 ? 'hover' : false"
-                hide-delimiters
-                height="auto"
-                cycle
-                interval="3000"
-            >
-                <v-carousel-item
-                    v-for="(imgUrl, index) of project.imagesUrls"
-                    :key="index"
-                    :value="index"
-                >
-                    <div
-                        class="d-flex justify-center align-center"
-                        style="height: 100%; max-height: 400px;"
+            <v-card-text v-else>
+                <v-row class="ma-0 ga-3 flex-nowrap overflow-x-scroll">
+                    <v-col
+                        v-for="(imgUrl, i) in project.imagesUrls"
+                        :key="i"
+                        class="pa-0"
+                        cols="auto"
                     >
-                        <v-img
-                            :src="toImageUrl(imgUrl)"
-                            :lazy-src="getPlaceholderImage()"
-                            :contain="isImageLoaded"
-                            :cover="!isImageLoaded"
-                            @load="onImageLoadUpdate"
+                        <ImageBox
+                            :project="project"
+                            :index="i"
+                            :src="imgUrl"
+                            :aspect-ratio="'1/1'"
+                            :width="120"
+                            :height="120"
                         />
-                    </div>
-                </v-carousel-item>
-            </v-carousel>
-
-            <v-divider />
+                    </v-col>
+                </v-row>
+            </v-card-text>
 
             <!-- 專案描述 -->
             <v-card-text>
@@ -126,41 +116,14 @@
     </v-dialog>
 </template>
 <script lang="ts" setup>
-import {
-  computed,
-  ref,
-  watch,
-} from 'vue';
+import { computed } from 'vue';
 
 import TextBtn from '@/components/btn/TextBtn.vue';
 import { useAppStore } from '@/store/app';
-import {
-  getPlaceholderImage,
-  toImageUrl,
-} from '@/utils/image';
+
+import ImageBox from '../ImageBox.vue';
 
 const appStore = useAppStore();
 
 const project = computed(() => appStore.activeProject);
-
-const activeIndex = ref(0);
-const isImageLoaded = ref(false);
-
-const setActiveImage = (index: number) => {
-    activeIndex.value = index;
-};
-
-const onImageLoadUpdate = () => {
-    isImageLoaded.value = true;
-};
-
-watch(
-    () => appStore.activeProject,
-    () => {
-        isImageLoaded.value = false;
-        if (project.value?.imagesUrls.length) {
-            setActiveImage(0);
-        }
-    },
-);
 </script>

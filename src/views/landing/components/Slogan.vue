@@ -5,15 +5,15 @@
     >
         <v-card-title
             :style="{fontSize: '2rem'}"
-            class="text-wrap"
+            class="text-wrap text-capitalize"
         >
-            All about<br>problem solving
+            All about<br>solving problems
         </v-card-title>
         <v-card-subtitle
             :style="{fontSize: '1.2rem'}"
             class="text-wrap"
         >
-            Welcome to my site<br>this is Gk<br>the web developer
+            I'm Gk<br>a web developer
         </v-card-subtitle>
     </v-card>
 </template>

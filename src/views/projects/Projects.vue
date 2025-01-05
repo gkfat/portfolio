@@ -9,7 +9,7 @@
             class="bg-transparent mb-5"
         >
             <v-card-title class="text-h5 text-center text-dark text-capitalize">
-                {{ t('common.project') }}
+                {{ t('project.title_all_projects') }}
             </v-card-title>
         </v-card>
 
@@ -31,6 +31,9 @@
                     v-for="(_projects, i) in projectsIn3Chunks"
                     :key="i"
                     cols="4"
+                    :style="{
+                        marginTop: i !== 1 ? '15px' : undefined
+                    }"
                 >
                     <v-row>
                         <v-col

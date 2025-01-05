@@ -1,45 +1,29 @@
 {
-  "app": {
-    "title": "GK's Portfolio"
+  "button": {
+    "view_project": "view project"
   },
   "common": {
-    "about": "about",
     "appearance": "appearance",
-    "browse": "browse",
-    "career": "career",
-    "current": "current",
-    "month": "month",
-    "proficiency": "proficiency",
-    "project": "project",
-    "refresh": "refresh",
     "resume": "resume",
-    "skill": "skill",
-    "tech_blog": "tech blog",
-    "year": "year"
+    "tech_blog": "tech blog"
   },
   "config": {
     "locale": "Language",
     "theme": "Theme"
   },
-  "job_title": {
-    "account_executive": "專案執行",
-    "copy_writing": "文案企劃",
-    "frontend_developer": "前端工程師",
-    "principle_engineer": "主任程式設計師"
-  },
   "locale": {
     "en": "English",
     "zh": "繁體中文"
   },
-  "proficiency": {
-    "copy_writing": "文案撰寫",
-    "full_stack_development": "全端開發",
-    "system_analysis": "系統分析"
-  },
-  "skill": {
-    "backend": "後端開發",
-    "devops": "部署維運",
-    "frontend": "前端開發"
+  "project": {
+    "label_investment_portfolio": "investment portfolio",
+    "label_investment_portfolio_intro": "Visually manage investment portfolios, collect transaction records, track performance, and obtain real-time market data",
+    "label_tsmc": "tsmc 2021 exhibition website",
+    "label_tsmc_intro": "Redefine the website structure and design the UI according to the main visual",
+    "label_welcab": "Long-term care transportation backstage",
+    "label_welcab_intro": "Gathering requirements forms from  Line Liff, display on the backstage, and help admin managing the transportation requirements",
+    "title_all_projects": "all projects",
+    "title_feature_projects": "feature projects"
   },
   "theme": {
     "dark": "dark",

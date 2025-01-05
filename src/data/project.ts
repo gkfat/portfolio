@@ -73,7 +73,6 @@ export const Projects: Record<EnumProject, Types.Project> = {
         items: [
             '遊戲流程邏輯設計與開發',
             '前端視覺設計與開發',
-            'Google App Script 串接',
             'NPC 邏輯設計與開發',
             '部署與維護',
         ],
@@ -82,9 +81,11 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'TypeScript',
             'Vue',
             'Cloudflare',
-            'Supabase'
+            'Worker',
+            'Hono',
+            'Cloudstorage',
         ],
-        websiteUrl: 'https://logicard-duel.pages.dev/',
+        websiteUrl: 'https://logicard-duel.pages.dev',
         githubUrl: 'https://github.com/gkfat/logicard-duel',
         imagesUrls: [
             '/img/project/logicard-duel/1.png',
@@ -93,6 +94,8 @@ export const Projects: Record<EnumProject, Types.Project> = {
             '/img/project/logicard-duel/4.png',
             '/img/project/logicard-duel/5.png',
             '/img/project/logicard-duel/6.png',
+            '/img/project/logicard-duel/7.png',
+            '/img/project/logicard-duel/8.png',
         ],
     },
     [EnumProject.Ikea]: {
@@ -146,7 +149,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
         items: [
             '個案＆司機管理',
             '長照派車調度單管理與指派',
-            '核銷報表試算工具'
+            '核銷報表試算工具',
         ],
         tags: [
             'Vue',
@@ -332,7 +335,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'RBAC 角色權限管理',
             '投資組合管理',
             '交易記錄管理',
-            '金融即時報價'
+            '金融即時報價',
         ],
         tags: [
             'Vue3',
@@ -343,7 +346,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Nest.js',
             'Render',
             'Swagger',
-            'Google OAuth'
+            'Google OAuth',
         ],
         githubUrl: 'https://github.com/gkfat/gk-app',
         websiteUrl: 'https://gk-app-client.onrender.com',
@@ -356,5 +359,5 @@ export const Projects: Record<EnumProject, Types.Project> = {
             '/img/project/investment-portfolio/6.png',
             '/img/project/investment-portfolio/7.png',
         ],
-    }
+    },
 };
