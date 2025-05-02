@@ -1,42 +1,46 @@
 <template>
-    <v-navigation-drawer
+    <v-dialog
         v-model="appStore.isMobileDrawerOpen"
-        disable-resize-watcher
-        location="bottom"
+        transition="dialog-bottom-transition"
+        fullscreen
     >
         <v-card
             flat
-            class="bg-transparent"
+            class="bg-white"
         >
-            <v-list nav>
+            <v-spacer :style="{height: '25vh'}" />
+            
+            <v-card-text class="pa-0">
                 <ThemeSelect />
     
                 <v-divider />
     
                 <LocaleSelect />
-            </v-list>
     
-            <v-divider />
+                <v-divider />
     
-            <SocialMedia />
-    
-            <v-btn
-                block
-                flat
-                tile
-                :ripple="false"
-                size="x-large"
-                :height="80"
-                @click="closeDrawer"
-            >
-                <v-icon
-                    size="40"
-                    color="primary"
-                    icon="mdi-chevron-down"
-                />
-            </v-btn>
+                <SocialMedia />
+            </v-card-text>
+            
+            <v-card-actions class="pa-0">
+                <v-btn
+                    block
+                    flat
+                    tile
+                    :ripple="false"
+                    size="x-large"
+                    :height="80"
+                    @click="closeDrawer"
+                >
+                    <v-icon
+                        size="40"
+                        color="primary"
+                        icon="mdi-chevron-down"
+                    />
+                </v-btn>
+            </v-card-actions>
         </v-card>
-    </v-navigation-drawer>
+    </v-dialog>
 </template>
 <script lang="ts" setup>
 import { watch } from 'vue';
