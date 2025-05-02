@@ -74,7 +74,7 @@
 import { computed } from 'vue';
 
 import { useI18n } from 'vue-i18n';
-import { useDisplay } from 'vuetify/lib/framework.mjs';
+import { useDisplay } from 'vuetify';
 
 import { Projects } from '@/data/project';
 import { EnumProject } from '@/enums/projects';
@@ -93,6 +93,7 @@ const projects = [
     EnumProject.AsinkEIP,
     // EnumProject.HTGameBackend,
 
+    EnumProject.TodoLess,
     EnumProject.TSMC,
     EnumProject.THLK,
     // EnumProject.CpfEdm,

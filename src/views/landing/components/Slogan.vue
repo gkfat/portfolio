@@ -13,7 +13,7 @@
             :style="{fontSize: '1.2rem'}"
             class="text-wrap"
         >
-            I'm Gk<br>a web developer
+            I'm Gk<br>A web developer
         </v-card-subtitle>
     </v-card>
 </template>

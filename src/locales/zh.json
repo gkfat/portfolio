@@ -25,6 +25,10 @@
     "title_all_projects": "所有專案",
     "title_feature_projects": "精選專案"
   },
+  "project_dialog": {
+    "label_no_images": "無預覽圖。",
+    "label_project_description": "專案描述"
+  },
   "theme": {
     "dark": "深色模式",
     "light": "淺色模式"

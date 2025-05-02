@@ -74,7 +74,7 @@
     </v-card>
 </template>
 <script lang="ts" setup>
-import { useDisplay } from 'vuetify/lib/framework.mjs';
+import { useDisplay } from 'vuetify';
 
 import { useWindowSize } from '@vueuse/core';
 

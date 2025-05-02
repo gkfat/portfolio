@@ -47,8 +47,8 @@ import { computed } from 'vue';
 import { useAppStore } from '@/store/app';
 import { Types } from '@/types/types';
 import {
-  getPlaceholderImage,
-  toImageUrl,
+    getPlaceholderImage,
+    toImageUrl,
 } from '@/utils/image';
 
 const appStore = useAppStore();

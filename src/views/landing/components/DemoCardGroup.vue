@@ -40,7 +40,7 @@
     </v-row>
 </template>
 <script lang="ts" setup>
-import { useDisplay } from 'vuetify/lib/framework.mjs';
+import { useDisplay } from 'vuetify';
 
 import { toImageUrl } from '@/utils/image';
 

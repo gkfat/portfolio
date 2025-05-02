@@ -25,6 +25,10 @@
     "title_all_projects": "all projects",
     "title_feature_projects": "feature projects"
   },
+  "project_dialog": {
+    "label_no_images": "No Images.",
+    "label_project_description": "Project Description"
+  },
   "theme": {
     "dark": "dark",
     "light": "light"
