@@ -337,6 +337,9 @@ export const Projects: Record<EnumProject, Types.Project> = {
             '投資組合管理',
             '交易記錄管理',
             '金融即時報價',
+            'Auditing／操作紀錄',
+            'IAM／角色管理',
+            'IAM／權限管理',
         ],
         tags: [
             'Vue3',
@@ -348,9 +351,10 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'Render',
             'Swagger',
             'Google OAuth',
+            'Grafana Cloud / Loki logs',
         ],
         githubUrl: 'https://github.com/gkfat/gk-app',
-        websiteUrl: 'https://gk-app-client.onrender.com',
+        websiteUrl: 'https://gk-app.pages.dev',
         imagesUrls: [
             '/img/project/investment-portfolio/1.png',
             '/img/project/investment-portfolio/2.png',
@@ -359,6 +363,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             '/img/project/investment-portfolio/5.png',
             '/img/project/investment-portfolio/6.png',
             '/img/project/investment-portfolio/7.png',
+            '/img/project/investment-portfolio/8.png',
         ],
     },
     [EnumProject.TodoLess]: {
