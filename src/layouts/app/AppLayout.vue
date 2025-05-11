@@ -3,6 +3,9 @@
 
     <v-main>
         <Features />
+
+        <v-spacer class="mb-10" />
+
         <Projects />
     </v-main>
 

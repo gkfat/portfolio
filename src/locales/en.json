@@ -3,7 +3,11 @@
     "view_project": "view project"
   },
   "common": {
+    "all": "All",
     "appearance": "appearance",
+    "backend": "Backend",
+    "frontend": "Frontend",
+    "fullstack": "Fullstack",
     "resume": "resume",
     "tech_blog": "tech blog"
   },
@@ -16,6 +20,8 @@
     "zh": "繁體中文"
   },
   "project": {
+    "label_back_end_projects": "Backend Projects",
+    "label_front_end_projects": "Frontend Projects",
     "label_investment_portfolio": "investment portfolio",
     "label_investment_portfolio_intro": "Visually manage investment portfolios, collect transaction records, track performance, and obtain real-time market data",
     "label_tsmc": "tsmc 2021 exhibition website",

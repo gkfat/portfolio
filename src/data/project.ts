@@ -397,4 +397,19 @@ export const Projects: Record<EnumProject, Types.Project> = {
             '/img/project/todoless/5.png',
         ],
     },
+    [EnumProject.Loopback4App]: {
+        title: 'Loopback4 TodoList App',
+        description: 'TodoList API server build with loopback4。',
+        time: '2025',
+        techStacks: ['BE'],
+        items: ['Openapi'],
+        tags: [
+            'Loopback4',
+            'TypeScript',
+            'Mysql',
+            'Swagger',
+        ],
+        githubUrl: 'https://github.com/gkfat/loopback4-app',
+        imagesUrls: ['/img/project/loopback4-app/1.png'],
+    },
 };

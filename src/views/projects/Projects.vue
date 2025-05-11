@@ -13,65 +13,48 @@
             </v-card-title>
         </v-card>
 
-        <div v-if="xs">
-            <v-row>
-                <v-col
-                    v-for="(key, i) in projects"
-                    :key="i"
-                    cols="12"
+        <v-row class="justify-center">
+            <v-col cols="auto">
+                <v-btn-toggle
+                    v-model="filter"
+                    mandatory
                 >
-                    <ProjectCard :project="Projects[key]" />
-                </v-col>
-            </v-row>
-        </div>
+                    <v-btn
+                        v-for="(item, i) in selection"
+                        :key="i"
+                        :value="item.value"
+                    >
+                        {{ item.title }}
+                    </v-btn>
+                </v-btn-toggle>
+            </v-col>
+        </v-row>
 
-        <div v-else-if="mdAndUp">
-            <v-row>
-                <v-col
-                    v-for="(_projects, i) in projectsIn3Chunks"
-                    :key="i"
-                    cols="4"
-                    :style="{
-                        marginTop: i !== 1 ? '15px' : undefined
-                    }"
-                >
-                    <v-row>
-                        <v-col
-                            v-for="(key, _i) in _projects"
-                            :key="_i"
-                            cols="12"
-                        >
-                            <ProjectCard :project="Projects[key]" />
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </div>
-
-        <div v-else>
-            <v-row>
-                <v-col
-                    v-for="(_projects, i) in projectsIn2Chunks"
-                    :key="i"
-                    cols="6"
-                >
-                    <v-row>
-                        <v-col
-                            v-for="(key, _i) in _projects"
-                            :key="_i"
-                            cols="12"
-                        >
-                            <ProjectCard :project="Projects[key]" />
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
-        </div>
+        <v-row>
+            <v-col
+                v-for="(chunk, i) in projectChunks"
+                :key="i"
+                :cols="12 / projectChunks.length"
+            >
+                <v-row>
+                    <v-col
+                        v-for="(key, j) in chunk"
+                        :key="j"
+                        cols="12"
+                    >
+                        <ProjectCard :project="Projects[key]" />
+                    </v-col>
+                </v-row>
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue';
+import {
+    computed,
+    ref,
+} from 'vue';
 
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
@@ -82,9 +65,28 @@ import { EnumProject } from '@/enums/projects';
 import ProjectCard from './components/ProjectCard.vue';
 
 const {
-    xs, mdAndUp, 
+    xs, sm,
 } = useDisplay();
 const { t } = useI18n();
+
+type Selection = 'all' | 'fullstack' | 'frontend' | 'backend';
+
+const filter = ref<Selection>('all');
+
+const selection = [
+    {
+        title: t('common.all'), value: 'all', 
+    },
+    {
+        title: t('common.fullstack'), value: 'fullstack', 
+    },
+    {
+        title: t('common.frontend'), value: 'frontend', 
+    },
+    {
+        title: t('common.backend'), value: 'backend', 
+    },
+];
 
 const projects = [
     EnumProject.InvestmentPortfolio,
@@ -102,23 +104,48 @@ const projects = [
     EnumProject.CNCMes,
     EnumProject.WelcabBackStage,
     EnumProject.WelcabLineLiff,
+    EnumProject.Loopback4App,
     // EnumProject.DiceRoller,
     // EnumProject.SimpleTodoList,
     EnumProject.TechBlog,
 ];
 
-const projectsIn2Chunks = computed(() => {
-    const half = Math.floor(projects.length / 2);
-    return [projects.slice(0, half), projects.slice(half)];
-});
+const projectChunks = computed(() => {
+    const sliceProjects = [...projects].filter((p) => {
+        const { techStacks } = Projects[p];
 
-const projectsIn3Chunks = computed(() => {
-    const third = Math.floor(projects.length / 3);
+        if (filter.value === 'fullstack') {
+            return ['FE', 'BE'].every((techStack) => techStacks.includes(techStack as 'FE' | 'BE'));
+        }
 
-    return [
-        projects.slice(0, third),
-        projects.slice(third, third * 2),
-        projects.slice(third * 2),
-    ];
+        if (filter.value === 'frontend') {
+            return ['FE'].every((techStack) => techStacks.includes(techStack as 'FE' | 'BE'));
+        }
+
+        if (filter.value === 'backend') {
+            return ['BE'].every((techStack) => techStacks.includes(techStack as 'FE' | 'BE'));
+        }
+
+        return true;
+    });
+    
+    let columns = 1;
+
+    if (xs.value) {
+        columns = 1;
+    } else if (sm.value) {
+        columns = 2;
+    } else {
+        columns = 3;
+    }
+
+    const chunkSize = Math.ceil(sliceProjects.length / columns);
+    const result: EnumProject[][] = [];
+
+    for (let i = 0; i < columns; i++) {
+        result.push(sliceProjects.slice(i * chunkSize, (i + 1) * chunkSize));
+    }
+
+    return result;
 });
 </script>

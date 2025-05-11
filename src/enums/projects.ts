@@ -16,5 +16,6 @@ export enum EnumProject {
     AtrustekWeb,
     AsinkEIP,
     InvestmentPortfolio,
-    TodoLess
+    TodoLess,
+    Loopback4App
 }

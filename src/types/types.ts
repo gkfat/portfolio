@@ -16,7 +16,7 @@ export namespace Types {
         title: string;
         description: string;
         time: string;
-        techStacks: string[];
+        techStacks: ('FE' | 'BE')[];
         items: string[];
         tags: string[];
         imagesUrls: string[];

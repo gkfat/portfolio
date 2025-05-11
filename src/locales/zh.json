@@ -3,7 +3,11 @@
     "view_project": "查看專案"
   },
   "common": {
+    "all": "全部",
     "appearance": "主題",
+    "backend": "後端",
+    "frontend": "前端",
+    "fullstack": "全端",
     "resume": "履歷",
     "tech_blog": "技術筆記"
   },
@@ -16,6 +20,8 @@
     "zh": "繁體中文"
   },
   "project": {
+    "label_back_end_projects": "後端專案",
+    "label_front_end_projects": "前端專案",
     "label_investment_portfolio": "投資組合管理平台",
     "label_investment_portfolio_intro": "視覺化管理投資組合，統計交易紀錄追蹤績效，即時市場資料",
     "label_tsmc": "2021 台積心築藝術季官網",
