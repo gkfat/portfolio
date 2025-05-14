@@ -105,6 +105,7 @@ const projects = [
     EnumProject.WelcabBackStage,
     EnumProject.WelcabLineLiff,
     EnumProject.Loopback4App,
+    EnumProject.FutureIntersection,
     // EnumProject.DiceRoller,
     // EnumProject.SimpleTodoList,
     EnumProject.TechBlog,

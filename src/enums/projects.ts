@@ -17,5 +17,6 @@ export enum EnumProject {
     AsinkEIP,
     InvestmentPortfolio,
     TodoLess,
-    Loopback4App
+    Loopback4App,
+    FutureIntersection
 }

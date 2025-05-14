@@ -399,10 +399,10 @@ export const Projects: Record<EnumProject, Types.Project> = {
     },
     [EnumProject.Loopback4App]: {
         title: 'Loopback4 TodoList App',
-        description: 'TodoList API server build with loopback4。',
+        description: 'TodoList API server build with loopback4',
         time: '2025',
         techStacks: ['BE'],
-        items: ['Openapi'],
+        items: ['API server'],
         tags: [
             'Loopback4',
             'TypeScript',
@@ -411,5 +411,22 @@ export const Projects: Record<EnumProject, Types.Project> = {
         ],
         githubUrl: 'https://github.com/gkfat/loopback4-app',
         imagesUrls: ['/img/project/loopback4-app/1.png'],
+    },
+    [EnumProject.FutureIntersection]: {
+        title: 'Future Intersection AI Blog',
+        description: '串接 OpenAI，每日自動產生文章的部落格。',
+        time: '2025',
+        techStacks: ['FE'],
+        items: ['OpenAI'],
+        tags: [
+            'OpenAI',
+            'Github Actions',
+            'Vue',
+            'Vuetify',
+            'TypeScript',
+        ],
+        githubUrl: 'https://github.com/gkfat/future-intersection',
+        websiteUrl: 'https://future-intersection.pages.dev',
+        imagesUrls: ['/img/project/future-intersection/1.png', '/img/project/future-intersection/2.png'],
     },
 };

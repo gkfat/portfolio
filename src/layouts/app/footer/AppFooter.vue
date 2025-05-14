@@ -5,9 +5,11 @@
         tile
     >
         <v-card-text class="text-center">
-            2024 GK All rights reserved.
+            {{ createDate().year() }} GK All rights reserved.
         </v-card-text>
     </v-card>
 </template>
 <script lang="ts" setup>
+import { createDate } from '@/utils/time';
+
 </script>

@@ -37,15 +37,7 @@
                 </v-col>
             </v-row>
 
-            <!-- 預覽圖 -->
-            <v-card-text v-if="!project.imagesUrls.length">
-                <p class="text-warning text-center py-3">
-                    {{ t('project_dialog.label_no_images') }}
-                </p>
-            </v-card-text>
-
             <v-card-text
-                v-else
                 class="overflow-hidden"
                 :style="{height: '500px'}"
             >
@@ -100,7 +92,17 @@
                         class="overflow-y-auto"
                         :style="{maxHeight: '100%'}"
                     >
-                        <v-row class="ma-0 ga-3 flex-wrap">
+                        <p
+                            v-if="!project.imagesUrls?.length"
+                            class="text-warning text-center py-3"
+                        >
+                            {{ t('project_dialog.label_no_images') }}
+                        </p>
+
+                        <v-row
+                            v-else
+                            class="ma-0 ga-3 flex-wrap"
+                        >
                             <v-col
                                 v-for="(imgUrl, i) in project.imagesUrls"
                                 :key="i"
