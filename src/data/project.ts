@@ -429,4 +429,21 @@ export const Projects: Record<EnumProject, Types.Project> = {
         websiteUrl: 'https://future-intersection.pages.dev',
         imagesUrls: ['/img/project/future-intersection/1.png', '/img/project/future-intersection/2.png'],
     },
+    [EnumProject.AIWriter]: {
+        title: 'AI Writer - AI 作家',
+        description: '串接 OpenAI，每日自動產生短小說。',
+        time: '2025',
+        techStacks: ['FE'],
+        items: ['OpenAI'],
+        tags: [
+            'OpenAI',
+            'Github Actions',
+            'Vue',
+            'Vuetify',
+            'TypeScript',
+        ],
+        githubUrl: 'https://github.com/gkfat/ai-writer',
+        websiteUrl: 'https://ai-writer-1lf.pages.dev',
+        imagesUrls: ['/img/project/ai-writer/1.png', '/img/project/ai-writer/2.png'],
+    },
 };

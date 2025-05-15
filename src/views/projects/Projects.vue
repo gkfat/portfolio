@@ -108,6 +108,7 @@ const projects = [
     EnumProject.FutureIntersection,
     // EnumProject.DiceRoller,
     // EnumProject.SimpleTodoList,
+    EnumProject.AIWriter,
     EnumProject.TechBlog,
 ];
 

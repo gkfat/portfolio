@@ -18,5 +18,6 @@ export enum EnumProject {
     InvestmentPortfolio,
     TodoLess,
     Loopback4App,
-    FutureIntersection
+    FutureIntersection,
+    AIWriter
 }
