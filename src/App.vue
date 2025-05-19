@@ -6,7 +6,6 @@
 <script lang="ts" setup>
 import {
     computed,
-    onMounted,
     watch,
 } from 'vue';
 
@@ -19,7 +18,6 @@ const appStore = useAppStore();
 const theme = useTheme();
 const { locale } = useI18n();
 const currentTheme = computed(() => (appStore.state.darkTheme ? 'dark' : 'light'));
-const currentLang = computed(() => appStore.state.locale);
 
 const setTheme = (themeValue: 'dark'|'light') => {
     document.documentElement.setAttribute(
@@ -35,11 +33,19 @@ const setI18nLocale = (lang: string) => {
     locale.value = lang;
 };
 
-watch((currentTheme), () => setTheme(currentTheme.value));
-watch((locale), () => appStore.setLocale(locale.value));
+watch(
+    () => currentTheme.value,
+    (val) => {
+        setTheme(val);
+    },
+    { immediate: true },
+);
 
-onMounted(async () => {
-    setTheme(currentTheme.value);
-    setI18nLocale(currentLang.value);
-});
+watch(
+    () => appStore.state.locale,
+    (val) => {
+        setI18nLocale(val);
+    },
+    { immediate: true },
+);
 </script>

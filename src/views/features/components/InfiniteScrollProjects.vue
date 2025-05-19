@@ -9,10 +9,7 @@
     </v-card>
 
     <div class="w-100 overflow-hidden text-no-wrap">
-        <div
-            class="testimony-track"
-            :class="scrollDirectionClass"
-        >
+        <div :class="`testimony-track ${scrollDirectionClass}`">
             <div
                 v-for="(project, i) in duplicateProjects"
                 :key="i"
@@ -45,21 +42,19 @@
     </div>
 </template>
 <script lang="ts" setup>
-import {
-    computed,
-    ref,
-} from 'vue';
+import { computed } from 'vue';
 
-import { Projects } from '@/data/project';
 import { useAppStore } from '@/store/app';
 import { Types } from '@/types/types';
 import { getPlaceholderImage } from '@/utils/image';
+import { EnumProject } from '@/enums/projects';
+import { Projects } from '@/data/project';
 
 const appStore = useAppStore();
 
 const parentProps = defineProps<{
     title: string;
-    techStacks: ('FE' | 'BE')[];
+    projects: EnumProject[];
     scrollDirection: 'left' | 'right';
 }>();
 
@@ -67,11 +62,11 @@ const scrollDirectionClass = computed(() =>
     parentProps.scrollDirection === 'left' ? 'scroll-left' : 'scroll-right',
 );
 
-const rawProjects = computed(() => {
-    return Object.values(Projects).filter((p) => parentProps.techStacks.every((techStack) => p.techStacks.includes(techStack)));
-});
+const duplicateProjects = computed(() => {
+    const findProjects = parentProps.projects.map((key) => Projects[key]);
 
-const duplicateProjects = ref([...rawProjects.value, ...rawProjects.value]);
+    return [...findProjects, ...findProjects];
+});
 
 const setActiveProject = (project: Types.Project) => {
     appStore.setActiveProject(project);

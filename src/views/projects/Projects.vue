@@ -73,7 +73,7 @@ type Selection = 'all' | 'fullstack' | 'frontend' | 'backend';
 
 const filter = ref<Selection>('all');
 
-const selection = [
+const selection = computed(() => [
     {
         title: t('common.all'), value: 'all', 
     },
@@ -86,7 +86,7 @@ const selection = [
     {
         title: t('common.backend'), value: 'backend', 
     },
-];
+]);
 
 const projects = [
     EnumProject.InvestmentPortfolio,
@@ -129,7 +129,7 @@ const projectChunks = computed(() => {
         }
 
         return true;
-    });
+    }).reverse();
     
     let columns = 1;
 
@@ -141,11 +141,23 @@ const projectChunks = computed(() => {
         columns = 3;
     }
 
-    const chunkSize = Math.ceil(sliceProjects.length / columns);
     const result: EnumProject[][] = [];
 
-    for (let i = 0; i < columns; i++) {
-        result.push(sliceProjects.slice(i * chunkSize, (i + 1) * chunkSize));
+    let currentColumn = 0;
+    while (sliceProjects.length) {
+        const p = sliceProjects.pop();
+
+        if (!result[currentColumn]) {
+            result[currentColumn] = [];
+        }
+
+        result[currentColumn].push(p);
+
+        if (currentColumn === columns - 1) {
+            currentColumn = 0;
+        } else {
+            currentColumn += 1;
+        }
     }
 
     return result;

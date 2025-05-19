@@ -10,55 +10,62 @@
         >
             <Logo />
     
-            <v-spacer class="ml-auto" />
-    
             <!-- desktop -->
-            <v-app-bar-actions v-if="mdAndUp">
-                <v-row class="align-center ma-0">
-                    <v-btn
-                        :text="t('common.resume')"
-                        :href="URL_SOURCE.socialMedias.resume"
-                        target="_blank"
-                        color="primary"
-                        append-icon="mdi-open-in-new"
-                    />
+            <v-row
+                v-if="mdAndUp"
+                class="justify-end align-center ma-0 pe-3"
+            >
+                <v-btn
+                    :text="t('common.resume')"
+                    :href="URL_SOURCE.socialMedias.resume"
+                    target="_blank"
+                    color="primary"
+                    append-icon="mdi-open-in-new"
+                />
     
-                    <v-btn
-                        :text="t('common.tech_blog')"
-                        :href="URL_SOURCE.socialMedias.techBlog"
-                        target="_blank"
-                        color="primary"
-                        append-icon="mdi-open-in-new"
-                    />
+                <v-btn
+                    :text="t('common.tech_blog')"
+                    :href="URL_SOURCE.socialMedias.techBlog"
+                    target="_blank"
+                    color="primary"
+                    append-icon="mdi-open-in-new"
+                />
     
-                    <v-divider
-                        vertical
-                        inset
-                        class="mx-3"
-                    />
+                <v-divider
+                    vertical
+                    inset
+                    class="mx-3"
+                />
     
-                    <AppearanceSwitcher />
+                <AppearanceSwitcher />
     
-                    <v-divider
-                        vertical
-                        inset
-                        class="mx-3"
-                    />
+                <v-divider
+                    vertical
+                    inset
+                    class="mx-3"
+                />
 
-                    <LocaleSelectMenu />
+                <LocaleSelectMenu />
 
-                    <v-divider
-                        vertical
-                        inset
-                        class="mx-3"
-                    />
+                <v-divider
+                    vertical
+                    inset
+                    class="mx-3"
+                />
     
+                <v-col
+                    cols="auto"
+                    class="pa-0"
+                >
                     <SocialMediaGroup />
-                </v-row>
-            </v-app-bar-actions>
+                </v-col>
+            </v-row>
     
             <!-- mobile -->
-            <v-app-bar-actions v-if="!mdAndUp">
+            <v-row
+                v-if="!mdAndUp"
+                class="justify-end align-center ma-0 pe-3"
+            >
                 <v-app-bar-nav-icon
                     icon="mdi-menu"
                     :ripple="false"
@@ -69,7 +76,7 @@
                     }"
                     @click.stop="appStore.isMobileDrawerOpen = !appStore.isMobileDrawerOpen"
                 />
-            </v-app-bar-actions>
+            </v-row>
         </v-app-bar>
     </v-fade-transition>
 </template>

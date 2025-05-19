@@ -10,22 +10,17 @@
 
         <v-list>
             <v-list-item
-                v-for="lang in locales"
-                :key="lang"
-                @click="setLocale(lang)"
-            >
-                <v-list-item-title class="text-capitalize">
-                    {{ t(`locale.${lang}`) }}
-                </v-list-item-title>
-            </v-list-item>
+                v-for="(item, i) in items"
+                :key="i"
+                :active="item.isSelected"
+                :title="item.title"
+                @click="updateLocale(item.value)"
+            />
         </v-list>
     </v-menu>
 </template>
 <script lang="ts" setup>
-import {
-    ref,
-    watch,
-} from 'vue';
+import { computed } from 'vue';
 
 import { useI18n } from 'vue-i18n';
 
@@ -36,19 +31,18 @@ const {
 } = useI18n();
 
 const appStore = useAppStore();
-const locales = ['zh', 'en'];
+const items = computed(() => {
+    return [
+        {
+            title: t('locale.zh'), value: 'zh', isSelected: appStore.state.locale === 'zh', 
+        }, {
+            title: t('locale.en'), value: 'en', isSelected: appStore.state.locale === 'en', 
+        },
+    ];
+});
 
-const localeSelect = ref(locale.value);
-
-const setLocale = (lang: string) => {
+const updateLocale = (lang: string) => {
     locale.value = lang;
     appStore.setLocale(lang);
 };
-
-watch(
-    () => localeSelect.value,
-    () => {
-        setLocale(localeSelect.value);
-    },
-);
 </script>
