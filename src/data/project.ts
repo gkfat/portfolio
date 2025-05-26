@@ -426,7 +426,7 @@ export const Projects: Record<EnumProject, Types.Project> = {
             'TypeScript',
         ],
         githubUrl: 'https://github.com/gkfat/future-intersection',
-        websiteUrl: 'https://future-intersection.pages.dev',
+        websiteUrl: 'https://future-intersection.netlify.app',
         imagesUrls: ['/img/project/future-intersection/1.png', '/img/project/future-intersection/2.png'],
     },
     [EnumProject.AIWriter]: {
