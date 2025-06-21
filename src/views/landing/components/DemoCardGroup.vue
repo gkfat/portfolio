@@ -5,6 +5,7 @@
                 flat
                 rounded="lg"
                 elevation="6"
+                class="card-from-top"
             >
                 <v-card-text>
                     <v-img
@@ -21,9 +22,7 @@
                 flat
                 rounded="lg"
                 elevation="10"
-                :style="{
-                    transform: `translateX(30%) translateY(-60%)`
-                }"
+                class="card-from-right"
             >
                 <v-card-text>
                     <v-img
@@ -46,3 +45,36 @@ import { toImageUrl } from '@/utils/image';
 
 const { smAndDown } = useDisplay();
 </script>
+<style lang="scss" scoped>
+.card-from-right {
+    transform: translate(40%, -30%);
+    animation: slideFromRight 0.7s ease-out;
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translate(60%, -30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(40%, -30%);
+    }
+}
+
+.card-from-top {
+    transform: translate(0, 10%);
+    animation: slideFromTop 0.7s ease-out;
+}
+
+@keyframes slideFromTop {
+    0% {
+        opacity: 0;
+        transform: translate(0, -30%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, 10%);
+    }
+}
+</style>

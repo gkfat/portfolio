@@ -26,35 +26,6 @@
             >
                 <DemoCardGroup />
             </v-col>
-
-            <!-- <v-col
-                cols="auto"
-                class="d-flex justify-center align-center flex-wrap"
-            >
-                <v-col cols="12">
-                    <v-btn
-                        :text="t('common.resume')"
-                        :href="URL_SOURCE.socialMedias.resume"
-                        flat
-                        class="text-capitalize"
-                        variant="outlined"
-                        target="_blank"
-                        block
-                        append-icon="mdi-open-in-new"
-                    />
-                </v-col>
-                <v-col cols="12">
-                    <v-btn
-                        text="Github"
-                        :href="URL_SOURCE.socialMedias.github"
-                        flat
-                        variant="outlined"
-                        target="_blank"
-                        block
-                        append-icon="mdi-open-in-new"
-                    />
-                </v-col>
-            </v-col> -->
         </v-row>
     
         <div
