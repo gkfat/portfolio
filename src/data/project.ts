@@ -446,4 +446,15 @@ export const Projects: Record<EnumProject, Types.Project> = {
         websiteUrl: 'https://ai-writer-1lf.pages.dev',
         imagesUrls: ['/img/project/ai-writer/1.png', '/img/project/ai-writer/2.png'],
     },
+    [EnumProject.SquashReservation]: {
+        title: 'Squash Reservation 壁球場地預約',
+        description: '快速連結至壁球場地預約頁面。',
+        time: '2025',
+        techStacks: ['FE'],
+        items: [],
+        tags: ['React'],
+        githubUrl: 'https://github.com/gkfat/squash-reservation',
+        websiteUrl: 'https://squash-reservation.pages.dev',
+        imagesUrls: ['/img/project/squash-reservation/1.png'],
+    },
 };

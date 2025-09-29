@@ -19,5 +19,6 @@ export enum EnumProject {
     TodoLess,
     Loopback4App,
     FutureIntersection,
-    AIWriter
+    AIWriter,
+    SquashReservation
 }

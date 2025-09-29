@@ -110,6 +110,7 @@ const projects = [
     // EnumProject.SimpleTodoList,
     EnumProject.AIWriter,
     EnumProject.TechBlog,
+    EnumProject.SquashReservation,
 ];
 
 const projectChunks = computed(() => {
