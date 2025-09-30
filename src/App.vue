@@ -12,7 +12,7 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useTheme } from 'vuetify';
 
-import { useAppStore } from './store/app';
+import { useAppStore } from './stores/app';
 
 const appStore = useAppStore();
 const theme = useTheme();

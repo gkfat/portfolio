@@ -44,17 +44,17 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { useAppStore } from '@/store/app';
-import { Types } from '@/types/types';
+import { useAppStore } from '@/stores/app';
 import {
     getPlaceholderImage,
     toImageUrl,
 } from '@/utils/image';
+import { IProject } from '@/types/project';
 
 const appStore = useAppStore();
 
 const { project } = defineProps<{
-    project: Types.Project;
+    project: IProject;
 }>();
 
 const setActiveProject = () => {

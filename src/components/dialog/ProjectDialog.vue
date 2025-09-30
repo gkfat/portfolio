@@ -151,7 +151,7 @@ import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
 import TextBtn from '@/components/btn/TextBtn.vue';
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/stores/app';
 
 import ImageBox from '../ImageBox.vue';
 

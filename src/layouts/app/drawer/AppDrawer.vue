@@ -47,7 +47,7 @@ import { watch } from 'vue';
 
 import { useDisplay } from 'vuetify';
 
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/stores/app';
 
 import LocaleSelect from './components/LocaleSelect.vue';
 import SocialMedia from './components/SocialMedia.vue';

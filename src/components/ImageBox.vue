@@ -23,8 +23,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useAppStore } from '@/store/app';
-import { Types } from '@/types/types';
+import { useAppStore } from '@/stores/app';
+import { IProject } from '@/types/project';
 import { getPlaceholderImage } from '@/utils/image';
 
 const appStore = useAppStore();
@@ -37,7 +37,7 @@ const {
     height,
     aspectRatio,
 } = defineProps<{
-    project: Types.Project,
+    project: IProject,
     src: string;
     index: number;
     width: number;

@@ -92,7 +92,7 @@ import { useDisplay } from 'vuetify';
 
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
 import { URL_SOURCE } from '@/data/url-source';
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/stores/app';
 
 import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
 import LocaleSelectMenu from './components/LocaleSelectMenu.vue';

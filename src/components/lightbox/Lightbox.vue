@@ -11,7 +11,7 @@
 <script lang="ts" setup>
 import VueEasyLightbox from 'vue-easy-lightbox';
 
-import { useAppStore } from '@/store/app';
+import { useAppStore } from '@/stores/app';
 
 const appStore = useAppStore();
 

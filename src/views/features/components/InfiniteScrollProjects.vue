@@ -44,11 +44,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue';
 
-import { useAppStore } from '@/store/app';
-import { Types } from '@/types/types';
+import { useAppStore } from '@/stores/app';
 import { getPlaceholderImage } from '@/utils/image';
 import { EnumProject } from '@/enums/projects';
 import { Projects } from '@/data/project';
+import { IProject } from '@/types/project';
 
 const appStore = useAppStore();
 
@@ -68,7 +68,7 @@ const duplicateProjects = computed(() => {
     return [...findProjects, ...findProjects];
 });
 
-const setActiveProject = (project: Types.Project) => {
+const setActiveProject = (project: IProject) => {
     appStore.setActiveProject(project);
 };
 </script>

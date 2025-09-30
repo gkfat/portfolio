@@ -2,8 +2,8 @@ import { ref } from 'vue';
 
 import { defineStore } from 'pinia';
 
-import { Types } from '@/types/types';
 import { useLocalStorage } from '@vueuse/core';
+import { IProject } from '@/types/project';
 
 function createDefaultState() {
     return {
@@ -16,7 +16,7 @@ function createDefaultState() {
 export const useAppStore = defineStore('app', () => {
     const state = useLocalStorage('gk-portfolio', createDefaultState(), { mergeDefaults: true });
     const isMobileDrawerOpen = ref(false);
-    const activeProject = ref(null as Types.Project | null);
+    const activeProject = ref(null as IProject | null);
     const isOpenDialog = ref(false);
     const lightboxConfig = ref({
         imgs: [] as string[],
@@ -24,7 +24,7 @@ export const useAppStore = defineStore('app', () => {
         isOpen: false,
     });
 
-    const setActiveProject = (project: Types.Project) => {
+    const setActiveProject = (project: IProject) => {
         activeProject.value = project;
         isOpenDialog.value = true;
     };

@@ -1,7 +1,7 @@
 import { EnumProject } from '@/enums/projects';
-import { Types } from '@/types/types';
+import { IProject } from '@/types/project';
 
-export const Projects: Record<EnumProject, Types.Project> = {
+export const Projects: Record<EnumProject, IProject> = {
     [EnumProject.TSMC]: {
         title: '台積心築藝術季',
         description: '重新定義台積電藝術文教基金會 2021 策展網站，以該年主視覺設計 UI，讓瀏覽網站的過程與看表演有同等的沉浸式體驗。',
