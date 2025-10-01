@@ -1,9 +1,19 @@
 <template>
-    <InfiniteScrollProjects
-        :title="t('project.title_feature_projects') "
-        :projects="projects"
-        :scroll-direction="'left'"
-    />
+    <v-container fluid>
+        <v-card
+            flat
+            class="bg-transparent"
+        >
+            <v-card-title class="text-h5 text-center text-dark text-capitalize">
+                {{ t('project.title_feature_projects') }}
+            </v-card-title>
+        </v-card>
+    
+        <InfiniteScrollProjects
+            :projects="projects"
+            :scroll-direction="'left'"
+        />
+    </v-container>
 </template>
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';

@@ -1,13 +1,4 @@
 <template>
-    <v-card
-        flat
-        class="bg-transparent mb-5"
-    >
-        <v-card-title class="text-h5 text-center text-dark text-capitalize">
-            {{ parentProps.title }}
-        </v-card-title>
-    </v-card>
-
     <div class="w-100 overflow-hidden text-no-wrap">
         <div :class="`testimony-track ${scrollDirectionClass}`">
             <div
@@ -53,7 +44,6 @@ import { IProject } from '@/types/project';
 const appStore = useAppStore();
 
 const parentProps = defineProps<{
-    title: string;
     projects: EnumProject[];
     scrollDirection: 'left' | 'right';
 }>();

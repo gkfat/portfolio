@@ -2,11 +2,11 @@
     <Landing />
 
     <v-main>
-        <Features />
-
-        <v-spacer class="mb-10" />
-
-        <Projects />
+        <v-row class="flex-column ga-15">
+            <Quote />
+            <Features />
+            <Projects />
+        </v-row>
     </v-main>
 
     <AppDrawer />
@@ -45,6 +45,7 @@ import Projects from '@/views/projects/Projects.vue';
 
 import AppDrawer from './drawer/AppDrawer.vue';
 import AppFooter from './footer/AppFooter.vue';
+import Quote from '@/views/quote/Quote.vue';
 
 const goTo = (y: number) => {
     window.scrollTo({
