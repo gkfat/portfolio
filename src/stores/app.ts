@@ -7,7 +7,7 @@ import { IProject } from '@/types/project';
 
 function createDefaultState() {
     return {
-        appTitle: import.meta.env.VITE_APP_TITLE || 'Gk\'s Portfolio',
+        appTitle: 'Gk\'s Portfolio',
         darkTheme: true,
         locale: 'zh',
     };

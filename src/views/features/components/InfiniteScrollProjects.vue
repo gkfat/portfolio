@@ -74,7 +74,7 @@ const setActiveProject = (project: IProject) => {
 </script>
 <style lang="scss" scoped>
 .testimony-track {
-  animation-duration: 15s;
+  animation-duration: 30s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-play-state: running;
