@@ -59,7 +59,7 @@ import {
 import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
-import { Projects } from '@/data/project';
+import { Projects } from '@/data/projects';
 import { EnumProject } from '@/enums/projects';
 
 import ProjectCard from './components/ProjectCard.vue';
@@ -93,12 +93,10 @@ const projects = [
     EnumProject.HT_GAME_BACKSTAGE,
     EnumProject.ATRUSTEK_WEB,
     EnumProject.ASINK_EIP,
-    // EnumProject.HTGameBackend,
 
-    EnumProject.TODOLESS,
     EnumProject.TSMC,
     EnumProject.THLK,
-    // EnumProject.CpfEdm,
+    EnumProject.CPF_EDM,
     EnumProject.LOGICARD_DUEL,
     EnumProject.IKEA,
     EnumProject.CNC_MES,
@@ -106,7 +104,7 @@ const projects = [
     EnumProject.WELCABIN_PASSENGER_LIFF,
     EnumProject.LOOPBACK4_APP,
     EnumProject.FUTURE_INTERSECTION,
-    // EnumProject.DiceRoller,
+    EnumProject.DICE_ROLLER,
     EnumProject.AI_WRITER,
     EnumProject.TECH_BLOG,
     EnumProject.SQUASH_RESERVATION,
@@ -114,7 +112,7 @@ const projects = [
 
 const projectChunks = computed(() => {
     const sliceProjects = [...projects].filter((p) => {
-        const { techStacks } = Projects[p];
+        const { techStacks } = Projects[p].meta;
 
         if (filter.value === 'fullstack') {
             return ['FE', 'BE'].every((techStack) => techStacks.includes(techStack as 'FE' | 'BE'));

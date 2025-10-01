@@ -14,19 +14,19 @@
         <v-card-title
             class="text-primary text-wrap mt-3 mb-1"
         >
-            {{ project.title }}
+            {{ project.meta.title }}
         </v-card-title>
 
         <v-card-subtitle
-            v-if="project.description"
+            v-if="project.meta.description"
             class="text-wrap mb-1"
         >
-            {{ project.description }}
+            {{ project.meta.description }}
         </v-card-subtitle>
 
         <v-card-actions class="align-start flex-wrap">
             <v-chip
-                v-for="(tag, i) in project.tags"
+                v-for="(tag, i) in project.meta.tags"
                 :key="i"
                 size="x-small"
             >
@@ -62,8 +62,8 @@ const setActiveProject = () => {
 };
 
 const getProjectImage = computed(() => {
-    if (project.imagesUrls?.length) {
-        return toImageUrl(project.imagesUrls[0]);
+    if (project.content.imagesUrls?.length) {
+        return toImageUrl(project.content.imagesUrls[0]);
     }
 
     return getPlaceholderImage();

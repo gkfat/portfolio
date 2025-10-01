@@ -33,7 +33,6 @@ const { mdAndUp } = useDisplay();
 
 const projects = [
     EnumProject.INVESTMENT_PORTFOLIO,
-    EnumProject.TODOLESS,
     EnumProject.TSMC,
     EnumProject.THLK,
     EnumProject.LOGICARD_DUEL,

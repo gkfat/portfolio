@@ -46,8 +46,8 @@ export const remapY = (y: number, canvasHeight: number, amplify = 0.85): number 
  * 權重計算策略
  */
 export const weightStrategies = {
-    tags: (p: IProject) => Math.max(1, p.tags?.length || 1),
-    weight: (p: IProject) => Math.max(1, p.weight ?? 1),
+    tags: (p: IProject) => Math.max(1, p.meta.tags?.length || 1),
+    weight: (p: IProject) => Math.max(1, p.meta.weight ?? 1),
     equal: () => 1,
 } as const;
 
@@ -64,5 +64,5 @@ export const getValue = (project: IProject, mode: WeightMode): number => {
  * 取得專案圖片 URL
  */
 export const getProjectImageUrl = (project: IProject, toImageUrl: (path?: string) => string, getPlaceholderImage: () => string): string => {
-    return toImageUrl(project.imagesUrls?.[0]) || getPlaceholderImage();
+    return toImageUrl(project.content.imagesUrls?.[0]) || getPlaceholderImage();
 };

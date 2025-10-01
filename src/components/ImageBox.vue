@@ -47,7 +47,7 @@ const {
 
 const openLightbox = () => {
     appStore.lightboxConfig = {
-        imgs: project.imagesUrls,
+        imgs: project.content.imagesUrls,
         activeIndex: index,
         isOpen: true,
     };

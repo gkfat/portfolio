@@ -51,7 +51,7 @@ const quoteList: Quote[] = [
         zh: '整合生成式 AI 輔助，提升開發效率。', en: 'Integrate Generative AI in developing.', 
     },
     {
-        zh: '專案的本質即為解決問題，程式只是手段。', en: 'All about solving problems.', 
+        zh: '專案本質是解決問題，程式只是手段。', en: 'All about solving problems.', 
     },
 ];
 

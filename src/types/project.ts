@@ -1,12 +1,22 @@
 export type IProject = {
-    title: string;
-    description: string;
-    time: string;
-    techStacks: ('FE' | 'BE')[];
-    items: string[];
-    tags: string[];
-    imagesUrls: string[];
-    weight?: number; // bubble weight, default 1
-    websiteUrl?: string;
-    githubUrl?: string;
+    meta: {
+        title: string;
+        description: string;
+        time: string;
+        techStacks: ('FE' | 'BE')[];
+        /** bubble weight, default 1 */
+        weight?: number;
+        tags: string[];
+    };
+
+    content: {
+        /** 原 items */
+        list: string[];
+        imagesUrls: string[];
+    }
+
+    links: {
+        websiteUrl?: string;
+        githubUrl?: string;
+    }
 }

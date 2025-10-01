@@ -60,7 +60,7 @@ export function useBubbleLayout(
         const data = {
             name: 'root',
             children: projects.value.map((p) => ({
-                name: p.title,
+                name: p.meta.title,
                 value: getValue(p, weightMode),
                 project: p,
             })),

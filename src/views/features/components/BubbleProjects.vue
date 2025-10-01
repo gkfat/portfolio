@@ -34,7 +34,7 @@
                             :height="node.r * 2"
                             cover
                             class="rounded-circle overflow-hidden border"
-                            :alt="node.project.title"
+                            :alt="node.project.meta.title"
                             @click="setActiveProject(node.project)"
                         />
 
@@ -51,7 +51,7 @@
                                 }"
                                 @click="setActiveProject(node.project)"
                             >
-                                {{ node.project.title }}
+                                {{ node.project.meta.title }}
                             </div>
                         </v-fade-transition>
                     </div>
@@ -69,7 +69,7 @@ import { useElementSize } from '@vueuse/core';
 
 import { useAppStore } from '@/stores/app';
 import { EnumProject } from '@/enums/projects';
-import { Projects } from '@/data/project';
+import { Projects } from '@/data/projects';
 import {
     getPlaceholderImage, toImageUrl, 
 } from '@/utils/image';

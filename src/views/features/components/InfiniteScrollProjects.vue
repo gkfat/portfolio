@@ -19,12 +19,12 @@
                                 transform: isHovering ? 'scale(1.1)' : ''
                             }"
                             cover
-                            :src="project.imagesUrls[0] ?? getPlaceholderImage()"
+                            :src="project.content.imagesUrls[0] ?? getPlaceholderImage()"
                             @click="setActiveProject(project)"
                         />
     
                         <p class="text-center">
-                            {{ project.title }}
+                            {{ project.meta.title }}
                         </p>
                     </template>
                 </v-hover>
@@ -38,7 +38,7 @@ import { computed } from 'vue';
 import { useAppStore } from '@/stores/app';
 import { getPlaceholderImage } from '@/utils/image';
 import { EnumProject } from '@/enums/projects';
-import { Projects } from '@/data/project';
+import { Projects } from '@/data/projects';
 import { IProject } from '@/types/project';
 
 const appStore = useAppStore();

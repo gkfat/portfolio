@@ -8,7 +8,7 @@
     >
         <v-card
             v-if="project"
-            rounded="lg"
+            rounded="xl"
             color="white"
         >
             <v-row class="align-center ma-0">
@@ -17,8 +17,8 @@
                     sm="auto"
                 >
                     <v-card-title class="text-primary text-wrap">
-                        {{ project.title }}
-                        <em class="ml-3 text-caption">{{ project.time }}</em>
+                        {{ project.meta.title }}
+                        <em class="ml-3 text-caption">{{ project.meta.time }}</em>
                     </v-card-title>
                 </v-col>
 
@@ -56,7 +56,7 @@
 
                         <div class="mb-5">
                             <p
-                                v-for="(item, i) of project.items"
+                                v-for="(item, i) of project.content.list"
                                 :key="i"
                             >
                                 - {{ item }}
@@ -65,7 +65,7 @@
 
                         <v-row class="ma-0 ga-1 flex-wrap">
                             <v-col
-                                v-for="(tag, i) in project.tags"
+                                v-for="(tag, i) in project.meta.tags"
                                 :key="i"
                                 cols="auto"
                                 class="pa-0"
@@ -93,7 +93,7 @@
                         :style="{maxHeight: '100%'}"
                     >
                         <p
-                            v-if="!project.imagesUrls?.length"
+                            v-if="!project.content.imagesUrls?.length"
                             class="text-warning text-center py-3"
                         >
                             {{ t('project_dialog.label_no_images') }}
@@ -104,7 +104,7 @@
                             class="ma-0 ga-3 flex-wrap"
                         >
                             <v-col
-                                v-for="(imgUrl, i) in project.imagesUrls"
+                                v-for="(imgUrl, i) in project.content.imagesUrls"
                                 :key="i"
                                 class="pa-0"
                                 :class="{ 'mx-auto': smAndDown }"
@@ -124,20 +124,20 @@
                 </v-row>
             </v-card-text>
 
-            <template v-if="project.githubUrl || project.websiteUrl">
+            <template v-if="project.links.githubUrl || project.links.websiteUrl">
                 <v-divider class="mt-3" />
 
                 <v-card-actions class="px-5">
                     <TextBtn
-                        v-if="project.githubUrl"
+                        v-if="project.links.githubUrl"
                         :title="'Github'"
-                        :link-url="project.githubUrl"
+                        :link-url="project.links.githubUrl"
                         class="me-3"
                     />
                     <TextBtn
-                        v-if="project.websiteUrl"
+                        v-if="project.links.websiteUrl"
                         :title="'Website'"
-                        :link-url="project.websiteUrl"
+                        :link-url="project.links.websiteUrl"
                     />
                 </v-card-actions>
             </template>
