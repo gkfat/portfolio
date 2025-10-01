@@ -10,11 +10,14 @@ import { i18n } from './i18n';
 import { pinia } from './pinia';
 import { vuetify } from './vuetify';
 
+import { googleAnalyticsPlugin } from './googleAnalytics';
+
 export const registerPlugins = (app: App) => {
     app
         .use(i18n)
         .use(vuetify)
         .use(VueEasyLightbox)
         .use(pinia)
-        .use(router);
+        .use(router)
+        .use(googleAnalyticsPlugin);
 };
