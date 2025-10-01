@@ -16,14 +16,6 @@
                 class="justify-end align-center ma-0 pe-3"
             >
                 <v-btn
-                    :text="t('common.resume')"
-                    :href="CONFIG.RESUME_URL"
-                    target="_blank"
-                    color="primary"
-                    append-icon="mdi-open-in-new"
-                />
-    
-                <v-btn
                     :text="t('common.tech_blog')"
                     :href="CONFIG.TECH_BLOG_URL"
                     target="_blank"

@@ -1,17 +1,8 @@
 <template>
-    <v-list nav>
-        <v-list-item
-            :href="CONFIG.RESUME_URL"
-            target="_blank"
-            append-icon="mdi-open-in-new"
-        >
-            <v-list-item-title class="text-primary text-capitalize">
-                {{ t('common.resume') }}
-            </v-list-item-title>
-        </v-list-item>
-
-        <v-divider />
-
+    <v-list
+        nav
+        class="bg-transparent"
+    >
         <v-list-item
             :href="CONFIG.TECH_BLOG_URL"
             target="_blank"
@@ -27,7 +18,7 @@
         <v-list-item
             height="60"
         >
-            <SocialMediaGroup :justify="'start'" />
+            <SocialMediaGroup :justify="'center'" />
         </v-list-item>
     </v-list>
 </template>

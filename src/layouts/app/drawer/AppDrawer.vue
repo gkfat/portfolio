@@ -6,19 +6,18 @@
     >
         <v-card
             flat
-            class="bg-white"
         >
             <v-spacer :style="{height: '25vh'}" />
             
             <v-card-text class="pa-0">
                 <ThemeSelect />
-    
+        
                 <v-divider />
-    
+        
                 <LocaleSelect />
-    
+        
                 <v-divider />
-    
+        
                 <SocialMedia />
             </v-card-text>
             
