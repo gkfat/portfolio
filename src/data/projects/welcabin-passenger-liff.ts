@@ -19,9 +19,9 @@ export const WELCABIN_PASSENGER_LIFF: IProject = {
     content: {
         list: ['表單驗證服務', '串接 Line Auth 服務'],
         imagesUrls: [
-            '/img/project/welcab-line-liff/1.png',
-            '/img/project/welcab-line-liff/2.png',
-            '/img/project/welcab-line-liff/3.png',
+            '/img/project/welcabin-passenger-liff/1.png',
+            '/img/project/welcabin-passenger-liff/2.png',
+            '/img/project/welcabin-passenger-liff/3.png',
         ],
     },
     links: { githubUrl: 'https://github.com/gkfat/welcab-line-reservation' },

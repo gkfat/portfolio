@@ -3,7 +3,7 @@ import { IProject } from '@/types/project';
 export const DICE_ROLLER: IProject = {
     meta: {
         title: 'Dice Roller',
-        description: '',
+        description: '簡單的丟骰子動畫。',
         time: '2024',
         techStacks: ['FE'],
         tags: [

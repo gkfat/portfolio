@@ -90,7 +90,7 @@ const { t } = useI18n();
 type Selection = 'all' | 'fullstack' | 'frontend' | 'backend';
 
 const filter = ref<Selection>('all');
-const hideSideProjects = ref(true);
+const hideSideProjects = ref(false);
 
 const selection = computed(() => [
     {

@@ -10,7 +10,8 @@ export const SQUASH_RESERVATION: IProject = {
         isSideProject: true,
     },
     content: {
-        list: [], imagesUrls: ['/img/project/squash-reservation/1.png'], 
+        list: [],
+        imagesUrls: ['/img/project/squash-reservation/1.png'], 
     },
     links: {
         websiteUrl: 'https://squash-reservation.pages.dev',

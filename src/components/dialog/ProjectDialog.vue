@@ -20,18 +20,7 @@
                         {{ project.meta.title }}
                         <em class="ml-3 text-caption">{{ project.meta.time }}</em>
                     </v-card-title>
-                    <v-card-subtitle
-                        v-if="project.meta.isSideProject"
-                    >
-                        <v-chip
-                            label
-                            color="primary"
-                            class="text-caption text-white"
-                            variant="flat"
-                            size="small"
-                            text="Side Project"
-                        />
-                    </v-card-subtitle>
+                    <v-card-subtitle>{{ project.meta.description }}</v-card-subtitle>
                 </v-col>
 
                 <v-col
@@ -46,6 +35,24 @@
                         icon="mdi-close"
                         @click="appStore.isOpenDialog = false"
                     />
+                </v-col>
+            </v-row>
+
+            <v-row
+                v-if="project.meta.isSideProject"
+                class="align-center ma-0"
+            >
+                <v-col class="py-0">
+                    <v-card-subtitle>
+                        <v-chip
+                            label
+                            color="primary"
+                            class="text-caption text-white"
+                            variant="flat"
+                            size="small"
+                            text="Side Project"
+                        />
+                    </v-card-subtitle>
                 </v-col>
             </v-row>
 
