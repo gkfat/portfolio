@@ -1,7 +1,7 @@
 <template>
     <v-list nav>
         <v-list-item
-            :href="URL_SOURCE.socialMedias.resume"
+            :href="CONFIG.RESUME_URL"
             target="_blank"
             append-icon="mdi-open-in-new"
         >
@@ -13,7 +13,7 @@
         <v-divider />
 
         <v-list-item
-            :href="URL_SOURCE.socialMedias.techBlog"
+            :href="CONFIG.TECH_BLOG_URL"
             target="_blank"
             append-icon="mdi-open-in-new"
         >
@@ -35,7 +35,7 @@
 import { useI18n } from 'vue-i18n';
 
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
-import { URL_SOURCE } from '@/data/url-source';
+import { CONFIG } from '@/config/config';
 
 const { t } = useI18n();
 </script>

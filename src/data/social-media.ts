@@ -1,14 +1,14 @@
-import { URL_SOURCE } from './url-source';
+import { CONFIG } from '@/config/config';
 
 export const SocialMedias: {
     link: string;
     icon: string;
 }[] = [
     {
-        link: URL_SOURCE.socialMedias.github,
+        link: CONFIG.GITHUB_URL,
         icon: 'mdi-github',
     }, {
-        link: URL_SOURCE.socialMedias.linkedIn,
+        link: CONFIG.LINKED_IN_URL,
         icon: 'mdi-linkedin',
     },
 ];

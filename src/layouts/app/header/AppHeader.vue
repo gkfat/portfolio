@@ -17,7 +17,7 @@
             >
                 <v-btn
                     :text="t('common.resume')"
-                    :href="URL_SOURCE.socialMedias.resume"
+                    :href="CONFIG.RESUME_URL"
                     target="_blank"
                     color="primary"
                     append-icon="mdi-open-in-new"
@@ -25,7 +25,7 @@
     
                 <v-btn
                     :text="t('common.tech_blog')"
-                    :href="URL_SOURCE.socialMedias.techBlog"
+                    :href="CONFIG.TECH_BLOG_URL"
                     target="_blank"
                     color="primary"
                     append-icon="mdi-open-in-new"
@@ -91,12 +91,12 @@ import { useI18n } from 'vue-i18n';
 import { useDisplay } from 'vuetify';
 
 import SocialMediaGroup from '@/components/SocialMediaGroup.vue';
-import { URL_SOURCE } from '@/data/url-source';
 import { useAppStore } from '@/stores/app';
 
 import AppearanceSwitcher from './components/AppearanceSwitcher.vue';
 import LocaleSelectMenu from './components/LocaleSelectMenu.vue';
 import Logo from './components/Logo.vue';
+import { CONFIG } from '@/config/config';
 
 const { t } = useI18n();
 const {
