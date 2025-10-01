@@ -14,17 +14,17 @@ import { EnumProject } from '@/enums/projects';
 const { t } = useI18n();
 
 const projects = [
-    EnumProject.InvestmentPortfolio,
-    EnumProject.TodoLess,
+    EnumProject.INVESTMENT_PORTFOLIO,
+    EnumProject.TODOLESS,
     EnumProject.TSMC,
     EnumProject.THLK,
-    EnumProject.LogicardDuel,
-    EnumProject.Ikea,
-    EnumProject.WelcabBackStage,
-    EnumProject.WelcabLineLiff,
-    EnumProject.Loopback4App,
-    EnumProject.FutureIntersection,
-    EnumProject.AIWriter,
-    EnumProject.TechBlog,
+    EnumProject.LOGICARD_DUEL,
+    EnumProject.IKEA,
+    EnumProject.WELCABIN_ADMIN,
+    EnumProject.WELCABIN_PASSENGER_LIFF,
+    EnumProject.LOOPBACK4_APP,
+    EnumProject.FUTURE_INTERSECTION,
+    EnumProject.AI_WRITER,
+    EnumProject.TECH_BLOG,
 ];
 </script>

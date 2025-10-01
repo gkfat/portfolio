@@ -54,7 +54,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/thlk/4.png',
         ],
     },
-    [EnumProject.CpfEdm]: {
+    [EnumProject.CPF_EDM]: {
         title: '齊柏林基金會 EDM',
         description: '',
         time: '2021',
@@ -65,7 +65,7 @@ export const Projects: Record<EnumProject, IProject> = {
         githubUrl: 'https://github.com/gkfat/cpf-edm',
         imagesUrls: ['/img/project/cpf-edm/1.png', '/img/project/cpf-edm/2.png'],
     },
-    [EnumProject.LogicardDuel]: {
+    [EnumProject.LOGICARD_DUEL]: {
         title: 'Logicard Duel',
         description: '從單純的撲克比大小邏輯延伸發展出的卡牌對戰遊戲，代入 RPG 元素，讓玩家以擊敗敵人，獲得戰利品及經驗值為角色升級為動力，引發遊玩興趣。',
         time: '2023',
@@ -99,7 +99,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/logicard-duel/9.png',
         ],
     },
-    [EnumProject.Ikea]: {
+    [EnumProject.IKEA]: {
         title: 'IKEA 活動網頁切版',
         description: '純前端 RWD 網頁開發。',
         time: '2021',
@@ -120,7 +120,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/ikea/5.png',
         ],
     },
-    [EnumProject.CNCMes]: {
+    [EnumProject.CNC_MES]: {
         title: 'CNC MES 系統',
         description: '整合 MES 加工/製造/生產管理的控制後台，現場可掃描 QRCode 登錄資料進後台，即時追蹤工單狀況。',
         time: '2024',
@@ -142,7 +142,7 @@ export const Projects: Record<EnumProject, IProject> = {
         githubUrl: 'https://github.com/gkfat/cnc-mes-frontend',
         imagesUrls: [],
     },
-    [EnumProject.WelcabBackStage]: {
+    [EnumProject.WELCABIN_ADMIN]: {
         title: '派車系統',
         description: '解決長照預約派車管控問題的後台，讓車行安排車趟更便利，提升管理效率。',
         time: '2024',
@@ -169,7 +169,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/welcab-backoffice/6.png',
         ],
     },
-    [EnumProject.WelcabLineLiff]: {
+    [EnumProject.WELCABIN_PASSENGER_LIFF]: {
         title: '派車系統 Line Liff 服務',
         description: '解決長照預約麻煩問題，需求者可透過 Line Liff 表單預約，需求單直接串接到後台，消弭資訊落差。',
         time: '2024',
@@ -189,7 +189,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/welcab-line-liff/3.png',
         ],
     },
-    [EnumProject.DiceRoller]: {
+    [EnumProject.DICE_ROLLER]: {
         title: 'Dice Roller',
         description: '',
         time: '2024',
@@ -209,23 +209,7 @@ export const Projects: Record<EnumProject, IProject> = {
         githubUrl: 'https://github.com/gkfat/dice-roller',
         imagesUrls: ['/img/project/dice-roller/1.png'],
     },
-    [EnumProject.SimpleTodoList]: {
-        title: 'Simple Todo List',
-        description: '',
-        time: '2024',
-        techStacks: ['FE'],
-        items: ['極簡待辦 app'],
-        tags: [
-            'Vue',
-            'Css',
-            'Vuetify',
-            'TypeScript',
-        ],
-        websiteUrl: 'https://simple-todo-list.pages.dev',
-        githubUrl: 'https://github.com/gkfat/simple-todo-list',
-        imagesUrls: ['/img/project/simple-todo-list/1.png'],
-    },
-    [EnumProject.TechBlog]: {
+    [EnumProject.TECH_BLOG]: {
         title: 'Tech blog',
         description: '技術筆記部落格。',
         time: '2024',
@@ -236,7 +220,7 @@ export const Projects: Record<EnumProject, IProject> = {
         githubUrl: 'https://github.com/gkfat/gk-blog',
         imagesUrls: ['/img/project/tech-blog/1.png'],
     },
-    [EnumProject.HTGameBackend]: {
+    [EnumProject.HT_GAME_BACKEND]: {
         title: '遊戲後端開發',
         description: '',
         time: '2023',
@@ -249,7 +233,7 @@ export const Projects: Record<EnumProject, IProject> = {
         ],
         imagesUrls: [],
     },
-    [EnumProject.HTGameBackstage]: {
+    [EnumProject.HT_GAME_BACKSTAGE]: {
         title: '遊戲專案後台全端開發',
         description: '遊戲商後台，包含會員/道具/活動控制，另有排程服務，即時管理活動進行狀態。',
         time: '2023~2024',
@@ -276,7 +260,7 @@ export const Projects: Record<EnumProject, IProject> = {
         ],
         imagesUrls: ['/img/project/ht-game-backstage/1.png', '/img/project/ht-game-backstage/2.png'],
     },
-    [EnumProject.AsinkEIP]: {
+    [EnumProject.ASINK_EIP]: {
         title: 'Asink EIP',
         description: '公司內部入口網站，串連工廠 ERP 系統，快速掌握工單進度狀況及產線人力分配。',
         time: '2021~2022',
@@ -299,7 +283,7 @@ export const Projects: Record<EnumProject, IProject> = {
         websiteUrl: 'https://www.atrustek.com/cis/home',
         imagesUrls: [],
     },
-    [EnumProject.AtrustekWeb]: {
+    [EnumProject.ATRUSTEK_WEB]: {
         title: 'Atrustek Fintech Saas',
         description: '個人金融顧問網站，從 KYC 分析到股票、外匯投資理財管理，一應俱全。',
         time: '2019~2021',
@@ -326,7 +310,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/atrustek-web/4.png',
         ],
     },
-    [EnumProject.InvestmentPortfolio]: {
+    [EnumProject.INVESTMENT_PORTFOLIO]: {
         title: '個人投資組合績效管理 App',
         description: '紀錄個人交易紀錄，掌握投資組合績效狀況，掌握市場即時報價。',
         time: '2024',
@@ -366,7 +350,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/investment-portfolio/8.png',
         ],
     },
-    [EnumProject.TodoLess]: {
+    [EnumProject.TODOLESS]: {
         title: '待辦事項 App',
         description: 'React + Mui 打造的待辦事項 App，呈現簡單的風格記事。',
         time: '2025',
@@ -397,7 +381,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/todoless/5.png',
         ],
     },
-    [EnumProject.Loopback4App]: {
+    [EnumProject.LOOPBACK4_APP]: {
         title: 'Loopback4 TodoList App',
         description: 'TodoList API server build with loopback4',
         time: '2025',
@@ -412,7 +396,7 @@ export const Projects: Record<EnumProject, IProject> = {
         githubUrl: 'https://github.com/gkfat/loopback4-app',
         imagesUrls: ['/img/project/loopback4-app/1.png'],
     },
-    [EnumProject.FutureIntersection]: {
+    [EnumProject.FUTURE_INTERSECTION]: {
         title: 'Future Intersection AI Blog',
         description: '串接 OpenAI，每日自動產生文章的部落格。',
         time: '2025',
@@ -429,7 +413,7 @@ export const Projects: Record<EnumProject, IProject> = {
         websiteUrl: 'https://future-intersection.netlify.app',
         imagesUrls: ['/img/project/future-intersection/1.png', '/img/project/future-intersection/2.png'],
     },
-    [EnumProject.AIWriter]: {
+    [EnumProject.AI_WRITER]: {
         title: 'AI Writer - AI 作家',
         description: '串接 OpenAI，每日自動產生短小說。',
         time: '2025',
@@ -446,7 +430,7 @@ export const Projects: Record<EnumProject, IProject> = {
         websiteUrl: 'https://ai-writer-1lf.pages.dev',
         imagesUrls: ['/img/project/ai-writer/1.png', '/img/project/ai-writer/2.png'],
     },
-    [EnumProject.SquashReservation]: {
+    [EnumProject.SQUASH_RESERVATION]: {
         title: 'Squash Reservation 壁球場地預約',
         description: '快速連結至壁球場地預約頁面。',
         time: '2025',

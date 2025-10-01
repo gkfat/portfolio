@@ -89,28 +89,27 @@ const selection = computed(() => [
 ]);
 
 const projects = [
-    EnumProject.InvestmentPortfolio,
-    EnumProject.HTGameBackstage,
-    EnumProject.AtrustekWeb,
-    EnumProject.AsinkEIP,
+    EnumProject.INVESTMENT_PORTFOLIO,
+    EnumProject.HT_GAME_BACKSTAGE,
+    EnumProject.ATRUSTEK_WEB,
+    EnumProject.ASINK_EIP,
     // EnumProject.HTGameBackend,
 
-    EnumProject.TodoLess,
+    EnumProject.TODOLESS,
     EnumProject.TSMC,
     EnumProject.THLK,
     // EnumProject.CpfEdm,
-    EnumProject.LogicardDuel,
-    EnumProject.Ikea,
-    EnumProject.CNCMes,
-    EnumProject.WelcabBackStage,
-    EnumProject.WelcabLineLiff,
-    EnumProject.Loopback4App,
-    EnumProject.FutureIntersection,
+    EnumProject.LOGICARD_DUEL,
+    EnumProject.IKEA,
+    EnumProject.CNC_MES,
+    EnumProject.WELCABIN_ADMIN,
+    EnumProject.WELCABIN_PASSENGER_LIFF,
+    EnumProject.LOOPBACK4_APP,
+    EnumProject.FUTURE_INTERSECTION,
     // EnumProject.DiceRoller,
-    // EnumProject.SimpleTodoList,
-    EnumProject.AIWriter,
-    EnumProject.TechBlog,
-    EnumProject.SquashReservation,
+    EnumProject.AI_WRITER,
+    EnumProject.TECH_BLOG,
+    EnumProject.SQUASH_RESERVATION,
 ];
 
 const projectChunks = computed(() => {
