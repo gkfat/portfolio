@@ -13,6 +13,7 @@ export const ASINK_EIP: IProject = {
             'Linux',
             'Apache',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

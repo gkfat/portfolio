@@ -14,7 +14,12 @@
         </v-card>
 
         <v-row class="justify-center">
-            <v-col cols="auto">
+            <v-spacer />
+            
+            <v-col
+                cols="4"
+                class="d-flex justify-center"
+            >
                 <v-btn-toggle
                     v-model="filter"
                     mandatory
@@ -27,6 +32,19 @@
                         {{ item.title }}
                     </v-btn>
                 </v-btn-toggle>
+            </v-col>
+
+            <v-col
+                cols="4"
+                class="d-flex justify-end align-center"
+            >
+                <v-checkbox
+                    v-model="hideSideProjects"
+                    :label="t('project.hide_side_projects')"
+                    color="primary"
+                    hide-details
+                    density="compact"
+                />
             </v-col>
         </v-row>
 
@@ -72,6 +90,7 @@ const { t } = useI18n();
 type Selection = 'all' | 'fullstack' | 'frontend' | 'backend';
 
 const filter = ref<Selection>('all');
+const hideSideProjects = ref(true);
 
 const selection = computed(() => [
     {
@@ -93,15 +112,14 @@ const projects = [
     EnumProject.HT_GAME_BACKSTAGE,
     EnumProject.ATRUSTEK_WEB,
     EnumProject.ASINK_EIP,
-
     EnumProject.TSMC,
     EnumProject.THLK,
     EnumProject.CPF_EDM,
-    EnumProject.LOGICARD_DUEL,
     EnumProject.IKEA,
     EnumProject.CNC_MES,
     EnumProject.WELCABIN_ADMIN,
     EnumProject.WELCABIN_PASSENGER_LIFF,
+    EnumProject.LOGICARD_DUEL,
     EnumProject.LOOPBACK4_APP,
     EnumProject.FUTURE_INTERSECTION,
     EnumProject.DICE_ROLLER,
@@ -112,8 +130,15 @@ const projects = [
 
 const projectChunks = computed(() => {
     const sliceProjects = [...projects].filter((p) => {
-        const { techStacks } = Projects[p].meta;
+        const {
+            techStacks, isSideProject, 
+        } = Projects[p].meta;
 
+        if (hideSideProjects.value && isSideProject) {
+            return false;
+        }
+
+        // Tech stack 過濾
         if (filter.value === 'fullstack') {
             return ['FE', 'BE'].every((techStack) => techStacks.includes(techStack as 'FE' | 'BE'));
         }

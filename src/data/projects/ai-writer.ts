@@ -13,6 +13,7 @@ export const AI_WRITER: IProject = {
             'Vuetify',
             'TypeScript',
         ],
+        isSideProject: true,
     },
     content: {
         list: ['OpenAI'],

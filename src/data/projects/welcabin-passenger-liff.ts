@@ -14,6 +14,7 @@ export const WELCABIN_PASSENGER_LIFF: IProject = {
             'TypeScript',
             'Vitest',
         ],
+        isSideProject: false,
     },
     content: {
         list: ['表單驗證服務', '串接 Line Auth 服務'],

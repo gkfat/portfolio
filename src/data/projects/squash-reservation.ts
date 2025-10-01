@@ -6,7 +6,8 @@ export const SQUASH_RESERVATION: IProject = {
         description: '快速連結至壁球場地預約頁面。',
         time: '2025',
         techStacks: ['FE'],
-        tags: [],
+        tags: ['React'],
+        isSideProject: true,
     },
     content: {
         list: [], imagesUrls: ['/img/project/squash-reservation/1.png'], 

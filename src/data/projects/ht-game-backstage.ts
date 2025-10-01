@@ -16,6 +16,7 @@ export const HT_GAME_BACKSTAGE: IProject = {
             'Firebase',
             'ELK',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

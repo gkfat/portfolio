@@ -12,6 +12,7 @@ export const DICE_ROLLER: IProject = {
             'Vuetify',
             'TypeScript',
         ],
+        isSideProject: true,
     },
     content: {
         list: [

@@ -11,6 +11,7 @@ export const IKEA: IProject = {
             'CSS',
             'JavaScript',
         ],
+        isSideProject: false,
     },
     content: {
         list: ['前端 RWD 網頁開發'],

@@ -19,6 +19,7 @@ export const INVESTMENT_PORTFOLIO: IProject = {
             'Google OAuth',
             'Grafana Cloud / Loki logs',
         ],
+        isSideProject: true,
     },
     content: {
         list: [

@@ -19,14 +19,7 @@
     "zh": "繁體中文"
   },
   "project": {
-    "label_back_end_projects": "後端專案",
-    "label_front_end_projects": "前端專案",
-    "label_investment_portfolio": "投資組合管理平台",
-    "label_investment_portfolio_intro": "視覺化管理投資組合，統計交易紀錄追蹤績效，即時市場資料",
-    "label_tsmc": "2021 台積心築藝術季官網",
-    "label_tsmc_intro": "重新定義網站結構，依主視覺設計 UI",
-    "label_welcab": "長照派車系統後台 & Line Liff",
-    "label_welcab_intro": "串接 Line Liff 表單收集派車需求，後台視覺化呈現管理調度",
+    "hide_side_projects": "我不想看到 Side Projects",
     "title_all_projects": "所有專案",
     "title_feature_projects": "精選專案"
   },

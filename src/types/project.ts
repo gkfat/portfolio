@@ -7,6 +7,7 @@ export type IProject = {
         /** bubble weight, default 1 */
         weight?: number;
         tags: string[];
+        isSideProject: boolean;
     };
 
     content: {

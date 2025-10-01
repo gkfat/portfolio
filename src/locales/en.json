@@ -19,14 +19,7 @@
     "zh": "繁體中文"
   },
   "project": {
-    "label_back_end_projects": "Backend Projects",
-    "label_front_end_projects": "Frontend Projects",
-    "label_investment_portfolio": "investment portfolio",
-    "label_investment_portfolio_intro": "Visually manage investment portfolios, collect transaction records, track performance, and obtain real-time market data",
-    "label_tsmc": "tsmc 2021 exhibition website",
-    "label_tsmc_intro": "Redefine the website structure and design the UI according to the main visual",
-    "label_welcab": "Long-term care transportation backstage",
-    "label_welcab_intro": "Gathering requirements forms from  Line Liff, display on the backstage, and help admin managing the transportation requirements",
+    "hide_side_projects": "Hide Side Projects",
     "title_all_projects": "all projects",
     "title_feature_projects": "feature projects"
   },

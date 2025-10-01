@@ -16,6 +16,7 @@ export const LOGICARD_DUEL: IProject = {
             'Hono',
             'Cloudstorage',
         ],
+        isSideProject: true,
     },
     content: {
         list: [

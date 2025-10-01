@@ -3,6 +3,7 @@
         rounded="lg"
         hover
         elevation="8"
+        class="position-relative"
         @click="setActiveProject"
     >
         <v-img
@@ -39,6 +40,16 @@
                 </span>
             </v-chip>
         </v-card-actions>
+
+        <v-chip
+            v-if="project.meta.isSideProject"
+            label
+            color="primary"
+            class="position-absolute top-0 right-0 text-caption text-white ma-2"
+            variant="flat"
+            size="small"
+            text="Side Project"
+        />
     </v-card>
 </template>
 <script lang="ts" setup>

@@ -11,6 +11,7 @@ export const TSMC: IProject = {
             'CSS',
             'JavaScript',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

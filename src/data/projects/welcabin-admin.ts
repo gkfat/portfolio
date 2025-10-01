@@ -14,6 +14,7 @@ export const WELCABIN_ADMIN: IProject = {
             'TypeScript',
             'Vitest',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

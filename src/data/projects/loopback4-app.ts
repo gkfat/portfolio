@@ -12,6 +12,7 @@ export const LOOPBACK4_APP: IProject = {
             'Mysql',
             'Swagger',
         ],
+        isSideProject: true,
     },
     content: {
         list: ['API server'],

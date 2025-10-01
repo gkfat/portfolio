@@ -13,6 +13,7 @@ export const THLK: IProject = {
             'TypeScript',
             'Vue',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

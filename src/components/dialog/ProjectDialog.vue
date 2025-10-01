@@ -20,6 +20,18 @@
                         {{ project.meta.title }}
                         <em class="ml-3 text-caption">{{ project.meta.time }}</em>
                     </v-card-title>
+                    <v-card-subtitle
+                        v-if="project.meta.isSideProject"
+                    >
+                        <v-chip
+                            label
+                            color="primary"
+                            class="text-caption text-white"
+                            variant="flat"
+                            size="small"
+                            text="Side Project"
+                        />
+                    </v-card-subtitle>
                 </v-col>
 
                 <v-col

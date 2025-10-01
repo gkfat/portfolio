@@ -7,6 +7,7 @@ export const CPF_EDM: IProject = {
         time: '2021',
         techStacks: ['FE'],
         tags: ['HTML'],
+        isSideProject: false,
     },
     content: {
         list: ['EDM 模板設計'],

@@ -7,6 +7,7 @@ export const TECH_BLOG: IProject = {
         time: '2024',
         techStacks: ['FE'],
         tags: ['VitePress'],
+        isSideProject: true,
     },
     content: {
         list: ['技術筆記。'],

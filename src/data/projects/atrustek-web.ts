@@ -12,6 +12,7 @@ export const ATRUSTEK_WEB: IProject = {
             'TypeScript',
             'Linux',
         ],
+        isSideProject: false,
     },
     content: {
         list: [

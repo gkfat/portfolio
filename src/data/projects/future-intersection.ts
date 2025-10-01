@@ -13,6 +13,7 @@ export const FUTURE_INTERSECTION: IProject = {
             'Vuetify',
             'TypeScript',
         ],
+        isSideProject: true,
     },
     content: {
         list: ['OpenAI'],

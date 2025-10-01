@@ -13,6 +13,7 @@ export const CNC_MES: IProject = {
             'TypeScript',
             'Vitest',
         ],
+        isSideProject: false,
     },
     content: {
         list: [
