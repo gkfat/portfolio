@@ -98,6 +98,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/logicard-duel/8.png',
             '/img/project/logicard-duel/9.png',
         ],
+        weight: 1.5,
     },
     [EnumProject.IKEA]: {
         title: 'IKEA 活動網頁切版',
@@ -168,6 +169,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/welcab-backoffice/5.png',
             '/img/project/welcab-backoffice/6.png',
         ],
+        weight: 2,
     },
     [EnumProject.WELCABIN_PASSENGER_LIFF]: {
         title: '派車系統 Line Liff 服務',
@@ -188,6 +190,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/welcab-line-liff/2.png',
             '/img/project/welcab-line-liff/3.png',
         ],
+        weight: 1.8,
     },
     [EnumProject.DICE_ROLLER]: {
         title: 'Dice Roller',
@@ -349,6 +352,7 @@ export const Projects: Record<EnumProject, IProject> = {
             '/img/project/investment-portfolio/7.png',
             '/img/project/investment-portfolio/8.png',
         ],
+        weight: 1.4,
     },
     [EnumProject.TODOLESS]: {
         title: '待辦事項 App',

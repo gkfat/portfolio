@@ -9,7 +9,12 @@
             </v-card-title>
         </v-card>
     
+        <BubbleProjects
+            v-if="mdAndUp"
+            :projects="projects"
+        />
         <InfiniteScrollProjects
+            v-else
             :projects="projects"
             :scroll-direction="'left'"
         />
@@ -17,11 +22,14 @@
 </template>
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
+import { useDisplay } from 'vuetify';
 
 import InfiniteScrollProjects from './components/InfiniteScrollProjects.vue';
+import BubbleProjects from './components/BubbleProjects.vue';
 import { EnumProject } from '@/enums/projects';
 
 const { t } = useI18n();
+const { mdAndUp } = useDisplay();
 
 const projects = [
     EnumProject.INVESTMENT_PORTFOLIO,
