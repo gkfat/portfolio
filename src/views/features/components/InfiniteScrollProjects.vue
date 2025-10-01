@@ -19,8 +19,8 @@
                     <template #default="{ isHovering, props }">
                         <v-img
                             v-bind="props"
-                            :width="160"
-                            :height="160"
+                            :width="120"
+                            :height="120"
                             aspect-ratio="1/1"
                             class="rounded-circle overflow-hidden cursor-pointer border mx-auto mb-3"
                             :style="{
