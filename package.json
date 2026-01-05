@@ -9,7 +9,7 @@
     "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "prepare": "husky install",
-    "cf:build": "pnpm install && pnpm run generate",
+    "cf:build": "npm install && npm run generate",
     "lint": "eslint . --ext .ts,.js,.vue --fix"
   },
   "engines": {
