@@ -58,20 +58,23 @@
                             </v-col>
                         </v-row>
 
-                        <v-card-title
-                            v-bind="props"
-                            :to="`/works/${work.slug}`"
-                            class="text-wrap font-weight-bold mb-2"
-                            :class="{
-                                'text-primary': isHovering,
-                                'text-white': !isHovering,
-                            }"
-                            :style="{
-                                transition: 'all 0.3s'
-                            }"
+                        <NuxtLink 
+                            :to="`/works/${work.slug}`" 
+                            class="text-decoration-none"
                         >
-                            {{ work.title }}
-                        </v-card-title>
+                            <v-card-title
+                                class="text-wrap font-weight-bold mb-2 cursor-pointer"
+                                :class="{
+                                    'text-primary': isHovering,
+                                    'text-white': !isHovering,
+                                }"
+                                :style="{
+                                    transition: 'all 0.3s'
+                                }"
+                            >
+                                {{ work.title }}
+                            </v-card-title>
+                        </NuxtLink>
                         <v-card-text>
                             <p class="text-grey-lighten-3">{{ work.description }}</p>
                         </v-card-text>
