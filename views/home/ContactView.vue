@@ -1,3 +1,4 @@
+import { contactInfo } from '../../config/config';
 <template>
     <v-row no-gutters class="justify-center align-center flex-column ga-5">
         <v-col cols="auto">
@@ -17,6 +18,7 @@
                 size="x-large"
                 class="text-none"
                 color="secondary"
+                :href="`mailto:${contactInfo.email}`"
             >
                 寫封郵件吧
             </v-btn>
@@ -38,4 +40,6 @@
     </v-row>
 </template>
 <script setup lang="ts">
+import { contactInfo } from '~/config/config';
+
 </script>
