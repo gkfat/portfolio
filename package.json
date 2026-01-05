@@ -6,7 +6,6 @@
     "dev": "nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate",
-    "postinstall": "nuxt prepare",
     "preview": "nuxt preview",
     "prepare": "husky install",
     "cf:build": "pnpm install --frozen-lockfile && pnpm generate",
