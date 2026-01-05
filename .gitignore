@@ -1,6 +1,11 @@
-.DS_Store
+# Node
 node_modules
-/dist
+pnpm-lock.yaml
+
+# Nuxt
+.output
+.nuxt
+dist
 
 # local env files
 .env
@@ -9,7 +14,9 @@ node_modules
 
 # Log files
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
 
+# OS
+.DS_Store
+
+ai.md

@@ -1,18 +1,8 @@
 {
-  "eslint.codeActionsOnSave.mode": "all",
-  "files.eol": "\n",
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": true,
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
+    "source.fixAll": "always"
   },
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
-  "eslint.useFlatConfig": true,
-  "eslint.format.enable": true,
-  "editor.formatOnSave": true,
-  "i18n-ally.localesPaths": [
-    "src/locales"
-  ],
-  "i18n-ally.keystyle": "nested",
-  "i18n-ally.sortKeys": true
+  "eslint.validate": ["javascript", "typescript", "vue"]
 }

@@ -1,48 +1,45 @@
 {
   "name": "portfolio",
-  "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "docker:up": "pnpm install && pnpm build && docker build . -t gk-portfolio && docker run -d -p 8080:80 --name gk-portfolio gk-portfolio",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix"
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "preview": "nuxt preview",
+    "prepare": "husky install",
+    "cf:build": "npm install && npm run generate",
+    "lint": "eslint . --ext .ts,.js,.vue --fix"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "dependencies": {
-    "@mdi/font": "7.4.47",
-    "@vueuse/core": "^13.4.0",
-    "core-js": "^3.43.0",
-    "d3-force": "^3.0.0",
-    "d3-hierarchy": "^3.1.2",
-    "dayjs": "^1.11.13",
-    "pinia": "^3.0.3",
-    "roboto-fontface": "^0.10.0",
-    "vue": "^3.5.17",
-    "vue-easy-lightbox": "^1.19.0",
-    "vue-i18n": "^11.1.6",
-    "vue-router": "^4.5.1",
-    "vuetify": "^3.8.10"
+    "@mdi/font": "^7.4.47",
+    "@nuxt/content": "^2.8.5",
+    "@nuxtjs/i18n": "^10.2.1",
+    "@nuxtjs/seo": "^3.3.0",
+    "dayjs": "^1.11.19",
+    "nuxt": "^3.8.0",
+    "vuetify": "^3.4.8"
   },
   "devDependencies": {
-    "@babel/types": "^7.27.6",
-    "@eslint/js": "^9.29.0",
-    "@types/node": "^22.15.32",
-    "@vitejs/plugin-vue": "^5.2.4",
-    "@vue/eslint-config-typescript": "^14.5.1",
-    "@vue/typescript": "^1.8.20",
-    "eslint": "^9.29.0",
+    "@eslint/js": "^9.39.2",
+    "@nuxt/eslint": "^1.12.1",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "@vue/eslint-config-typescript": "^14.6.0",
+    "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-vue": "^10.2.0",
-    "globals": "^16.2.0",
-    "sass": "^1.89.2",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "unplugin-fonts": "^1.3.1",
-    "vite": "^6.3.5",
-    "vite-plugin-vuetify": "^2.1.1",
-    "vue-eslint-parser": "^10.1.3",
-    "vue-tsc": "^2.2.10"
+    "eslint-plugin-vue": "^10.6.2",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "sass": "^1.69.5",
+    "typescript": "^5.9.3",
+    "vite-plugin-vuetify": "^2.0.1",
+    "vue-eslint-parser": "^10.2.0"
   },
-  "packageManager": "pnpm@9.15.2"
+  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
 }
