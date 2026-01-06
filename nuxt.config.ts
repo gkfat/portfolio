@@ -1,4 +1,11 @@
 export default defineNuxtConfig({
+    // 路由設定 - 禁用自動添加尾隨斜線
+    router: {
+        options: {
+            trailingSlash: false
+        }
+    },
+
     // SSG 模式
     nitro: { prerender: { routes: ['/sitemap.xml'] } },
 
