@@ -104,6 +104,8 @@ const featuredWorkSlugs = [
     '2024-welcabin-liff', 
     '2021-tsmc',
     '2023-logicard-duel',
+    '2021-ikea',
+    '2025-punch-qrcode-generator',
 ];
 
 const { data: allWorks } = await useAsyncData('featured-works', () => 
