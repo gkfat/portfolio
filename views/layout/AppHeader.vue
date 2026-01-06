@@ -4,7 +4,6 @@
             v-show="show"
             app
             flat
-            color="grey-lighten-3"
         >
             <v-container fluid>
                 <v-row no-gutters class="align-center flex-nowrap">
@@ -20,18 +19,18 @@
                             :key="item.anchor"
                             variant="plain"
                             class="px-2"
-                            color="primary"
                             :ripple="false"
                             @click="onNavClick(item.anchor)"
                         >
-                            <span class="text-primary me-1">0{{ i + 1 }}.</span>
-                            <span class="text-secondary">{{ item.name }}</span>
+                            <span class="text-secondary me-1">0{{ i + 1 }}.</span>
+                            <span class="text-primary">{{ item.name }}</span>
                         </v-btn>
 
                         <v-btn
                             variant="outlined"
                             class="ml-2 border"
-                            color="secondary"
+                            color="primary"
+                            prepend-icon="mdi-view-dashboard"
                             to="/works"
                         >
                             作品集
@@ -55,7 +54,7 @@
             overflowY: 'auto',
         }"
     >
-        <v-list class="fill-height bg-surface-variant">
+        <v-list class="fill-height">
             <v-container>
                 <div class="py-10">
                     <v-list-item
@@ -63,7 +62,7 @@
                         :key="item.anchor"
                         variant="plain"
                         :ripple="false"
-                        class="opacity-100 my-3"
+                        class="opacity-100 text-white my-3"
                         @click="onNavClick(item.anchor)"
                     >
                         <p class="text-center">0{{ i + 1 }}.</p>
@@ -77,6 +76,7 @@
                         to="/works"
                         :ripple="false"
                         variant="outlined"
+                        color="primary"
                         rounded
                         class="text-center my-3"
                         @click="toggleMobileMenu(false)"
