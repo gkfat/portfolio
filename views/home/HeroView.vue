@@ -2,22 +2,26 @@
     <v-row no-gutters class="justify-center">
         <v-col cols="12">
             <v-list class="bg-transparent" density="compact">
-                <v-list-item class="pl-5 text-body-2 text-grey-darken-1">
+                <v-list-item class="pl-5 text-primary">
                     您好，我是
                 </v-list-item>
                 <v-list-item class="mb-2">
-                    <h1 class="text-h2 text-primary font-weight-bold mb-3">
+                    <h1 class="text-h2 text-secondary font-weight-bold mb-3">
                         Gk Wang
                     </h1>
-                    <h2 class="text-h4 text-primary font-weight-bold" :style="{filter: 'opacity(0.9)'}">
+                    <h2 class="text-h4 text-secondary font-weight-bold" :style="{filter: 'opacity(0.9)'}">
                         集設計、專案管理與程式專業於一身的網頁開發者
                     </h2>
                 </v-list-item>
                 <v-list-item
                     v-for="(item, i) in list"
                     :key="i"
+                    class="text-primary"
                 >
-                    <v-icon icon="mdi-minus" class="text-caption" />
+                    <v-icon
+                        icon="mdi-triangle-small-up"
+                        :style="{transform: 'rotate(90deg)'}"
+                    />
                     {{ item.title }}
                 </v-list-item>
             </v-list>

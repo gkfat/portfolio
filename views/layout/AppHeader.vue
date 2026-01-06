@@ -29,7 +29,7 @@
                         <v-btn
                             variant="outlined"
                             class="ml-2 border"
-                            color="primary"
+                            color="secondary"
                             prepend-icon="mdi-view-dashboard"
                             to="/works"
                         >
@@ -69,14 +69,13 @@
                         <p class="text-center">{{ item.name }}</p>
                     </v-list-item>
                         
-                    <v-divider class="my-5" color="white"/>
+                    <v-divider class="w-50 mx-auto my-10" color="secondary" />
 
                     <v-list-item
                         title="作品集"
                         to="/works"
                         :ripple="false"
                         variant="outlined"
-                        color="primary"
                         rounded
                         class="text-center my-3"
                         @click="toggleMobileMenu(false)"

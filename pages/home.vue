@@ -8,7 +8,8 @@
         <!-- Features -->
         <SectionBlock
             :id="'features'"
-            :title="'01. 精選作品'"
+            :prefix="'01.'"
+            :title="'精選作品'"
         >
             <FeaturesView />
         </SectionBlock>
@@ -16,7 +17,8 @@
         <!-- About -->
         <SectionBlock
             :id="'about'"
-            :title="'02. 關於我'"
+            :prefix="'02.'"
+            :title="'關於我'"
         >
             <AboutView />
         </SectionBlock>
@@ -24,7 +26,8 @@
         <!-- Experience -->
         <SectionBlock
             :id="'experience'"
-            :title="'03. 工作經歷'"
+            :prefix="'03.'"
+            :title="'工作經歷'"
             :max-width="800"
         >
             <ExperienceView />
@@ -33,7 +36,8 @@
         <!-- Contact -->
         <SectionBlock
             :id="'contact'"
-            :title="'04. 聯絡我'"
+            :prefix="'04.'"
+            :title="'聯絡我'"
             :max-width="800"
             justify-center
         >

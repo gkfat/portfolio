@@ -2,7 +2,7 @@
     <v-footer
         :class="{
             'bg-transparent': mdAndUp,
-            'bg-secondary': !mdAndUp
+            'bg-dark': !mdAndUp
         }"
     >
         <v-container class="pb-10">
@@ -29,11 +29,7 @@
 
                 <v-col
                     cols="12"
-                    :class="{
-                        'text-center': true,
-                        'text-secondary': mdAndUp,
-                        'text-white': !mdAndUp,
-                    }"
+                    class="text-primary text-center"
                     :style="{letterSpacing: '1px'}"
                 >
                     {{ currentYear }} Gk All rights reserved.

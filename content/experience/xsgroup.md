@@ -5,19 +5,23 @@ timeRange: Mar 2023 ~ May 2025
 order: 1
 ---
 
-### NPM package BigQuery client
+## 1. NPM package BigQuery client
 
 原先儲存在 ELK 的大量 log 資料，遷移到 BigQuery 以節省費用。建造了一個公司內部共用的 NPM 包，供各專案串接使用。
 
 使用技術：Node.js / TypeScript
 
-### Slot game backstage project
+<br>
+
+## 2. Slot game backstage project
 
 老虎機類型遊戲的積分報表。
 
 使用技術：Azure pipeline / Vue2 / Vuetify / Node.js / Fastify / ELK
 
-### Brand backstage project
+<br>
+
+## 3. Brand backstage project
 
 品牌遊戲的管理後台。
 
@@ -32,12 +36,16 @@ order: 1
 - 定時任務模組
 - 積分報表
 
-### ETL tool
+<br>
+
+## 4. ETL tool
 
 從 BigQuery 將資料拉下來，清洗後存入 Mysql 的工具。
 
 使用技術：Node.js / BigQuery / mysql
 
-### Game Server
+<br>
+
+## 5. Game Server
 
 開發遊戲 GS，並導入 TypeScript 重構一個 node.js 專案。

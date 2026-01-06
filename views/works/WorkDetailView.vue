@@ -21,7 +21,7 @@
                 <h1 class="text-h4 text-primary font-weight-bold mb-3">
                     {{ work.title }}
                 </h1>
-                <p class="text-subtitle bg-secondary pa-5 rounded text-white">
+                <p class="text-body-1 bg-dark pa-5 rounded">
                     {{ work.description }}
                 </p>
             </v-col>

@@ -6,8 +6,10 @@ import { contactInfo } from '../../config/config';
         </v-col>
 
         <v-col cols="auto">
-            <p  class="text-center">
-                雖然我目前並未尋找新的工作機會，但我的信箱隨時開啟。<br>
+            <p  class="text-center text-body-1 text-primary mb-2">
+                雖然目前並未尋找新的工作機會，但我的信箱隨時保持開啟。
+            </p>
+            <p  class="text-center text-body-1 text-primary mb-3">
                 若您有任何疑問，或單純只是想要聯繫我，請直接來信。我會盡我所能回覆您！
             </p>
         </v-col>
@@ -27,13 +29,13 @@ import { contactInfo } from '../../config/config';
         <v-col cols="auto" class="text-center">
             <v-chip
                 color="success"
-                variant="tonal"
+                variant="flat"
                 size="small"
                 class="mb-2"
             >
                 快速回應
             </v-chip>
-            <p class="text-grey-darken-1 text-caption">
+            <p class="text-lightgrey text-caption">
                 通常在 24 小時內回覆
             </p>
         </v-col>

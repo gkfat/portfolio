@@ -41,8 +41,10 @@
                         flat
                         class="bg-transparent"
                     >
-                        <v-card-title>
-                            {{ currentExperience.jobTitle}} <span class="text-primary font-weight-bold">@ {{ currentExperience.company }}</span>
+                        <v-card-title class="d-flex ga-1 align-center">
+                            <span class="text-primary">{{ currentExperience.jobTitle}}</span>
+                            <span class="text-secondary font-weight-bold">@</span>
+                            <span class="text-secondary font-weight-bold">{{ currentExperience.company }}</span>
                         </v-card-title>
                         <v-card-subtitle>
                             {{ currentExperience.timeRange }}

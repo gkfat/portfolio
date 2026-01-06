@@ -6,9 +6,10 @@
             md="6"
             class="mb-10 mb-md-0"
         >
-            <p class="text-body-1 mb-3">你好！我是 Gk Wang，是一名集設計、專案管理與程式專業於一身的網頁開發者。經歷過設計、行銷、文案領域之後，本著對程式的熱情，自學轉職成爲程式開發者，並在軟體業歷練多年。</p>
-            <p class="text-body-1 mb-3">為了追求工作與生活的平衡，我在 2025 年 5 月離職，轉為全職接案。</p>
-            <p class="text-body-1 mb-3">這些是我近期較常使用的技能：</p>
+            <p class="text-body-1 text-primary mb-3">你好！我是 Gk Wang，是一名集設計、專案管理與程式專業於一身的網頁開發者。經歷過設計、行銷、文案領域之後，本著對程式的熱情，自學轉職成爲程式開發者，並在軟體業歷練多年。</p>
+            <p class="text-body-1 text-primary mb-3">為了追求工作與生活的平衡，我在 2025 年 5 月離職，轉為全職接案。</p>
+            <p class="text-body-1 text-primary mb-8">這些是我近期較常使用的技能：</p>
+
             <v-row no-gutters>
                 <v-col
                     v-for="(row, i) in skills"
@@ -21,7 +22,7 @@
                             :key="skill"
                             cols="6"
                         >
-                            <p class="text-primary font-weight-bold py-1">
+                            <p class="text-secondary font-weight-bold py-1">
                                 <v-icon
                                     :style="{transform: 'rotate(90deg)'}"
                                     icon="mdi-triangle-small-up"

@@ -29,10 +29,10 @@
             <v-table class="bg-transparent">
                 <thead>
                     <tr>
-                        <td class="text-h6 font-weight-bold text-grey-darken-1">Year</td>
-                        <td class="text-h6 font-weight-bold text-grey-darken-1">Title</td>
-                        <td v-if="smAndUp" class="text-h6 font-weight-bold text-grey-darken-1">Built with</td>
-                        <td class="text-h6 font-weight-bold text-grey-darken-1">Link</td>
+                        <td class="text-h6 font-weight-bold text-grey">Year</td>
+                        <td class="text-h6 font-weight-bold text-grey">Title</td>
+                        <td v-if="smAndUp" class="text-h6 font-weight-bold text-grey">Built with</td>
+                        <td class="text-h6 font-weight-bold text-grey">Link</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,13 +40,13 @@
                         v-for="work in sortedWorks" 
                         :key="work.slug"
                     >
-                        <td class="border-none text-body-1 text-grey font-weight-bold">
+                        <td class="border-none text-body-1 text-primary font-weight-bold">
                             {{ work.year }}
                         </td>
                         <td class="border-none">
                             <v-btn
                                 variant="plain"
-                                color="grey"
+                                color="secondary"
                                 size="sm"
                                 :to="`/works/${work.slug}`"
                                 :max-width="!smAndUp ? 180 : ''"
@@ -91,7 +91,7 @@
                                     <v-btn
                                         variant="plain"
                                         target="_blank"
-                                        color="grey"
+                                        color="primary"
                                         icon="mdi-github"
                                         size="sm"
                                         :href="work.github"
@@ -102,7 +102,7 @@
                                     <v-btn
                                         variant="plain"
                                         target="_blank"
-                                        color="grey"
+                                        color="primary"
                                         icon="mdi-open-in-new"
                                         size="sm"
                                         :href="work.url"

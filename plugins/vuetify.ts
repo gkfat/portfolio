@@ -42,6 +42,7 @@ export default defineNuxtPlugin({
                             secondary: '#FCECDF',
                             warning: '#a05d5d',
                             background: '#212020',
+                            success: colors.green.lighten2,
                         },
                     },
                 },

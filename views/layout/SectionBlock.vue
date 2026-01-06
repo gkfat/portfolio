@@ -18,7 +18,8 @@
                 class="justify-center align-center"
             >
                 <v-col cols="auto" class="text-h6 font-weight-bold">
-                    {{ title }}
+                    <span v-if="prefix" class="text-secondary me-3">{{ prefix }}</span>
+                    <span>{{ title }}</span>
                 </v-col>
             </v-row>
 
@@ -29,7 +30,8 @@
                 class="align-center ga-5 nowrap"
             >
                 <v-col cols="auto" class="text-h5 font-weight-bold">
-                    {{ title }}
+                    <span v-if="prefix" class="text-secondary me-3">{{ prefix }}</span>
+                    <span>{{ title }}</span>
                 </v-col>
                 <v-col class="flex-grow">
                     <v-divider
@@ -49,7 +51,13 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
 
-defineProps<{ id?: string; title?: string; maxWidth?: number; justifyCenter?: boolean; }>();
+defineProps<{
+    id?: string;
+    prefix?: string;
+    title?: string;
+    maxWidth?: number;
+    justifyCenter?: boolean;
+}>();
 
 const { smAndUp } = useDisplay();
 </script>

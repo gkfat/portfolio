@@ -13,7 +13,7 @@
                     <v-card
                         v-bind="props"
                         class="h-100 cursor-pointer pa-3"
-                        color="secondary"
+                        color="dark"
                         :style="{
                             transition: 'all 0.3s',
                             transform: isHovering ? 'translateY(-8px)' : ''
@@ -65,7 +65,7 @@
                             <v-card-title
                                 class="text-wrap font-weight-bold mb-2 cursor-pointer"
                                 :class="{
-                                    'text-primary': isHovering,
+                                    'text-secondary': isHovering,
                                     'text-white': !isHovering,
                                 }"
                                 :style="{
@@ -86,9 +86,10 @@
         <v-col cols="12" class="mt-10 text-center">
             <v-btn
                 to="/works"
-                color="primary"
+                color="secondary"
                 size="large"
                 variant="flat"
+                prepend-icon="mdi-view-dashboard"
             >
                 查看所有作品
             </v-btn>
