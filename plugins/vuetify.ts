@@ -18,7 +18,7 @@ export default defineNuxtPlugin({
     
             // 主題配置
             theme: {
-                defaultTheme: 'light',
+                defaultTheme: 'dark',
                 themes: {
                     light: {
                         dark: false,
