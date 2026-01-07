@@ -1,5 +1,7 @@
 export type TechStack = string;
 
+export type WorkType = 'work' | 'side_project';
+
 export type Work = {
   slug: string;
   title: string;
@@ -9,7 +11,7 @@ export type Work = {
   duration: string;
   url?: string;
   github?: string;
-  type?: 'work' | 'side_project';
+  type?: WorkType;
 }
 
 export type ListItem = {

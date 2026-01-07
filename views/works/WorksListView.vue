@@ -37,7 +37,8 @@
                 </thead>
                 <tbody>
                     <tr
-                        v-for="work in sortedWorks" 
+                        v-for="work in works" 
+                        v-show="(work.type || 'work') === selectedType"
                         :key="work.slug"
                     >
                         <td class="border-none text-body-1 text-primary font-weight-bold">
@@ -120,12 +121,13 @@
 
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
-import type { Work } from '~/types';
+import type {
+    Work, WorkType, 
+} from '~/types';
 
 const { smAndUp } = useDisplay();
 
-type WorkType = 'work' | 'side_project';
-const selectedType = ref<WorkType>('work');
+const selectedType = ref<WorkType>();
 
 const { data: works } = await useAsyncData('works', () => 
     queryContent<Work>('/works')
@@ -133,17 +135,11 @@ const { data: works } = await useAsyncData('works', () =>
         .find(),
 );
 
-const sortedWorks = computed(() => {
-    if (!works.value) return [];
-    
-    return works.value.filter(work => {
-        // 預設為 'work' 如果沒有設定 type
-        const workType = work.type || 'work';
-        return workType === selectedType.value;
-    });
-});
-
 const sortedTechList = (techs: string[]) => {
     return techs.sort((a,b) => a.localeCompare(b));
 };
+
+onMounted(() => {
+    selectedType.value = 'work';
+});
 </script>
