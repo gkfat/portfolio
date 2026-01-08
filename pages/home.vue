@@ -43,6 +43,11 @@
         >
             <ContactView />
         </SectionBlock>
+
+        <CoverView 
+            :start-animation="startAnimation"
+            :direction="coverDirection"
+        />
     </div>
 </template>
 
@@ -53,6 +58,33 @@ import FeaturesView from '~/views/home/FeaturesView.vue';
 import HeroView from '~/views/home/HeroView.vue';
 import SectionBlock from '~/views/layout/SectionBlock.vue';
 import AboutView from '~/views/home/AboutView.vue';
+import CoverView from '~/views/home/CoverView.vue';
 
+type SlideDirection = 'slide-left' | 'slide-right' | 'slide-up' | 'slide-down';
+
+// SEO 設定
 useSeo({ key: 'home' });
+
+const startAnimation = ref(false);
+const coverDirection = ref<SlideDirection>('slide-left');
+
+// 隨機選擇滑出方向
+const getRandomDirection = (): SlideDirection => {
+    const directions: SlideDirection[] = [
+        'slide-left',
+        'slide-right',
+        'slide-up',
+        'slide-down',
+    ];
+    return directions[Math.floor(Math.random() * directions.length)];
+};
+
+// 1 秒後開始滑出動畫
+onMounted(() => {
+    setTimeout(() => {
+        // 隨機選擇滑出方向
+        coverDirection.value = getRandomDirection();
+        startAnimation.value = true;
+    }, 1000);
+});
 </script>
