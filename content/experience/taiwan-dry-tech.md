@@ -1,5 +1,5 @@
 ---
-company: 台灣防潮科技
+company: 防潮產業
 jobTitle: 文案企劃
 timeRange: Apr 2018 ~ May 2019
 order: 3

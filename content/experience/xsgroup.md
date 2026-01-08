@@ -1,5 +1,5 @@
 ---
-company: 向上集團
+company: 遊戲產業
 jobTitle: 程式開發
 timeRange: Mar 2023 ~ May 2025
 order: 1

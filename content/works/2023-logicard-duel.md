@@ -1,7 +1,7 @@
 ---
-title: 卡牌遊戲 Logicard Duel
+title: 卡牌冒險遊戲 Logicard Duel
 slug: 2023-logicard-duel
-description: 從單純的撲克比大小邏輯延伸發展出的卡牌對戰遊戲，代入 RPG 元素，讓玩家以擊敗敵人，獲得戰利品及經驗值為角色升級為動力，引發遊玩興趣。
+description: 從單純的撲克比大小邏輯延伸發展出的卡牌冒險遊戲，代入 RPG 元素，讓玩家以擊敗敵人，獲得戰利品及經驗值為角色升級為動力，引發遊玩興趣。
 tech:
   - Vue
   - TypeScript

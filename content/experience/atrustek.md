@@ -1,5 +1,5 @@
 ---
-company: 艾信科
+company: 金融科技產業
 jobTitle: 程式開發
 timeRange: Oct 2019 ~ Dec 2022
 order: 2

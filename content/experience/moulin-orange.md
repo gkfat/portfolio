@@ -1,5 +1,5 @@
 ---
-company: 橘子磨坊
+company: 數位行銷產業
 jobTitle: 專案管理
 timeRange: Dec 2015 ~ Dec 2017
 order: 4
