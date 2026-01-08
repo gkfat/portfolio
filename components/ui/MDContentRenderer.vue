@@ -1,30 +1,17 @@
 <template>
     <ContentRenderer class="content-md" :value="content"/>
 
-    <!-- Gallery -->
-    <v-container
-        v-if="images?.length"
-        fluid
-        class="mt-10 pa-0"
-    >
-        <v-row>
-            <v-col
-                v-for="(img, index) in images"
-                :key="index"
-                cols="12"
-            >
-                <v-img
-                    :src="img"
-                    contain
-                    class="rounded"
-                    loading="lazy"
-                />
-            </v-col>
-        </v-row>
-    </v-container>
+    <!-- Carousel Gallery -->
+    <section v-if="images?.length" class="my-10">
+        <v-divider class="mb-5" />
+        <p class="text-h4 mb-5">Gallery</p>
+        <CarouselGallery :images="images"/>
+    </section>
 </template>
 
 <script lang="ts" setup>
+import CarouselGallery from './CarouselGallery.vue';
+
 const props = defineProps<{
     content: {
         images?: string[];
