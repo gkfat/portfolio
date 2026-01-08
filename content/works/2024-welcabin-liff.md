@@ -17,12 +17,19 @@ images:
   - /images/works/2024-welcabin-liff/1.png
   - /images/works/2024-welcabin-liff/2.png
   - /images/works/2024-welcabin-liff/3.png
+  - /images/works/2024-welcabin-liff/4.png
+  - /images/works/2024-welcabin-liff/5.png
+  - /images/works/2024-welcabin-liff/6.png
 ---
 
 ## 專案項目
 
-- 個案＆司機管理
-- 長照派車調度單管理與指派
+本專案是長期合作，為了讓長照領域的車行接送派車更順暢，而開發了一套結合 Line Liff 與 Admin Web 的系統。
+
+### 系統功能
+
+- 整合 Line Liff 實現簡易叫車下單介面
+- UI / UX 設計完全由我產出
 
 <br>
 
