@@ -6,9 +6,7 @@ tech:
   - Vue
   - TypeScript
   - Vuetify
-  - Vuex
-  - Vitest
-year: 2024~2025
+year: 2026
 github: https://github.com/gkfat/welcab-saas-frontend
 url: https://admin-web-welcabin.rickson.com.tw
 type: work

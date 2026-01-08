@@ -28,7 +28,7 @@ Contributed:
 ### Brand backstage project
 
 Developed with:
-- Azure pipeline / Vue3 / Vuetify / Node.js / Fastify / ELK / Ice / Firebase
+- Azure pipeline / Vue / Vuetify / Node.js / Fastify / ELK / Ice / Firebase
 
 Contributed:
 - Start from infrastructure, delivering 20 + versions / Accounts and roles based on RBAC management / Game item templates management / 4 kinds of activities management / Users management / Cronjob / Accounting and financial reports

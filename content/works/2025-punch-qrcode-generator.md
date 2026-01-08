@@ -6,7 +6,6 @@ tech:
   - Vue
   - TypeScript
   - Vuetify
-  - Vitest
 year: 2025
 github: https://github.com/gkfat/punch-qrcode-generator
 url: https://punch-qrcode-generator.pages.dev

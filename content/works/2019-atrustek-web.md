@@ -1,13 +1,11 @@
 ---
-title: Atrustek Fintech SaaS
+title: 金融科技網站 Atrustek Fintech SaaS
 slug: 2019-atrustek-web
 description: 個人金融顧問網站，從 KYC 分析到股票、外匯投資理財管理，一應俱全。
 tech:
   - Angular
-  - NgRx
   - TypeScript
-  - Linux
-year: 2019~2021
+year: 2021
 type: work
 url: https://www.atrustek.com/cis/home
 images:

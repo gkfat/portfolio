@@ -1,17 +1,14 @@
 ---
-title: Logicard Duel 卡牌遊戲
+title: 卡牌遊戲 Logicard Duel
 slug: 2023-logicard-duel
 description: 從單純的撲克比大小邏輯延伸發展出的卡牌對戰遊戲，代入 RPG 元素，讓玩家以擊敗敵人，獲得戰利品及經驗值為角色升級為動力，引發遊玩興趣。
 tech:
   - Vue
   - TypeScript
   - Vuetify
-  - Vuex
-  - Vitest
   - Cloudflare Worker
-  - Hono
-  - Cloudstorage
-year: 2023~2025
+  - Cloud Storage
+year: 2025
 type: side_project
 github: https://github.com/gkfat/logicard-duel
 url: https://logicard-duel.pages.dev

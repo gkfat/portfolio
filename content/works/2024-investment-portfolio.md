@@ -1,9 +1,9 @@
 ---
 title: 個人投資組合績效管理 App
-slug: 2024-investment-porfolio
+slug: 2024-investment-portfolio
 description: 紀錄個人交易紀錄，掌握投資組合績效狀況，掌握市場即時報價。
 tech:
-  - Vue3
+  - Vue
   - TypeScript
   - Vuetify
   - Redis
@@ -14,8 +14,7 @@ tech:
   - Swagger
   - Render
 year: 2024
-github: https://github.com/gkfat/thlk
-url: https://www.thlk.com.tw
+github: https://github.com/gkfat/gk-app
 type: side_project
 images:
   - /images/works/2024-investment-portfolio/1.png

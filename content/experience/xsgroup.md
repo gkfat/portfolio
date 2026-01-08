@@ -25,7 +25,7 @@ order: 1
 
 品牌遊戲的管理後台。
 
-使用技術：Azure pipeline / Vue3 / Vuetify / Node.js / Fastify / ELK / Ice / Firebase
+使用技術：Azure pipeline / Vue / Vuetify / Node.js / Fastify / ELK / Ice / Firebase
 
 貢獻：
 - 從零開始持續交付 20+ 個版本

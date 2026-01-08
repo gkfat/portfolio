@@ -6,10 +6,8 @@ tech:
   - Vue
   - TypeScript
   - Vuetify
-  - Vuex
-  - Vitest
-  - Liff
-year: 2024~2025
+  - Line Liff
+year: 2026
 github: https://github.com/gkfat/welcab-saas-frontend
 url: https://welcabin-line.rickson.com.tw
 type: work

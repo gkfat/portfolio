@@ -26,7 +26,6 @@ const work = computed<Work>(() => ({
     year: data.year || '',
     description: data.description,
     tech: data.tech || [],
-    duration: data.duration,
     url: data.url,
     github: data.github,
     images: data.images || [],

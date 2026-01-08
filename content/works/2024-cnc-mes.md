@@ -6,8 +6,6 @@ tech:
   - Vue
   - TypeScript
   - Vuetify
-  - Vuex
-  - Vitest
 year: 2024
 type: work
 ---

@@ -1,5 +1,5 @@
 ---
-title: Asink EIP
+title: 內部入口網站 Asink EIP
 slug: 2021-asink-eip
 description: 公司內部入口網站，串連工廠 ERP 系統，快速掌握工單進度狀況及產線人力分配。
 tech:
@@ -7,8 +7,7 @@ tech:
   - TypeScript
   - Python
   - MariaDB
-  - Linux
-year: 2021~2022
+year: 2022
 type: work
 ---
 

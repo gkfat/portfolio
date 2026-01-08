@@ -1,5 +1,5 @@
 ---
-title: Squash Reservation 壁球場地預約
+title: 壁球場地預約網站速查
 slug: 2025-squash-reservation
 description: 快速連結至壁球場地預約頁面。
 tech:

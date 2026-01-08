@@ -8,7 +8,6 @@ export type Work = {
   year: string;
   description: string;
   tech: TechStack[];
-  duration: string;
   url?: string;
   github?: string;
   type?: WorkType;

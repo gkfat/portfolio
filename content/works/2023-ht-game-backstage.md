@@ -3,7 +3,7 @@ title: 遊戲專案後台全端開發
 slug: 2023-ht-game-backstage
 description: 遊戲商後台，包含會員/道具/活動控制，另有排程服務，即時管理活動進行狀態。
 tech:
-  - Vue3
+  - Vue
   - TypeScript
   - Vuetify
   - Node.js
@@ -13,7 +13,7 @@ tech:
   - Firebase
   - ELK
 type: work
-year: 2023~2024
+year: 2024
 images:
   - /images/works/2023-ht-game-backstage/1.png
   - /images/works/2023-ht-game-backstage/2.png
