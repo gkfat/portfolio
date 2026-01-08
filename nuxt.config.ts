@@ -65,10 +65,6 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: 'stylesheet', 
-                    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap',
-                },
-                {
-                    rel: 'stylesheet', 
                     href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap',
                 },
             ],
@@ -90,9 +86,6 @@ export default defineNuxtConfig({
 
     // 效能優化
     experimental: { payloadExtraction: false },
-
-    // 開發工具
-    devtools: { enabled: true },
 
     // 建構優化
     build: { transpile: ['vuetify'] },

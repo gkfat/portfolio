@@ -3,7 +3,7 @@ export const siteConfig = {
     // 網站資訊
     siteName: 'Gk Wang',
     domain: 'https://portfolio-cbf.pages.dev',
-    defaultImage: '/og-image.jpg',
+    defaultImage: '/og-image.png',
   
     // SEO 基礎資訊
     seo: {
