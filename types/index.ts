@@ -12,6 +12,7 @@ export type Work = {
   url?: string;
   github?: string;
   type?: WorkType;
+  related_works?: string[]; // Related work slugs
 }
 
 export type ListItem = {

@@ -2,9 +2,9 @@
     <ContentRenderer class="content-md" :value="content"/>
 
     <!-- Carousel Gallery -->
-    <section v-if="images?.length" class="my-10">
-        <v-divider class="mb-5" />
-        <p class="text-h4 mb-5">Gallery</p>
+    <section v-if="images?.length" class="mt-16">
+        <v-divider class="mb-8" />
+        <h2 class="text-h5 font-weight-bold text-primary mb-5">圖片列表</h2>
         <CarouselGallery :images="images"/>
     </section>
 </template>

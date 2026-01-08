@@ -12,6 +12,8 @@ year: 2024~2025
 github: https://github.com/gkfat/welcab-saas-frontend
 url: https://admin-web-welcabin.rickson.com.tw
 type: work
+related_works:
+  - 2024-welcabin-liff
 images:
   - /images/works/2024-welcabin-admin/1.png
   - /images/works/2024-welcabin-admin/2.png

@@ -1,5 +1,5 @@
 <template>
-    <div v-if="images?.length" class="mt-10">
+    <div v-if="images?.length">
         <!-- Single image mode -->
         <v-img
             v-if="images.length === 1"
