@@ -13,6 +13,7 @@
             :max-width="40"
             :width="40"
             contain
+            alt="Gk Wang Portfolio Logo"
         />
     </v-btn>
 </template>

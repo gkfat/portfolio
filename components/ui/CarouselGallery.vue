@@ -8,6 +8,7 @@
             class="rounded"
             loading="lazy"
             max-height="600"
+            :alt="`${workTitle || '專案'} 截圖`"
         />
         
         <!-- Carousel mode -->
@@ -31,6 +32,7 @@
                     height="100%"
                     loading="lazy"
                     class="d-flex align-center justify-center"
+                    :alt="`${workTitle || '專案'} 截圖 ${index + 1}`"
                 />
             </v-carousel-item>
         </v-carousel>
@@ -40,6 +42,7 @@
 <script lang="ts" setup>
 const props = defineProps<{
     images: string[]
+    workTitle?: string  // 用於生成 alt 文字
 }>();
 
 // Carousel state

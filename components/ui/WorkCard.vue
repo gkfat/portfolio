@@ -16,6 +16,7 @@
                             color="primary"
                             icon="mdi-folder-outline"
                             size="36"
+                            :aria-label="`${work.title} 專案圖示`"
                         />
                     </v-col>
 

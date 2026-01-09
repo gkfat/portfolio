@@ -46,7 +46,7 @@
                 :size="mdAndUp ? '90%' : 300"
             >
                 <v-img
-                    alt="avatar"
+                    alt="Gk Wang 個人照片"
                     aspect-ratio="1/1"
                     contain
                     :src="AvatarImg"
