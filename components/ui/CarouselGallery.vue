@@ -1,15 +1,12 @@
 <template>
     <div v-if="images?.length">
         <!-- Single image mode -->
-        <v-img
-            v-if="images.length === 1"
-            :src="images[0]"
-            contain
-            class="rounded"
-            loading="lazy"
-            max-height="600"
-            :alt="`${workTitle || '專案'} 截圖`"
-        />
+        <div v-if="images.length === 1" class="d-flex justify-center">
+            <LazyImage 
+                :src="images[0]"
+                :alt="`${workTitle || '專案'} 截圖`"
+            />
+        </div>
         
         <!-- Carousel mode -->
         <v-carousel
@@ -26,20 +23,20 @@
                 :key="index"
                 :value="index"
             >
-                <v-img
-                    :src="img"
-                    contain
-                    height="100%"
-                    loading="lazy"
-                    class="d-flex align-center justify-center"
-                    :alt="`${workTitle || '專案'} 截圖 ${index + 1}`"
-                />
+                <div class="w-100 fill-height d-flex justify-center">
+                    <LazyImage 
+                        :src="img"
+                        :alt="`${workTitle || '專案'} 截圖 ${index + 1}`"
+                    />
+                </div>
             </v-carousel-item>
         </v-carousel>
     </div>
 </template>
 
 <script lang="ts" setup>
+import LazyImage from './LazyImage.vue';
+
 const props = defineProps<{
     images: string[]
     workTitle?: string  // 用於生成 alt 文字
