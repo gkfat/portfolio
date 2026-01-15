@@ -129,4 +129,6 @@ export default defineNuxtConfig({
             cssCodeSplit: true,
         },
     },
+
+    sitemap: { zeroRuntime: true },
 });
