@@ -9,7 +9,7 @@ github: https://github.com/gkfat/gk-blog
 url: https://gk-blog.pages.dev/
 type: side_project
 images:
-  - /images/works/2024-ㄕㄟ/1.png
+  - /images/works/2024-tech-blog/1.png
 ---
 
 ## 專案項目
