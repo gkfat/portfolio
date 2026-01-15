@@ -1,3 +1,6 @@
+import fs from 'fs';
+import path from 'path';
+
 export default defineNuxtConfig({
     // 禁用自動添加尾隨斜線
     site: { trailingSlash: false },
@@ -7,6 +10,9 @@ export default defineNuxtConfig({
         prerender: { 
             routes: ['/sitemap.xml'],
             crawlLinks: true,
+            ...fs.readdirSync(path.resolve('./content/works'))
+                .filter(f => f.endsWith('.md'))
+                .map(f => '/works/' + f.replace(/\.md$/, '')),
         },
         // 效能優化
         minify: true,
