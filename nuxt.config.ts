@@ -12,14 +12,7 @@ export default defineNuxtConfig({
         minify: true,
         compressPublicAssets: true,
         // 代碼分割優化
-        rollupConfig: {
-            output: {
-                manualChunks: {
-                    'vue-vendor': ['vue', '@vue/runtime-core'],
-                    'vuetify-vendor': ['vuetify'],
-                },
-            },
-        },
+        rollupConfig: { output: { manualChunks: { 'vuetify-vendor': ['vuetify'] } } },
     },
 
     typescript: {
@@ -131,16 +124,6 @@ export default defineNuxtConfig({
         define: { __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false },
         ssr: { noExternal: ['vuetify'] },
         build: {
-            // 代碼分割優化
-            rollupOptions: {
-                output: {
-                    manualChunks: {
-                        'vendor': ['vue', 'vue-router'],
-                        'vuetify': ['vuetify'],
-                        'utils': ['lodash', 'axios'],
-                    },
-                },
-            },
             // 最小化配置
             minify: 'esbuild',
             cssCodeSplit: true,
