@@ -33,7 +33,6 @@ const featuredWorkSlugs = [
     '2024-welcabin-liff', 
     '2021-tsmc',
     '2023-logicard-duel',
-    '2025-funbike',
     '2025-punch-qrcode-generator',
 ];
 

@@ -19,4 +19,4 @@ pnpm-debug.log*
 # OS
 .DS_Store
 
-ai.md
+.ai/*
