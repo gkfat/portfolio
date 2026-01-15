@@ -41,8 +41,5 @@
     "typescript": "^5.9.3",
     "vite-plugin-vuetify": "^2.0.1",
     "vue-eslint-parser": "^10.2.0"
-  },
-  "overrides": {
-    "vite": "^6.5.0"
   }
 }
