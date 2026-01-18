@@ -16,6 +16,7 @@ export type Work = {
 
 export type ListItem = {
   title: string;
+  subtitle?: string;
   content?: string;
   link?: string;
 }

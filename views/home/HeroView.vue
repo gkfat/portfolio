@@ -13,16 +13,25 @@
                         集設計、專案管理與程式專業於一身的網頁開發者
                     </h2>
                 </v-list-item>
+                <v-list-item class="pl-5 text-primary">
+                    我提供哪些服務？
+                </v-list-item>
                 <v-list-item
                     v-for="(item, i) in list"
                     :key="i"
-                    class="text-primary"
+                    class="text-primary mb-2"
                 >
-                    <v-icon
-                        icon="mdi-triangle-small-up"
-                        :style="{transform: 'rotate(90deg)'}"
-                    />
-                    {{ item.title }}
+                    <v-list-item-title class="font-weight-bold" :style="{ letterSpacing: '1px' }">
+                        <v-icon
+                            icon="mdi-triangle-small-up"
+                            class="text-secondary"
+                            :style="{transform: 'rotate(90deg)'}"
+                        />
+                        {{ item.title }}
+                    </v-list-item-title>
+                    <v-list-item-subtitle class="pl-7">
+                        {{ item.subtitle }}
+                    </v-list-item-subtitle>
                 </v-list-item>
             </v-list>
         </v-col>
@@ -32,8 +41,20 @@
 import type { ListItem } from '~/types';
 
 const list: ListItem[] = [
-    { title: '設計背景，提供具基礎美感的 UI/UX' },
-    { title: '豐富專案管理經驗，熟悉跨部門溝通協作，推動專案' },
-    { title: '專業程式開發者，致力於為您提供最適合、高度可維護性的解決方案' },
+    {
+        title: '全端開發', subtitle: '後台、前端、部署，一次搞定', 
+    },
+    {
+        title: 'Line Liff 應用', subtitle: '現代化輕巧 App，開箱即用', 
+    },
+    {
+        title: '複雜業務邏輯', subtitle: 'ERP 整合、數據報表、RBAC 權限管理', 
+    },
+    {
+        title: '設計驅動開發', subtitle: '美感 UI 搭配高度可維護程式碼', 
+    },
+    {
+        title: '長期技術夥伴', subtitle: '掌握時程、詳盡交接、持續維護', 
+    },
 ];
 </script>

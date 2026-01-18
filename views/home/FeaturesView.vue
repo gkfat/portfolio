@@ -34,6 +34,7 @@ const featuredWorkSlugs = [
     '2021-tsmc',
     '2023-logicard-duel',
     '2025-punch-qrcode-generator',
+    '2025-bicycle-rental-system',
 ];
 
 const { data: allWorks } = await useAsyncData('featured-works', () => 
