@@ -7,7 +7,6 @@ tech:
   - TypeScript
   - Vuetify
 year: 2026
-github: https://github.com/gkfat/welcab-saas-frontend
 url: https://admin-web-welcabin.rickson.com.tw
 type: work
 related_works:

@@ -8,7 +8,6 @@ tech:
   - Vuetify
   - Line Liff
 year: 2026
-github: https://github.com/gkfat/welcab-saas-frontend
 url: https://welcabin-line.rickson.com.tw
 type: work
 related_works:

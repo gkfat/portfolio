@@ -3,7 +3,7 @@
         :src="src"
         loading="lazy"
         :alt="alt"
-        placeholder="blur"
+        placeholder
         style="object-fit: contain; max-height: 600px;"
         class="w-100 fill-height"
         sizes="(max-width: 640px) 100vw, 600px"
