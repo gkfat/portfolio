@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { baseSeo } from '~/seo/base';
+import { siteConfig } from '~/config/config';
 import { seoI18n } from '~/seo/i18n';
 import { pageSeoMap } from '~/seo/pages';
 
@@ -78,13 +78,13 @@ export function useSeo(options: SeoOptions = {}) {
     const seoData = getSeoData();
     
     // 最終的 SEO 內容
-    const title = options.title ?? seoData?.title ?? baseSeo.siteName;
+    const title = options.title ?? seoData?.title ?? siteConfig.siteName;
     const description = options.description ?? seoData?.description ?? '';
     const keywords = options.keywords ?? seoData?.keywords ?? '';
-    const image = options.image ?? seoData?.image ?? baseSeo.defaultImage;
+    const image = options.image ?? seoData?.image ?? siteConfig.defaultImage;
     
     // 確保圖片 URL 是完整的
-    const fullImageUrl = image?.startsWith('http') ? image : `${baseSeo.domain}${image}`;
+    const fullImageUrl = image?.startsWith('http') ? image : `${siteConfig.domain}${image}`;
 
     useHead({
         title,
@@ -108,13 +108,13 @@ export function useSeo(options: SeoOptions = {}) {
                 property: 'og:image', content: fullImageUrl, 
             },
             {
-                property: 'og:url', content: `${baseSeo.domain}${route.path}`, 
+                property: 'og:url', content: `${siteConfig.domain}${route.path}`, 
             },
             {
                 property: 'og:type', content: 'website', 
             },
             {
-                property: 'og:site_name', content: baseSeo.siteName, 
+                property: 'og:site_name', content: siteConfig.siteName, 
             },
             
             // Twitter Card
@@ -133,7 +133,7 @@ export function useSeo(options: SeoOptions = {}) {
             
             // 額外 meta
             {
-                name: 'author', content: baseSeo.siteName, 
+                name: 'author', content: siteConfig.siteName, 
             },
             {
                 name: 'robots', content: 'index, follow', 
@@ -141,7 +141,7 @@ export function useSeo(options: SeoOptions = {}) {
         ],
         link: [
             {
-                rel: 'canonical', href: `${baseSeo.domain}${route.path}`, 
+                rel: 'canonical', href: `${siteConfig.domain}${route.path}`, 
             },
         ],
     });

@@ -1,18 +1,8 @@
 // 網站基本資訊
 export const siteConfig = {
-    // 網站資訊
     siteName: 'Gk Wang',
     domain: 'https://portfolio-cbf.pages.dev',
     defaultImage: '/og-image.png',
-  
-    // SEO 基礎資訊
-    seo: {
-        author: 'GK',
-        keywords: {
-            'zh-TW': 'Vue.js, React, TypeScript, 前端開發, 網站設計, RWD, SEO, 台灣',
-            'en': 'Vue.js, React, TypeScript, Frontend Development, Web Design, RWD, SEO, Taiwan',
-        },
-    },
 } as const;
 
 // 聯絡資訊

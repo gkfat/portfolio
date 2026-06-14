@@ -21,7 +21,7 @@ useHead({
         },
         {
             name: 'author',
-            content: siteConfig.seo.author,
+            content: siteConfig.siteName,
         },
         {
             property: 'og:type',

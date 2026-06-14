@@ -1,4 +1,6 @@
 export default defineNuxtConfig({
+    compatibilityDate: '2026-06-14',
+
     // 禁用自動添加尾隨斜線
     site: { trailingSlash: false },
 
@@ -78,9 +80,6 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: 'manifest', href: '/manifest.json', 
-                },
-                {
-                    rel: 'canonical', href: process.env.SITE_DOMAIN || 'https://portfolio-cbf.pages.dev', 
                 },
                 {
                     rel: 'preconnect', href: 'https://fonts.googleapis.com',
