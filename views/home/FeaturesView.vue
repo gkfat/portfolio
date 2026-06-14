@@ -38,15 +38,12 @@ const featuredWorkSlugs = [
     '2025-ticket-vending-machine-interface',
 ];
 
-const { data: allWorks } = await useAsyncData('featured-works', () => 
-    queryContent<Work>('/works').find(),
-);
-
-const featuredWorks = computed(() => {
-    if (!allWorks.value) return [];
-    
+const { data: featuredWorks } = await useAsyncData('featured-works', async () => {
+    const results = await queryContent<Work>('/works')
+        .where({ slug: { $in: featuredWorkSlugs } })
+        .find();
     return featuredWorkSlugs
-        .map(slug => allWorks.value!.find(work => work.slug === slug))
+        .map(slug => results.find(w => w.slug === slug))
         .filter(Boolean) as Work[];
 });
 

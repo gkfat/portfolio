@@ -35,13 +35,5 @@ const getTransform = () => {
         return 'translateX(-100vw)';
     }
 };
-
-watch(() => props.startAnimation, (newValue) => {
-    if (!newValue) {
-        setTimeout(() => {
-            //
-        }, 1200);
-    }
-});
 </script>
 

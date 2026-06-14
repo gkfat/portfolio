@@ -1,8 +1,7 @@
 import type { NavigationItem } from '~/types/index';
 
-const drawer = ref(false);
-
 export function useNavigator() {
+    const drawer = useState('nav-drawer', () => false);
     const route = useRoute();
     const router = useRouter();
 
@@ -52,7 +51,7 @@ export function useNavigator() {
         // 立即關閉 mobile drawer
         drawer.value = false;
         
-        if (route.fullPath !== '/home') {
+        if (!route.path.startsWith('/home')) {
             // 跳轉到 home 頁面
             await router.push('/home');
             // 等待 DOM 更新

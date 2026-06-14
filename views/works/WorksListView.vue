@@ -127,7 +127,7 @@ import type {
 
 const { smAndUp } = useDisplay();
 
-const selectedType = ref<WorkType>();
+const selectedType = ref<WorkType>('work');
 
 const { data: works } = await useAsyncData('works', () => 
     queryContent<Work>('/works')
@@ -136,10 +136,7 @@ const { data: works } = await useAsyncData('works', () =>
 );
 
 const sortedTechList = (techs: string[]) => {
-    return techs.sort((a,b) => a.localeCompare(b));
+    return [...techs].sort((a, b) => a.localeCompare(b));
 };
 
-onMounted(() => {
-    selectedType.value = 'work';
-});
 </script>

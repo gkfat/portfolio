@@ -35,22 +35,25 @@
             style="min-width: 0;"
         >
             <v-tabs-window v-model="currentTab">
-                <v-tabs-window-item :value="currentTab">
+                <v-tabs-window-item
+                    v-for="(exp, i) in experiences"
+                    :key="i"
+                    :value="i"
+                >
                     <v-card
-                        v-if="currentExperience"
                         flat
                         class="bg-transparent"
                     >
                         <v-card-title class="d-flex ga-1 align-center">
-                            <span class="text-primary">{{ currentExperience.jobTitle}}</span>
+                            <span class="text-primary">{{ exp.jobTitle }}</span>
                             <span class="text-secondary font-weight-bold">@</span>
-                            <span class="text-secondary font-weight-bold">{{ currentExperience.company }}</span>
+                            <span class="text-secondary font-weight-bold">{{ exp.company }}</span>
                         </v-card-title>
                         <v-card-subtitle>
-                            {{ currentExperience.timeRange }}
+                            {{ exp.timeRange }}
                         </v-card-subtitle>
                         <v-card-text>
-                            <MDContentRenderer :content="currentExperience" />
+                            <MDContentRenderer :content="exp" />
                         </v-card-text>
                     </v-card>
                 </v-tabs-window-item>
@@ -73,11 +76,4 @@ const { data: experiences } = await useAsyncData('experiences', () =>
 );
 
 const currentTab = ref(0);
-const currentExperience = computed(() => {
-    if (!experiences.value) {
-        return null;
-    }
-    
-    return experiences.value[currentTab.value];
-});
 </script>
