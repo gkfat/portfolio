@@ -29,6 +29,7 @@ import type { Work } from '~/types';
 import WorkCard from '~/components/ui/WorkCard.vue';
 
 const featuredWorkSlugs = [
+    '2026-gkbot-adventure-run',
     '2026-saas-starter-kit',
     '2024-welcabin-admin',
     '2024-welcabin-liff', 
