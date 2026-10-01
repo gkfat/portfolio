@@ -10,6 +10,7 @@ tech:
   - Firebase
   - Zod
 year: 2026
+url: https://gkbot-adventure-run.vercel.app
 github: https://github.com/gkfat/gkbot-adventure-run
 type: side_project
 images:
