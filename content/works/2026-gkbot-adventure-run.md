@@ -21,6 +21,10 @@ images:
   - /images/works/2026-gkbot-adventure-run/5.jpg
   - /images/works/2026-gkbot-adventure-run/6.jpg
   - /images/works/2026-gkbot-adventure-run/7.jpg
+  - /images/works/2026-gkbot-adventure-run/8.jpg
+  - /images/works/2026-gkbot-adventure-run/9.jpg
+  - /images/works/2026-gkbot-adventure-run/10.jpg
+  - /images/works/2026-gkbot-adventure-run/11.jpg
 ---
 
 ## 專案項目
@@ -31,18 +35,20 @@ images:
 
 - 冒險核心
   - 節點式關卡（戰鬥／事件／休息／選擇／祝福等）組成的 run 狀態機，依戰力動態生成章節與關卡難度
+  - 冒險頁節點路徑，即時顯示目前位置與已探索的節點類型；祝福於進入節點後才揭露，並保底休息與 Boss 節點優先
   - 基於種子的 Deterministic RNG，確保同一場戰鬥結果可重現、可驗證
   - 戰鬥、休息、事件節點觸發角色與敵人的喃喃自語文案，強化沉浸感
 - 角色養成
   - 力量／敏捷／體質／幸運四維屬性點分配，衍生生命值、攻擊、防禦、攻速、爆擊、閃避等戰鬥數值
   - 裝備系統：稀有度分級、負重系統（力量與體質決定可承受重量）、武器熟練度
-  - 天賦樹（分 Tier 逐層解鎖）與角色技能系統
+  - 天賦樹（分 Tier 逐層解鎖）與角色技能系統，技能可透過碎片解鎖、以技能經驗值晶片進行通用星級升級
 - 商店與收集
-  - 每日補給、老虎機抽道具、SR/R/N 稀有度補給櫃
+  - 每日補給、老虎機抽道具、L/SR/R/N 稀有度補給櫃
   - 每日／常駐任務與成就系統、怪物圖鑑
+  - 賽季制排行榜（分數累計、賽季結算獎勵）與信箱系統（領取金幣／鑽石／道具）
 - 體驗細節
   - 角色走路/受擊像素動畫、戰鬥特效
-  - 音效與 BGM
+  - 音效與 BGM，可分別調整音量
   - 帳密／Google／LINE／手機 OTP 多種登入方式
 
 ### 技術重點
