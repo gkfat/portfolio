@@ -30,12 +30,12 @@ import WorkCard from '~/components/ui/WorkCard.vue';
 
 const featuredWorkSlugs = [
     '2026-gkbot-adventure-run',
+    '2026-facet-yourself',
     '2026-saas-starter-kit',
     '2024-welcabin-admin',
     '2024-welcabin-liff', 
     '2021-tsmc',
     '2023-logicard-duel',
-    '2025-punch-qrcode-generator',
     '2025-bicycle-rental-system',
     '2025-ticket-vending-machine-interface',
 ];
