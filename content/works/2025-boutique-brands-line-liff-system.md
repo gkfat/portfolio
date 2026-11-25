@@ -13,37 +13,27 @@ year: 2025
 type: work
 ---
 
-## 專案項目
+## Overview
 
-### 桌布櫃模組
+為多家精品品牌開發行銷所需的系統功能。
 
-- Server
-  - 開發相關 API
-- 後台
-  - 開發桌布系列維護功能
-- Line Liff
-  - 開發收藏桌布系列功能
+## Business Challenge
 
-### 預約模組
+品牌需要透過 Line Liff 與後台，提供桌布收藏、預約與主視覺等行銷互動。
 
-- Server
-  - 開發相關 API
-- Line Liff
-  - 業務端綁定功能、客戶備註功能
-  - 客戶端註冊、預約功能
+## Solution
 
-### 主視覺模組
+拆成桌布櫃、預約與主視覺三個模組，各自由 Server API、後台維護與 Line Liff 前端組成。
 
-- Server
-  - 開發相關 API
-- 後台
-  - 開發主視覺維護功能
-- Line Liff
-  - 串接顯示當期主視覺
+## Key Features
 
+- 桌布櫃模組
+  - 後台維護桌布系列、Line Liff 收藏桌布系列
+- 預約模組
+  - 業務端綁定與客戶備註、客戶端註冊與預約
+- 主視覺模組
+  - 後台維護主視覺、Line Liff 顯示當期主視覺
 
-<br>
-
-## 負責角色
+## My Role
 
 - 程式開發

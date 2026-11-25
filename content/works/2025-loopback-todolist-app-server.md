@@ -14,12 +14,18 @@ images:
   - /images/works/2025-loopback4-todolist-app-server/1.png
 ---
 
-## 專案項目
+## Overview
 
-- 基於 Loopback4 框架製作的 TodoList API server
+基於 Loopback4 框架製作的待辦事項 API Server。
 
-<br>
+## Solution
 
-## 負責角色
+以 Loopback4 實作 TodoList 的 API Server。
+
+## Key Features
+
+- 待辦事項 API
+
+## My Role
 
 - 程式開發

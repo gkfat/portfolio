@@ -27,7 +27,19 @@ images:
   - /images/works/2024-investment-portfolio/8.png
 ---
 
-## 專案項目
+## Overview
+
+個人投資組合績效管理 App，紀錄交易、掌握績效與市場即時報價。
+
+## Business Challenge
+
+個人投資人需要集中紀錄交易，才能掌握投資組合的績效狀況與市場即時報價。
+
+## Solution
+
+建置含會員與角色權限的全端應用：以交易紀錄計算投資組合績效，並串接金融即時報價。
+
+## Key Features
 
 - 會員系統
 - RBAC 角色權限管理
@@ -35,12 +47,9 @@ images:
 - 交易記錄管理
 - 金融即時報價
 - Auditing／操作紀錄
-- IAM／角色管理
-- IAM／權限管理
+- IAM／角色與權限管理
 
-<br>
-
-## 負責角色
+## My Role
 
 - PO
 - 程式開發

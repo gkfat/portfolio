@@ -13,12 +13,22 @@ images:
   - /images/works/2021-cpf-edm/2.png
 ---
 
-## 專案項目
+## Overview
+
+為基金會製作的電子報（EDM）模板排版。
+
+## Business Challenge
+
+電子報需要一份排版穩定、可重複使用的模板。
+
+## Solution
+
+完成 EDM 模板的切版與排版，提供可預覽的 Demo。
+
+## Key Features
 
 - EDM 模板排版
 
-<br>
-
-## 負責角色
+## My Role
 
 - 程式開發

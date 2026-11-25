@@ -14,13 +14,20 @@ images:
   - /images/works/2025-punch-qrcode-generator/1.png
 ---
 
-## 專案項目
+## Overview
+
+定時產生 OTP Code，並以此產生打卡 QR Code 的小工具。
+
+## Solution
+
+依 secret 定時產生 OTP Code，再依 OTP Code 產生 QR Code，並組裝連結導向 Line Liff，完成打卡。
+
+## Key Features
 
 - 依 secret 產生 OTP Code
-- 依 OTP Code 產生 QR Code，並組裝連結導向至 Line Liff，完成打卡
+- 依 OTP Code 產生 QR Code
+- 組裝連結導向 Line Liff，完成打卡
 
-<br>
-
-## 負責角色
+## My Role
 
 - 程式開發

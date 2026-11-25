@@ -13,13 +13,23 @@ images:
   - /images/works/2025-squash-reservation/1.png
 ---
 
-## 專案項目
+## Overview
 
-- 整合散落各處的壁球預約連結的網站
+快速連結至壁球場地預約頁面的速查網站。
 
-<br>
+## Business Challenge
 
-## 負責角色
+壁球場地的預約連結散落各處，不容易快速找到。
+
+## Solution
+
+將散落各處的預約連結整合到同一個網站。
+
+## Key Features
+
+- 整合各場地預約連結
+
+## My Role
 
 - PO
 - 程式開發

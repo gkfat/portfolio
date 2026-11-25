@@ -24,16 +24,26 @@ images:
   - /images/works/2023-logicard-duel/9.png
 ---
 
-## 專案項目
+## Overview
+
+從單純的撲克比大小邏輯延伸發展出的卡牌冒險遊戲。
+
+## Business Challenge
+
+單純的比大小玩法缺少持續遊玩的動力。
+
+## Solution
+
+代入 RPG 元素：玩家擊敗敵人、獲得戰利品與經驗值，為角色升級，引發遊玩興趣。
+
+## Key Features
 
 - 遊戲流程邏輯設計與開發
 - 前端視覺設計與開發
 - NPC 邏輯設計與開發
 - 部署與維護
 
-<br>
-
-## 負責角色
+## My Role
 
 - PO
 - 程式開發

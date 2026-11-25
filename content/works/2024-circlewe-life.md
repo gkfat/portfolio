@@ -12,12 +12,22 @@ images:
   - /images/works/2024-circlewe-life/1.png
 ---
 
-## 專案項目
+## Overview
 
-- 活動報名功能開發
+圍繞在心理相關活動與課程的網站。
 
-<br>
+## Business Challenge
 
-## 負責角色
+活動與課程需要提供線上報名的管道。
+
+## Solution
+
+開發活動報名功能，讓參加者可直接在網站上報名。
+
+## Key Features
+
+- 活動報名功能
+
+## My Role
 
 - 程式開發
