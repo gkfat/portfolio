@@ -5,11 +5,17 @@
             <HeroView />
         </SectionBlock>
 
+        <!-- Collaboration -->
+        <SectionBlock :id="'collab'">
+            <CollabView />
+        </SectionBlock>
+
         <!-- Solutions -->
         <SectionBlock
             :id="'solutions'"
             :prefix="'01.'"
             :title="'What I Solve'"
+            stacked
         >
             <SolutionsView />
         </SectionBlock>
@@ -58,6 +64,7 @@ import FeaturesView from '~/views/home/FeaturesView.vue';
 import SolutionsView from '~/views/home/SolutionsView.vue';
 import CapabilitiesView from '~/views/home/CapabilitiesView.vue';
 import HeroView from '~/views/home/HeroView.vue';
+import CollabView from '~/views/home/CollabView.vue';
 import SectionBlock from '~/views/layout/SectionBlock.vue';
 import AboutView from '~/views/home/AboutView.vue';
 

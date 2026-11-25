@@ -4,7 +4,7 @@
             Have a Business Problem to Solve?
         </h3>
         <p class="text-h6 font-weight-regular text-lightgrey mb-8" :style="{ maxWidth: '640px', lineHeight: 1.7 }">
-            無論是 AI 應用、流程自動化或系統整合，歡迎來信討論，讓我們把想法變成可運作的解決方案。
+            無論是 AI 應用、流程自動化或系統整合，不論需求已經明確，或只有一個想像，歡迎先來聊聊，讓我們把想法變成可運作的解決方案。
         </p>
         <div class="d-flex flex-wrap align-center ga-3 mb-6">
             <v-btn

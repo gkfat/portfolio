@@ -31,9 +31,9 @@ import type { Work } from '~/types';
 import WorkCard from '~/components/ui/WorkCard.vue';
 
 const featuredWorkSlugs = [
-    '2024-welcabin-admin',
-    '2024-cnc-mes',
-    '2026-saas-starter-kit',
+    '2026-facet-yourself',
+    '2024-investment-portfolio',
+    '2023-ht-game-backstage',
 ];
 
 const { data: featuredWorks } = await useAsyncData('featured-works', async () => {

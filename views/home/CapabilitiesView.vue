@@ -1,33 +1,32 @@
 <template>
-    <v-row no-gutters>
-        <v-col
-            v-for="(group, i) in groups"
+    <div class="cards">
+        <section
+            v-for="group in groups"
             :key="group.title"
-            cols="12"
-            sm="6"
-            class="pb-8"
-            :class="{ 'pe-sm-8': i % 2 === 0 }"
+            class="card"
         >
-            <h3 class="eyebrow text-secondary mb-3">
+            <h3 class="card-title">
                 {{ group.title }}
             </h3>
-            <p
-                v-for="item in group.items"
-                :key="item"
-                class="text-body-1 py-2 rule-top"
-            >
-                {{ item }}
-            </p>
-            <p
-                v-for="item in group.experiments"
-                :key="item"
-                class="text-body-1 text-lightgrey py-2 rule-top"
-            >
-                {{ item }}
-                <span class="text-caption font-weight-bold ms-2">EXPERIMENT</span>
-            </p>
-        </v-col>
-    </v-row>
+            <div class="items">
+                <p
+                    v-for="item in group.items"
+                    :key="item"
+                    class="item"
+                >
+                    {{ item }}
+                </p>
+                <p
+                    v-for="item in group.experiments"
+                    :key="item"
+                    class="item experiment"
+                >
+                    <span>{{ item }}</span>
+                    <span class="tag">EXPERIMENT</span>
+                </p>
+            </div>
+        </section>
+    </div>
 </template>
 <script lang="ts" setup>
 type Group = {
@@ -71,3 +70,52 @@ const groups: Group[] = [
     },
 ];
 </script>
+
+<style scoped>
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 16px;
+}
+
+.card {
+    padding: 20px 22px 12px;
+    border: 1px solid var(--hairline);
+    background: rgb(var(--v-theme-surface));
+}
+
+.card-title {
+    margin: 0 0 8px;
+    color: rgb(var(--v-theme-secondary));
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin: 0;
+    padding: 11px 0;
+    border-top: 1px solid var(--hairline);
+    color: rgb(var(--v-theme-primary));
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.experiment {
+    color: rgb(var(--v-theme-lightgrey));
+}
+
+.tag {
+    padding: 0 7px;
+    border: 1px solid var(--hairline);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.7;
+}
+</style>

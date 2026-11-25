@@ -1,41 +1,72 @@
 <template>
-    <v-row class="justify-center flex-md-nowrap">
-        <!-- About -->
-        <v-col
-            cols="12"
-            md="7"
-            class="mb-10 mb-md-0 pe-md-8"
+    <div class="about">
+        <!-- 自我介紹 + 照片 -->
+        <v-row
+            no-gutters
+            class="align-start"
         >
-            <template
-                v-for="(block, i) in aboutBlocks"
-                :key="i"
+            <v-col
+                cols="12"
+                md="8"
+                class="pe-md-10"
             >
-                <p
-                    v-if="block.type === 'p'"
-                    class="text-body-1 mb-3"
-                >
-                    {{ block.text }}
+                <p class="lead text-primary mb-5">
+                    {{ intro.lead }}
                 </p>
+                <p class="text-body-1 text-lightgrey mb-0">
+                    {{ intro.background }}
+                </p>
+            </v-col>
 
-                <v-list
-                    v-else-if="block.type === 'list'"
-                    density="compact"
-                    class="text-body-1 mb-3 bg-transparent px-0"
+            <v-col
+                cols="12"
+                md="4"
+                class="mt-8 mt-md-0"
+            >
+                <v-img
+                    alt="Gk Wang 個人照片"
+                    :src="AvatarImg"
+                    aspect-ratio="1"
+                    cover
+                    :max-width="220"
+                    class="ms-md-auto"
+                />
+            </v-col>
+        </v-row>
+
+        <!-- 工作方式 -->
+        <section class="mt-12">
+            <p class="eyebrow text-secondary rule-top pt-4 mb-5">
+                我的工作方式
+            </p>
+            <v-row>
+                <v-col
+                    v-for="(step, i) in approach"
+                    :key="step.title"
+                    cols="12"
+                    sm="6"
                 >
-                    <v-list-item v-if="block.items">
-                        <template
-                            v-for="(item, j) in block.items"
-                            :key="j"
-                        >
-                            {{ item }}<br v-if="j < block.items.length - 1">
-                        </template>
-                    </v-list-item>
-                </v-list>
-            </template>
+                    <p class="eyebrow text-secondary mb-1">
+                        {{ String(i + 1).padStart(2, '0') }}
+                    </p>
+                    <h3 class="text-h6 font-weight-bold mb-1">
+                        {{ step.title }}
+                    </h3>
+                    <p class="text-body-2 text-lightgrey mb-0">
+                        {{ step.desc }}
+                    </p>
+                </v-col>
+            </v-row>
+        </section>
 
-            <div class="d-flex flex-wrap ga-2 mt-4">
+        <!-- 技能 -->
+        <section class="mt-10">
+            <p class="eyebrow text-secondary rule-top pt-4 mb-4">
+                近期較常使用的技能
+            </p>
+            <div class="d-flex flex-wrap ga-2">
                 <v-chip
-                    v-for="skill in skills.flat()"
+                    v-for="skill in skills"
                     :key="skill"
                     variant="outlined"
                     rounded="0"
@@ -43,73 +74,63 @@
                     {{ skill }}
                 </v-chip>
             </div>
-        </v-col>
-
-        <!-- Avatar -->
-        <v-col
-            cols="12"
-            md="5"
-            class="text-center text-md-right"
-        >
-            <v-avatar
-                rounded="0"
-                :size="mdAndUp ? 260 : 220"
-            >
-                <v-img
-                    alt="Gk Wang 個人照片"
-                    aspect-ratio="1/1"
-                    contain
-                    :src="AvatarImg"
-                />
-            </v-avatar>
-        </v-col>
-    </v-row>
+        </section>
+    </div>
 </template>
 
 <script setup lang="ts">
-import { useDisplay } from 'vuetify';
 import AvatarImg from '~/public/avatar.jpg';
 
-const { mdAndUp } = useDisplay();
+const intro = {
+    lead: '我是 Gk Wang。真正稀缺的能力不再是寫出程式，而是定義問題、設計架構與整合需求。',
+    background: '我從設計、行銷、文案到軟體開發，橫跨產品打造的多個角色，能理解需求、規劃流程、設計系統，也能和不同角色順暢溝通。',
+};
 
-type AboutBlock = {
-    type: 'p' | 'list';
-    text?: string;
-    items?: string[];
-}
+type ApproachStep = {
+    title: string;
+    desc: string;
+};
 
-const aboutBlocks: AboutBlock[] = [
+const approach: ApproachStep[] = [
     {
-        type: 'p',
-        text: '我是 Gk Wang。真正稀缺的能力不再是寫出程式，而是定義問題、設計架構與整合需求。',
+        title: 'Understand the Business',
+        desc: '理解營運流程、痛點與真正需求',
     },
     {
-        type: 'p',
-        text: '我的工作方式：',
+        title: 'Design the Solution',
+        desc: '規劃系統架構、資料流、API 與 AI 應用方式',
     },
     {
-        type: 'list',
-        items: [
-            '(1) Understand the Business：理解營運流程、痛點與真正需求',
-            '(2) Design the Solution：規劃系統架構、資料流、API 與 AI 應用方式',
-            '(3) Build & Integrate：開發軟體、整合現有系統與第三方服務',
-            '(4) Deploy & Iterate：部署、測試，並依實際使用情況持續改善',
-        ],
+        title: 'Build & Integrate',
+        desc: '開發軟體、整合現有系統與第三方服務',
     },
     {
-        type: 'p',
-        text: '我從設計、行銷、文案到軟體開發，橫跨產品打造的多個角色，能理解需求、規劃流程、設計系統，也能和不同角色順暢溝通。',
-    },
-    {
-        type: 'p',
-        text: '這些是我近期較常使用的技能：',
+        title: 'Deploy & Iterate',
+        desc: '部署、測試，並依實際使用情況持續改善',
     },
 ];
 
 const skills = [
-    ['JavaScript(ES6+)', 'TypeScript'],
-    ['Vue(3+)', 'Angular(19+)'],
-    ['React', 'Node.js'],
-    ['Claude'],
+    'JavaScript(ES6+)',
+    'TypeScript',
+    'Vue(3+)',
+    'Angular(19+)',
+    'React',
+    'Node.js',
+    'Claude',
 ];
 </script>
+
+<style scoped>
+.lead {
+    font-size: 1.375rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+@media (max-width: 599px) {
+    .lead {
+        font-size: 1.1875rem;
+    }
+}
+</style>

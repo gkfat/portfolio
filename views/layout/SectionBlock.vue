@@ -10,6 +10,22 @@
             <!-- 無標題（Hero）：滿版 -->
             <slot v-if="!title" />
 
+            <!-- stacked：標題在上、內容全寬 -->
+            <div
+                v-else-if="stacked"
+                class="rule-top"
+            >
+                <div class="pt-5 pb-2">
+                    <p class="eyebrow text-secondary mb-1">
+                        {{ prefix }}
+                    </p>
+                    <h2 class="text-h6 font-weight-bold">
+                        {{ title }}
+                    </h2>
+                </div>
+                <slot />
+            </div>
+
             <!-- 12-column grid：左 3 欄標題、右 9 欄內容 -->
             <v-row
                 v-else
@@ -47,6 +63,7 @@ defineProps<{
     id?: string;
     prefix?: string;
     title?: string;
+    stacked?: boolean;
 }>();
 
 const { smAndUp } = useDisplay();
