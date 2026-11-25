@@ -15,12 +15,12 @@
     
                     <v-spacer />
     
-                    <v-col class="d-none d-sm-block" cols="auto">
+                    <v-col class="d-none d-md-block" cols="auto">
                         <v-btn
                             v-for="item of navigation"
                             :key="item.anchor"
                             variant="plain"
-                            class="px-2"
+                            class="px-2 text-none"
                             :ripple="false"
                             @click="onNavClick(item.anchor)"
                         >
@@ -38,7 +38,7 @@
                         </v-btn>
                     </v-col>
 
-                    <v-col class="d-block d-sm-none" cols="auto">
+                    <v-col class="d-block d-md-none" cols="auto">
                         <MenuBtn />
                     </v-col>
                 </v-row>
@@ -95,7 +95,7 @@ import MenuBtn from '~/components/ui/MenuBtn.vue';
 const {
     drawer, navigation, onNavClick, toggleMobileMenu,
 } = useNavigator();
-const { smAndUp } = useDisplay();
+const { mdAndUp } = useDisplay();
 
 // 儲存原始滾動位置
 let scrollPosition = 0;
@@ -179,7 +179,7 @@ const SCROLL_THRESHOLD = 10;
 
 const handleScroll = () => {
     // Mobile 始終顯示
-    if (!smAndUp.value) return;
+    if (!mdAndUp.value) return;
 
     const currentScrollY = window.scrollY;
     const scrollDiff = Math.abs(currentScrollY - lastScrollY.value);
