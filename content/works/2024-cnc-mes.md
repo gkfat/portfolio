@@ -7,7 +7,12 @@ tech:
   - TypeScript
   - Vuetify
 year: 2024
+order: 1
 type: work
+images:
+  - /images/works/2024-cnc-mes/1.jpg
+  - /images/works/2024-cnc-mes/2.jpg
+  - /images/works/2024-cnc-mes/3.jpg
 ---
 
 ## Overview
@@ -21,6 +26,14 @@ type: work
 ## Solution
 
 現場人員掃描 QR Code 即可將資料登錄進後台，管理端即時追蹤工單狀況，把現場生產資訊數位化。
+
+::cnc-mes-actors
+::
+
+## 核心流程
+
+::cnc-mes-flow
+::
 
 ## Key Features
 
