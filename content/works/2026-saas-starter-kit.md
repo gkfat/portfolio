@@ -43,16 +43,16 @@ images:
   - /images/works/2026-saas-starter-kit/25.jpg
 ---
 
-## 專案項目
+## Overview
 
 許多店家或品牌都需要「會員系統」：讓客人加入會員、累積點數、領優惠券、升等 VIP、線上預約。這個專案把這些常見需求整理成一套可以直接套用的範本，採 Monorepo 架構拆分為後台管理介面、獨立 API Server，以及讓客人在 LINE 裡直接使用的會員卡三個子系統。
 
-### 立即體驗
+### Live Demo
 
 - 後台管理介面：[saas-starter-kit-admin.web.app](https://saas-starter-kit-admin.web.app){:target="_blank"}
 - LINE 會員卡：[點此開啟](https://liff.line.me/2010923466-SNdYbl8E){:target="_blank"}（會直接在 LINE App 內開啟，需在手機 LINE 裡點擊才能正常登入）
 
-### 主要功能
+## Key Features
 
 - 會員與權限管理
   - 帳密（主要）、Google、LINE、手機 OTP 多種登入方式，支援綁定同一帳號
@@ -75,13 +75,13 @@ images:
   - 內建繁體中文 / 英文多語系切換
   - 統一 API 錯誤訊息在地化與全域 Toast 通知
 
-### LINE 會員卡
+### LINE 會員卡（Member Card）
 
 客人不需要額外註冊帳號密碼，用 LINE 就能直接開通會員卡，在裡面查看自己的等級、點數與優惠券，並可直接進行線上預約，結帳時出示 QR Code 讓店家掃碼核銷。
 
 <br>
 
-## 負責角色
+## My Role
 
 - 架構設計
 - 程式開發
