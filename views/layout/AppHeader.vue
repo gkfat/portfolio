@@ -4,6 +4,8 @@
             v-show="show"
             app
             flat
+            color="background"
+            class="rule-bottom"
         >
             <v-container fluid>
                 <v-row no-gutters class="align-center flex-nowrap">
@@ -15,22 +17,21 @@
     
                     <v-col class="d-none d-sm-block" cols="auto">
                         <v-btn
-                            v-for="(item, i) of navigation"
+                            v-for="item of navigation"
                             :key="item.anchor"
                             variant="plain"
                             class="px-2"
                             :ripple="false"
                             @click="onNavClick(item.anchor)"
                         >
-                            <span class="text-secondary me-1">0{{ i + 1 }}.</span>
                             <span class="text-primary">{{ item.name }}</span>
                         </v-btn>
 
                         <v-btn
                             variant="outlined"
-                            class="ml-2 border"
-                            color="secondary"
-                            prepend-icon="mdi-view-dashboard"
+                            class="ml-2 text-none"
+                            color="primary"
+                            rounded="0"
                             to="/works"
                         >
                             作品集
@@ -48,6 +49,7 @@
     <!-- Mobile Navigation Sheet -->
     <v-sheet
         class="w-75 position-fixed top-0 right-0 bottom-0 mobile-nav-sheet"
+        color="background"
         :style="{
             transform: drawer ? '' : 'translateX(100%)',
             transition: 'all 0.3s',
@@ -58,14 +60,13 @@
             <v-container>
                 <div class="py-10">
                     <v-list-item
-                        v-for="(item, i) of navigation"
+                        v-for="item of navigation"
                         :key="item.anchor"
                         variant="plain"
                         :ripple="false"
                         class="opacity-100 text-white my-3"
                         @click="onNavClick(item.anchor)"
                     >
-                        <p class="text-center">0{{ i + 1 }}.</p>
                         <p class="text-center">{{ item.name }}</p>
                     </v-list-item>
                         

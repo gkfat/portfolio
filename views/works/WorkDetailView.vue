@@ -1,100 +1,159 @@
 <template>
-    <v-container :max-width="700" class="mx-auto mb-10">
-        <v-row no-gutters class="ga-5 flex-column">
-            <v-col>
-                <v-btn
-                    variant="outlined"
-                    class="border"
-                    color="primary"
-                    prepend-icon="mdi-chevron-left"
-                    to="/works"
+    <section :style="{ paddingTop: smAndUp ? '140px' : '100px', paddingBottom: '96px' }">
+        <v-container :max-width="1200" class="mx-auto px-6 px-md-16">
+            <v-row no-gutters>
+                <!-- 左側 meta（3 欄） -->
+                <v-col
+                    cols="12"
+                    md="3"
+                    class="pe-md-6 mb-8 mb-md-0"
                 >
-                    回列表
-                </v-btn>
-            </v-col>
+                    <div class="meta-sticky">
+                        <v-btn
+                            variant="text"
+                            color="primary"
+                            to="/works"
+                            prepend-icon="mdi-arrow-left"
+                            class="text-none px-0 mb-6"
+                            :ripple="false"
+                        >
+                            All Works
+                        </v-btn>
 
-            <v-col>
-                <v-chip variant="tonal" label>{{ work.year }}</v-chip>
-            </v-col>
+                        <p class="eyebrow text-lightgrey mb-1">
+                            Year
+                        </p>
+                        <p class="text-body-1 mb-5">
+                            {{ work.year }}
+                        </p>
 
-            <v-col>
-                <h1 class="text-h4 text-primary font-weight-bold mb-3">
-                    {{ work.title }}
-                </h1>
-                <p class="text-body-1 bg-dark pa-5 rounded">
-                    {{ work.description }}
-                </p>
-            </v-col>
+                        <p class="eyebrow text-lightgrey mb-1">
+                            Built with
+                        </p>
+                        <p class="text-body-2 mb-5">
+                            {{ work.tech.join(' · ') }}
+                        </p>
 
-            <v-col v-if="work.github || work.url" class="d-flex ga-3">
-                <v-btn
-                    v-if="work.github"
-                    prepend-icon="mdi-github"
-                    variant="outlined"
-                    :href="work.github"
-                    target="_blank"
-                    color="primary"
-                    class="text-none"
+                        <div v-if="work.github || work.url" class="d-flex flex-column ga-2">
+                            <v-btn
+                                v-if="work.url"
+                                prepend-icon="mdi-open-in-new"
+                                variant="outlined"
+                                :href="work.url"
+                                target="_blank"
+                                color="primary"
+                                rounded="0"
+                                class="text-none justify-start"
+                            >
+                                Website
+                            </v-btn>
+                            <v-btn
+                                v-if="work.github"
+                                prepend-icon="mdi-github"
+                                variant="outlined"
+                                :href="work.github"
+                                target="_blank"
+                                color="primary"
+                                rounded="0"
+                                class="text-none justify-start"
+                            >
+                                GitHub
+                            </v-btn>
+                        </div>
+                    </div>
+                </v-col>
+
+                <!-- 右側內容（9 欄） -->
+                <v-col
+                    cols="12"
+                    md="9"
+                    class="rule-top pt-8 pt-md-10"
                 >
-                    Check Github
-                </v-btn>
-                <v-btn
-                    v-if="work.url"
-                    prepend-icon="mdi-web"
-                    variant="outlined"
-                    :href="work.url"
-                    target="_blank"
-                    color="primary"
-                    class="text-none"
-                >
-                    Check Website
-                </v-btn>
-            </v-col>
+                    <h1 class="display-title mb-6" :style="{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }">
+                        {{ work.title }}
+                    </h1>
+                    <p class="text-h6 font-weight-regular text-lightgrey mb-10" :style="{ maxWidth: '720px', lineHeight: 1.7 }">
+                        {{ work.description }}
+                    </p>
 
-            <v-col>
-                <MDContentRenderer :content="work" />
-            </v-col>
+                    <div class="work-content" :style="{ maxWidth: '760px' }">
+                        <MDContentRenderer :content="work" />
+                    </div>
 
-            <!-- Related Works -->
-            <v-col v-if="relatedWorks?.length">
-                <v-divider class="mb-8" />
-                <h2 class="text-h5 text-primary font-weight-bold mb-10">
-                    相關專案
-                </h2>
-                <v-row>
-                    <v-col
-                        v-for="relatedWork in relatedWorks"
-                        :key="relatedWork.slug"
-                        cols="12"
-                        sm="6"
-                        md="4"
-                        class="pa-1"
-                    >
-                        <WorkCard :work="relatedWork" />
-                    </v-col>
-                </v-row>
-            </v-col>
-        </v-row>
-    </v-container>
+                    <!-- Related Works -->
+                    <div v-if="relatedWorks?.length" class="mt-16">
+                        <p class="eyebrow text-secondary mb-4">
+                            Related Works
+                        </p>
+                        <v-row>
+                            <v-col
+                                v-for="relatedWork in relatedWorks"
+                                :key="relatedWork.slug"
+                                cols="12"
+                                sm="6"
+                                class="pa-2"
+                            >
+                                <WorkCard :work="relatedWork" />
+                            </v-col>
+                        </v-row>
+                    </div>
+                </v-col>
+            </v-row>
+        </v-container>
+    </section>
 </template>
 
 <script setup lang="ts">
+import { useDisplay } from 'vuetify';
 import MDContentRenderer from '~/components/ui/MDContentRenderer.vue';
 import WorkCard from '~/components/ui/WorkCard.vue';
 import type { Work } from '~/types';
 
 const props = defineProps<{ work: Work }>();
 
+const { smAndUp } = useDisplay();
+
 // Query related works based on related_works slugs
-const { data: allWorks } = await useAsyncData('all-works-for-related', () => 
+const { data: allWorks } = await useAsyncData('all-works-for-related', () =>
     queryContent<Work>('/works').find(),
 );
 
 const relatedWorks = computed(() => {
     if (!props.work.related_works?.length || !allWorks.value) return [];
-    
+
     return props.work.related_works
         .map(slug => allWorks.value!.find(work => work.slug === slug))
         .filter(Boolean) as Work[];
 });
 </script>
+
+<style scoped>
+@media (min-width: 960px) {
+    .meta-sticky {
+        position: sticky;
+        top: 96px;
+    }
+}
+
+/* Case Study 章節標題：Swiss 風格 eyebrow + 分隔線 */
+.work-content :deep(h2) {
+    border-top: 1px solid var(--hairline);
+    padding-top: 1rem;
+    margin: 2.5rem 0 1rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgb(var(--v-theme-secondary));
+}
+
+.work-content :deep(h3) {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.work-content :deep(p),
+.work-content :deep(li) {
+    line-height: 1.8;
+}
+</style>

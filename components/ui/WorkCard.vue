@@ -3,73 +3,57 @@
         <template #default="{ isHovering, props }">
             <v-card
                 v-bind="props"
-                class="h-100 cursor-pointer pa-3"
-                color="dark"
+                class="h-100 pa-5 d-flex flex-column"
+                color="surface"
+                rounded="0"
+                variant="flat"
                 :style="{
-                    transition: 'all 0.3s',
-                    transform: isHovering ? 'translateY(-8px)' : ''
+                    border: `1px solid ${isHovering ? 'rgb(var(--v-theme-secondary))' : 'var(--hairline)'}`,
+                    transition: 'border-color 0.2s',
                 }"
             >
-                <v-row no-gutters class="pa-3 justify-space-between align-center">
-                    <v-col cols="auto">
-                        <v-icon
-                            color="primary"
-                            icon="mdi-folder-outline"
-                            size="36"
-                            :aria-label="`${work.title} 專案圖示`"
-                        />
-                    </v-col>
-
+                <div class="d-flex align-center mb-4">
+                    <span class="eyebrow text-lightgrey">{{ work.year }}</span>
                     <v-spacer />
-
-                    <v-col
+                    <v-btn
                         v-if="work.github"
-                        cols="auto"
-                        class="me-2"
-                    >
-                        <v-btn
-                            variant="plain"
-                            target="_blank"
-                            color="white"
-                            icon="mdi-github"
-                            size="sm"
-                            :href="work.github"
-                            :ripple="false"
-                        />
-                    </v-col>
-                    <v-col v-if="work.url" cols="auto">
-                        <v-btn
-                            variant="plain"
-                            target="_blank"
-                            color="white"
-                            icon="mdi-open-in-new"
-                            size="sm"
-                            :href="work.url"
-                            :ripple="false"
-                        />
-                    </v-col>
-                </v-row>
+                        variant="plain"
+                        target="_blank"
+                        color="primary"
+                        icon="mdi-github"
+                        size="small"
+                        :href="work.github"
+                        :ripple="false"
+                        :aria-label="`${work.title} GitHub`"
+                    />
+                    <v-btn
+                        v-if="work.url"
+                        variant="plain"
+                        target="_blank"
+                        color="primary"
+                        icon="mdi-open-in-new"
+                        size="small"
+                        :href="work.url"
+                        :ripple="false"
+                        :aria-label="`${work.title} 網站`"
+                    />
+                </div>
 
-                <NuxtLink 
-                    :to="`/works/${work.slug}`" 
+                <NuxtLink
+                    :to="`/works/${work.slug}`"
                     class="text-decoration-none"
                 >
-                    <v-card-title
-                        class="text-wrap font-weight-bold mb-2 cursor-pointer"
-                        :class="{
-                            'text-secondary': isHovering,
-                            'text-white': !isHovering,
-                        }"
-                        :style="{
-                            transition: 'all 0.3s'
-                        }"
+                    <h3
+                        class="text-h6 font-weight-bold mb-3"
+                        :class="isHovering ? 'text-secondary' : 'text-primary'"
+                        :style="{ transition: 'color 0.2s' }"
                     >
                         {{ work.title }}
-                    </v-card-title>
+                    </h3>
                 </NuxtLink>
-                <v-card-text>
-                    <p class="text-grey-lighten-3">{{ work.description }}</p>
-                </v-card-text>
+                <p class="text-body-2 text-lightgrey">
+                    {{ work.description }}
+                </p>
             </v-card>
         </template>
     </v-hover>

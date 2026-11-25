@@ -1,120 +1,100 @@
 <template>
-    <section
-        :style="{
-            'padding-top': '30px',
-            'padding-bottom': '60px'
-        }"
-    >
-        <v-container>
-            <v-row no-gutters class="ga-3 mb-4 align-center">
-                <v-btn-toggle
-                    v-model="selectedType"
-                    variant="outlined"
-                    color="primary"
-                    mandatory
+    <section :style="{ paddingBottom: '96px' }">
+        <v-container :max-width="1200" class="mx-auto px-6 px-md-16">
+            <!-- 分類篩選 -->
+            <div class="d-flex ga-6 mb-6">
+                <button
+                    v-for="type in types"
+                    :key="type.value"
+                    type="button"
+                    class="eyebrow filter-btn pb-2"
+                    :class="selectedType === type.value ? 'text-secondary is-active' : 'text-lightgrey'"
+                    @click="selectedType = type.value"
                 >
-                    <v-btn
-                        class="text-none"
-                        value="work"
-                        text="合作案例"
-                    />
-                    <v-btn
-                        class="text-none"
-                        value="side_project"
-                        text="Side Projects"
-                    />
-                </v-btn-toggle>
+                    {{ type.label }}
+                </button>
+            </div>
+
+            <!-- 表頭（桌機） -->
+            <v-row
+                v-if="smAndUp"
+                no-gutters
+                class="rule-top py-3"
+            >
+                <v-col sm="2" class="eyebrow text-lightgrey">
+                    Year
+                </v-col>
+                <v-col sm="5" class="eyebrow text-lightgrey">
+                    Title
+                </v-col>
+                <v-col sm="4" class="eyebrow text-lightgrey">
+                    Built with
+                </v-col>
+                <v-col sm="1" class="eyebrow text-lightgrey text-right">
+                    Link
+                </v-col>
             </v-row>
 
-            <v-table class="bg-transparent">
-                <thead>
-                    <tr>
-                        <td class="text-h6 font-weight-bold text-grey">Year</td>
-                        <td class="text-h6 font-weight-bold text-grey">Title</td>
-                        <td v-if="smAndUp" class="text-h6 font-weight-bold text-grey">Built with</td>
-                        <td class="text-h6 font-weight-bold text-grey">Link</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr
-                        v-for="work in works" 
-                        v-show="(work.type || 'work') === selectedType"
-                        :key="work.slug"
+            <v-row
+                v-for="work in filteredWorks"
+                :key="work.slug"
+                no-gutters
+                class="rule-top py-5 align-baseline"
+            >
+                <v-col cols="12" sm="2">
+                    <span class="text-body-1 text-lightgrey">{{ work.year }}</span>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="5"
+                    class="pe-sm-6"
+                >
+                    <NuxtLink
+                        :to="`/works/${work.slug}`"
+                        class="work-title text-h6 font-weight-bold text-primary text-decoration-none"
                     >
-                        <td class="border-none text-body-1 text-primary font-weight-bold">
-                            {{ work.year }}
-                        </td>
-                        <td class="border-none">
-                            <v-btn
-                                variant="plain"
-                                color="secondary"
-                                size="sm"
-                                :to="`/works/${work.slug}`"
-                                :max-width="!smAndUp ? 180 : ''"
-                                :ripple="false"
-                                class="text-none"
-                            >
-                                <p
-                                    class="text-wrap"
-                                    :class="{
-                                        'text-body-1': !smAndUp,
-                                        'text-h6': smAndUp
-                                    }"
-                                >
-                                    {{ work.title }}
-                                </p>
-                            </v-btn>
-                        </td>
-                        <td
-                            v-if="smAndUp"
-                            class="border-none"
-                            :style="{ maxWidth: '300px' }"
-                        >
-                            <v-row no-gutters class="ga-1 py-3">
-                                <v-col
-                                    v-for="tech of sortedTechList(work.tech)"
-                                    :key="tech"
-                                    cols="auto"
-                                >
-                                    <v-chip
-                                        size="sm"
-                                        color="primary"
-                                        class="px-2"
-                                    >
-                                        {{ tech }}
-                                    </v-chip>
-                                </v-col>
-                            </v-row>
-                        </td>
-                        <td class="border-none">
-                            <v-row no-gutters class="align-center ga-3 flex-nowrap">
-                                <v-col v-if="work.github" cols="auto">
-                                    <v-btn
-                                        variant="plain"
-                                        target="_blank"
-                                        color="primary"
-                                        icon="mdi-github"
-                                        size="sm"
-                                        :href="work.github"
-                                        :ripple="false"
-                                    />
-                                </v-col>
-                                <v-col v-if="work.url" cols="auto">
-                                    <v-btn
-                                        variant="plain"
-                                        target="_blank"
-                                        color="primary"
-                                        icon="mdi-open-in-new"
-                                        size="sm"
-                                        :href="work.url"
-                                        :ripple="false"
-                                    />
-                                </v-col>
-                            </v-row>
-                        </td>
-                    </tr>
-                </tbody>
-            </v-table>
+                        {{ work.title }}
+                    </NuxtLink>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="4"
+                    class="mt-2 mt-sm-0 pe-sm-4"
+                >
+                    <p class="text-body-2 text-lightgrey">
+                        {{ sortedTechList(work.tech).join(' · ') }}
+                    </p>
+                </v-col>
+                <v-col
+                    cols="12"
+                    sm="1"
+                    class="d-flex justify-sm-end mt-2 mt-sm-0"
+                >
+                    <v-btn
+                        v-if="work.github"
+                        variant="plain"
+                        target="_blank"
+                        color="primary"
+                        icon="mdi-github"
+                        size="small"
+                        :href="work.github"
+                        :ripple="false"
+                        :aria-label="`${work.title} GitHub`"
+                    />
+                    <v-btn
+                        v-if="work.url"
+                        variant="plain"
+                        target="_blank"
+                        color="primary"
+                        icon="mdi-open-in-new"
+                        size="small"
+                        :href="work.url"
+                        :ripple="false"
+                        :aria-label="`${work.title} 網站`"
+                    />
+                </v-col>
+            </v-row>
+            <div class="rule-top" />
         </v-container>
     </section>
 </template>
@@ -122,21 +102,53 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
 import type {
-    Work, WorkType, 
+    Work, WorkType,
 } from '~/types';
 
 const { smAndUp } = useDisplay();
 
+const types: { value: WorkType; label: string }[] = [
+    {
+        value: 'work',
+        label: '合作案例', 
+    }, {
+        value: 'side_project',
+        label: 'Side Projects', 
+    },
+];
+
 const selectedType = ref<WorkType>('work');
 
-const { data: works } = await useAsyncData('works', () => 
+const { data: works } = await useAsyncData('works', () =>
     queryContent<Work>('/works')
         .sort({ year: -1 })
         .find(),
 );
 
+const filteredWorks = computed(() =>
+    (works.value ?? []).filter(work => (work.type || 'work') === selectedType.value),
+);
+
 const sortedTechList = (techs: string[]) => {
     return [...techs].sort((a, b) => a.localeCompare(b));
 };
-
 </script>
+
+<style scoped>
+.filter-btn {
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+.filter-btn.is-active {
+    border-bottom-color: rgb(var(--v-theme-secondary));
+}
+
+.work-title {
+    transition: color 0.2s;
+}
+
+.work-title:hover {
+    color: rgb(var(--v-theme-secondary));
+}
+</style>

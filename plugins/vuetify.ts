@@ -4,45 +4,56 @@ import * as directives from 'vuetify/directives';
 import {
     aliases, mdi, 
 } from 'vuetify/iconsets/mdi';
-import colors from 'vuetify/lib/util/colors.mjs';
 
 export default defineNuxtPlugin({
     name: 'vuetify',
     setup(nuxtApp) {
+        // SSR 無 viewport 資訊：依 UA 推估初始寬度，降低 hydration mismatch
+        const userAgent = import.meta.server
+            ? useRequestHeaders(['user-agent'])['user-agent'] ?? ''
+            : '';
+        const ssrClientWidth = /Mobi|Android|iPhone|iPad/i.test(userAgent) ? 390 : 1280;
+
         const vuetify = createVuetify({
             components,
             directives,
         
             // 字體配置
-            defaults: { global: { style: 'font-family: "Source Sans 3", "Noto Sans TC", sans-serif;' } },
+            defaults: { global: { style: 'font-family: "Inter", "Noto Sans TC", sans-serif;' } },
     
             // 主題配置
             theme: {
                 defaultTheme: 'dark',
                 themes: {
+                    // 莫蘭迪配色：低飽和、偏暖灰；token 語意——
+                    // primary = 主文字、secondary = 唯一強調色（灰藍）、lightgrey = 次要文字、
+                    // dark = 稍亮的底（區塊/chip）、white = 前景色
                     light: {
                         dark: false,
                         colors: {
-                            white: colors.shades.white,
-                            primary: '#808873',
-                            dark: '#41453c',
-                            lightgrey: colors.grey.lighten1,
-                            secondary: '#C6BAAC',
-                            warning: '#975557',
-                            background: '#FFFBFC',
+                            white: '#3B3835',
+                            primary: '#3B3835',
+                            secondary: '#5F7A8C',
+                            dark: '#E2DCD3',
+                            lightgrey: '#7A756D',
+                            warning: '#A87068',
+                            background: '#EDE8E1',
+                            surface: '#F6F3EE',
+                            success: '#6F8A6C',
                         },
                     },
                     dark: {
                         dark: true,
                         colors: {
-                            white: colors.grey.darken3,
-                            primary: '#C4CBDB',
-                            dark: '#4f5563',
-                            lightgrey: colors.grey.darken1,
-                            secondary: '#FCECDF',
-                            warning: '#a05d5d',
-                            background: '#212020',
-                            success: colors.green.lighten2,
+                            white: '#E8E2D8',
+                            primary: '#E8E2D8',
+                            secondary: '#8FA7B8',
+                            dark: '#34322E',
+                            lightgrey: '#A39E93',
+                            warning: '#C4968F',
+                            background: '#22211F',
+                            surface: '#2B2A27',
+                            success: '#9DB39A',
                         },
                     },
                 },
@@ -69,7 +80,7 @@ export default defineNuxtPlugin({
                 hydration: { mobileBreakpoint: 'sm' },
             },
             // SSR 配置
-            ssr: true,
+            ssr: import.meta.server ? { clientWidth: ssrClientWidth } : true,
         });
 
         nuxtApp.vueApp.use(vuetify);

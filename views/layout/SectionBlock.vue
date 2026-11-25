@@ -2,48 +2,40 @@
     <section
         :id="id"
         :style="{
-            'padding-top': smAndUp ? '100px' : '60px',
-            'padding-bottom': smAndUp ? '100px' : '60px',
+            'padding-top': smAndUp ? '72px' : '56px',
+            'padding-bottom': smAndUp ? '72px' : '56px',
         }"
     >
-        <v-container
-            v-if="title"
-            :max-width="maxWidth"
-            class="mx-auto"
-        >
-            <!-- center type -->
-            <v-row
-                v-if="justifyCenter"
-                no-gutters
-                class="justify-center align-center"
-            >
-                <v-col cols="auto" class="text-h6 font-weight-bold">
-                    <span v-if="prefix" class="text-secondary me-3">{{ prefix }}</span>
-                    <span>{{ title }}</span>
-                </v-col>
-            </v-row>
+        <v-container :max-width="1200" class="mx-auto px-6 px-md-16">
+            <!-- 無標題（Hero）：滿版 -->
+            <slot v-if="!title" />
 
-            <!-- left type -->
+            <!-- 12-column grid：左 3 欄標題、右 9 欄內容 -->
             <v-row
                 v-else
+                class="rule-top"
                 no-gutters
-                class="align-center ga-5 nowrap"
             >
-                <v-col cols="auto" class="text-h5 font-weight-bold">
-                    <span v-if="prefix" class="text-secondary me-3">{{ prefix }}</span>
-                    <span>{{ title }}</span>
+                <v-col
+                    cols="12"
+                    md="3"
+                    class="pt-5 pb-6"
+                >
+                    <p class="eyebrow text-secondary mb-1">
+                        {{ prefix }}
+                    </p>
+                    <h2 class="text-h6 font-weight-bold">
+                        {{ title }}
+                    </h2>
                 </v-col>
-                <v-col class="flex-grow">
-                    <v-divider
-                        :thickness="2"
-                        :length="120"
-                    />
+                <v-col
+                    cols="12"
+                    md="9"
+                    class="pt-md-5"
+                >
+                    <slot />
                 </v-col>
             </v-row>
-        </v-container>
-
-        <v-container :max-width="maxWidth" class="mx-auto">
-            <slot />
         </v-container>
     </section>
 </template>
@@ -55,8 +47,6 @@ defineProps<{
     id?: string;
     prefix?: string;
     title?: string;
-    maxWidth?: number;
-    justifyCenter?: boolean;
 }>();
 
 const { smAndUp } = useDisplay();

@@ -3,8 +3,7 @@
 
     <!-- Image Gallery -->
     <section v-if="images?.length" class="mt-16">
-        <v-divider class="mb-8" />
-        <h2 class="text-h5 font-weight-bold text-primary mb-5">圖片列表</h2>
+        <h2 class="eyebrow text-secondary rule-top pt-4 mb-5">圖片列表</h2>
         <ImageGallery :images="images" :work-title="content.title"/>
     </section>
 </template>

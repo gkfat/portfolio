@@ -6,7 +6,7 @@
         >
             <v-tabs
                 v-model="currentTab"
-                color="primary"
+                color="secondary"
                 :direction="smAndUp ? 'vertical' : 'horizontal'"
             >
                 <v-tab
