@@ -2,12 +2,12 @@ export const seoI18n = {
     'zh-TW': {
         home: {
             title: '首頁',
-            description: '我是 Gk Wang，集設計、專案管理與程式專業於一身的網頁開發者',
-            keywords: 'Vue.js, React, TypeScript, 前端開發, 網站設計, RWD, SEO, 台灣',
+            description: 'Gk Wang — AI Forward Deployed Engineer。協助企業整合 AI、既有系統與營運流程，打造能投入生產環境的解決方案。',
+            keywords: 'AI Forward Deployed Engineer, AI 導入, RAG, Workflow Automation, 系統整合, 客製化軟體, 台灣',
         },
         works: {
             title: '作品集',
-            description: '查看我完成的各類專案，包含合作案例與 Side Projects',
+            description: '企業系統整合、流程自動化與客製化軟體的實作案例，包含合作案例與 Side Projects',
             keywords: '作品集, 專案案例, 前端作品, Vue.js 專案, React 開發, Angular 開發',
         },
         work: {

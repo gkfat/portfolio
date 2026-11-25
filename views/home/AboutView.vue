@@ -3,8 +3,8 @@
         <!-- About -->
         <v-col
             cols="12"
-            md="6"
-            class="mb-10 mb-md-0"
+            md="7"
+            class="mb-10 mb-md-0 pe-md-8"
         >
             <template
                 v-for="(block, i) in aboutBlocks"
@@ -12,7 +12,7 @@
             >
                 <p
                     v-if="block.type === 'p'"
-                    class="text-body-1 text-primary mb-3"
+                    class="text-body-1 mb-3"
                 >
                     {{ block.text }}
                 </p>
@@ -20,7 +20,7 @@
                 <v-list
                     v-else-if="block.type === 'list'"
                     density="compact"
-                    class="text-body-1 text-primary mb-3"
+                    class="text-body-1 mb-3 bg-transparent px-0"
                 >
                     <v-list-item v-if="block.items">
                         <template
@@ -33,40 +33,27 @@
                 </v-list>
             </template>
 
-            <v-row no-gutters>
-                <v-col
-                    v-for="(row, i) in skills"
-                    :key="i"
-                    cols="12"
+            <div class="d-flex flex-wrap ga-2 mt-4">
+                <v-chip
+                    v-for="skill in skills.flat()"
+                    :key="skill"
+                    variant="outlined"
+                    rounded="0"
                 >
-                    <v-row no-gutters>
-                        <v-col
-                            v-for="(skill) in row"
-                            :key="skill"
-                            cols="6"
-                        >
-                            <p class="text-secondary font-weight-bold py-1">
-                                <v-icon
-                                    :style="{transform: 'rotate(90deg)'}"
-                                    icon="mdi-triangle-small-up"
-                                />
-                                {{ skill }}
-                            </p>
-                        </v-col>
-                    </v-row>
-                </v-col>
-            </v-row>
+                    {{ skill }}
+                </v-chip>
+            </div>
         </v-col>
 
         <!-- Avatar -->
         <v-col
             cols="12"
-            md="6"
-            class="text-center"
+            md="5"
+            class="text-center text-md-right"
         >
             <v-avatar
-                rounded="xl"
-                :size="mdAndUp ? '90%' : 300"
+                rounded="0"
+                :size="mdAndUp ? 260 : 220"
             >
                 <v-img
                     alt="Gk Wang 個人照片"
@@ -94,42 +81,24 @@ type AboutBlock = {
 const aboutBlocks: AboutBlock[] = [
     {
         type: 'p',
-        text: '我是 Gk Wang。',
+        text: '我是 Gk Wang。真正稀缺的能力不再是寫出程式，而是定義問題、設計架構與整合需求。',
     },
     {
         type: 'p',
-        text: '在這個 AI 爆發的時代，你的產品是否能放心依靠 AI？眾所皆知，AI 非常擅長產生程式碼，但不擅長：',
+        text: '我的工作方式：',
     },
     {
         type: 'list',
         items: [
-            '(1) 理解隱藏需求',
-            '(2) 維持架構一致性',
-            '(3) 長期演進',
+            '(1) Understand the Business：理解營運流程、痛點與真正需求',
+            '(2) Design the Solution：規劃系統架構、資料流、API 與 AI 應用方式',
+            '(3) Build & Integrate：開發軟體、整合現有系統與第三方服務',
+            '(4) Deploy & Iterate：部署、測試，並依實際使用情況持續改善',
         ],
     },
     {
         type: 'p',
-        text: '你要尋找的人不是會用 AI 就好，而必須能夠「精準駕馭」。同理，架構並非能動就好，而是需要經過妥善設計。真正稀缺的能力不再是寫出程式，而是定義問題、設計架構與整合需求。',
-    },
-    {
-        type: 'p',
-        text: '而我，從設計、行銷、文案到軟體開發，橫跨產品打造的多個角色，在具有寫程式的熱忱之餘，兼有理解需求、規劃流程與設計系統的能力。最重要的是，我能溝通。',
-    },
-    {
-        type: 'p',
-        text: '我具備以下優勢：',
-    },
-    {
-        type: 'list',
-        items: [
-            '(1) 擅長需求分析與產品規劃',
-            '(2) 系統架構設計',
-            '(3) Client side UX 流程設計與 API 串接管理',
-            '(4) Server side 邏輯釐清與設計',
-            '(5) SDD 規格驅動開發',
-            '(6) 擅長溝通',
-        ],
+        text: '我從設計、行銷、文案到軟體開發，橫跨產品打造的多個角色，能理解需求、規劃流程、設計系統，也能和不同角色順暢溝通。',
     },
     {
         type: 'p',

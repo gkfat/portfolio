@@ -8,19 +8,19 @@ export function useNavigator() {
     // 導航項目配置
     const navigation: NavigationItem[] = [
         {
-            name: '精選作品',
+            name: 'Solutions',
+            anchor: '#solutions',
+        },
+        {
+            name: 'Works',
             anchor: '#features',
         },
         {
-            name: '關於我', 
+            name: 'About', 
             anchor: '#about',
         },
         {
-            name: '工作經歷',
-            anchor: '#experience',
-        },
-        {
-            name: '聯絡我',
+            name: 'Contact',
             anchor: '#contact',
         },
     ];

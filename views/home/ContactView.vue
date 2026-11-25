@@ -1,47 +1,48 @@
-import { contactInfo } from '../../config/config';
 <template>
-    <v-row no-gutters class="justify-center align-center flex-column ga-5">
-        <v-col cols="auto">
-            <h3 class="text-h4 font-weight-bold">保持聯絡</h3>
-        </v-col>
-
-        <v-col cols="auto">
-            <p  class="text-center text-body-1 text-primary mb-2">
-                雖然目前並未尋找新的工作機會，但我的信箱隨時保持開啟。
-            </p>
-            <p  class="text-center text-body-1 text-primary mb-3">
-                若您有任何疑問，或單純只是想要聯繫我，請直接來信。我會盡我所能回覆您！
-            </p>
-        </v-col>
-        
-        <v-col cols="auto">
+    <div>
+        <h3 class="display-title mb-6" :style="{ fontSize: 'clamp(2rem, 4.5vw, 3.25rem)' }">
+            Have a Business Problem to Solve?
+        </h3>
+        <p class="text-h6 font-weight-regular text-lightgrey mb-8" :style="{ maxWidth: '640px', lineHeight: 1.7 }">
+            無論是 AI 應用、流程自動化或系統整合，歡迎來信討論，讓我們把想法變成可運作的解決方案。
+        </p>
+        <div class="d-flex flex-wrap align-center ga-3 mb-6">
             <v-btn
-                variant="outlined"
+                variant="flat"
                 size="x-large"
                 class="text-none"
                 color="secondary"
+                rounded="0"
                 :href="`mailto:${contactInfo.email}`"
             >
-                寫封郵件吧
+                Let's Build Something.
             </v-btn>
-        </v-col>
-
-        <v-col cols="auto" class="text-center">
-            <v-chip
-                color="success"
-                variant="flat"
-                size="small"
-                class="mb-2"
+            <v-btn
+                v-for="link in socialLinks"
+                :key="link.name"
+                variant="outlined"
+                size="x-large"
+                class="text-none"
+                rounded="0"
+                target="_blank"
+                :prepend-icon="link.icon"
+                :href="link.url"
             >
-                快速回應
-            </v-chip>
-            <p class="text-lightgrey text-caption">
-                通常在 24 小時內回覆
-            </p>
-        </v-col>
-    </v-row>
+                {{ link.name }}
+            </v-btn>
+        </div>
+        <p class="text-body-2 text-lightgrey">
+            <v-icon
+                icon="mdi-circle"
+                color="success"
+                size="10"
+                class="me-2"
+            />通常在 24 小時內回覆
+        </p>
+    </div>
 </template>
 <script setup lang="ts">
 import { contactInfo } from '~/config/config';
 
+const socialLinks = Object.values(contactInfo.socialLinks);
 </script>
