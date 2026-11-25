@@ -11,6 +11,7 @@ export type Work = {
   url?: string;
   github?: string;
   type?: WorkType;
+  order?: number; // 同年度內的排序（小的在前），未設定者排在最後並維持檔名順序
   related_works?: string[]; // Related work slugs
 }
 

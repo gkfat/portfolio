@@ -125,8 +125,14 @@ const { data: works } = await useAsyncData('works', () =>
         .find(),
 );
 
+const DEFAULT_ORDER = 999;
+
+// 年份新到舊；同年度依 front matter 的 order（小的在前），未設定者維持原本順序
 const filteredWorks = computed(() =>
-    (works.value ?? []).filter(work => (work.type || 'work') === selectedType.value),
+    (works.value ?? [])
+        .filter(work => (work.type || 'work') === selectedType.value)
+        .sort((a, b) => Number(b.year) - Number(a.year)
+            || (a.order ?? DEFAULT_ORDER) - (b.order ?? DEFAULT_ORDER)),
 );
 
 const sortedTechList = (techs: string[]) => {
