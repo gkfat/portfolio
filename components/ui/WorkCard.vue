@@ -12,7 +12,7 @@
                     transition: 'border-color 0.2s',
                 }"
             >
-                <div class="d-flex align-center mb-4">
+                <div class="card-head d-flex align-center mb-4">
                     <span class="eyebrow text-lightgrey">{{ work.year }}</span>
                     <v-spacer />
                     <v-btn
@@ -66,3 +66,10 @@ defineProps<{
     work: Work
 }>();
 </script>
+
+<style scoped>
+/* 頁首列高度固定（等同圖示按鈕高度），避免有無連結造成標題位置不一 */
+.card-head {
+    min-height: 40px;
+}
+</style>
