@@ -18,8 +18,14 @@ export default defineNuxtConfig({
         '/': {
             redirect: {
                 to: '/home', statusCode: 301, 
-            }, 
-        }, 
+            },
+        },
+        // 派車系統 LIFF 與後台合併為同一個作品，舊網址 301 到合併後的頁面
+        '/works/2024-welcabin-liff': {
+            redirect: {
+                to: '/works/2024-welcabin-admin', statusCode: 301,
+            },
+        },
     },
 
     // SSG 模式 - 混合預渲染策略 + 效能優化
