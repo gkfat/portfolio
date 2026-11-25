@@ -1,0 +1,10 @@
+# Cloudflare Pages 設定（此檔為專案設定的唯一來源，後台對應的 Functions 設定會被覆蓋）
+name = "portfolio"
+pages_build_output_dir = "dist"
+
+# 與 nuxt.config.ts 的 compatibilityDate 一致
+compatibility_date = "2026-06-14"
+
+# @nuxt/content 等依賴會用到 node:buffer、node:process 等內建模組，
+# 相容性日期早於 2026-08-04 時必須明確開啟，否則 Function 發佈會失敗
+compatibility_flags = ["nodejs_compat"]
