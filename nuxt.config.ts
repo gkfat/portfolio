@@ -1,17 +1,37 @@
+import { siteConfig } from './config/config';
+
+// Cloudflare 部署（CF_PAGES 為 Pages build 環境變數）：Workers 無法執行 sharp/ipx
+const isCloudflare = Boolean(process.env.CF_PAGES) || Boolean(process.env.NITRO_PRESET?.includes('cloudflare'));
+
 export default defineNuxtConfig({
     compatibilityDate: '2026-06-14',
 
     // 禁用自動添加尾隨斜線
-    site: { trailingSlash: false },
+    site: {
+        url: siteConfig.domain,
+        name: siteConfig.siteName,
+        trailingSlash: false,
+    },
+
+    // `/` 於 server 端 301 到 /home（不依賴 client JS，爬蟲可直接跟隨）
+    routeRules: {
+        '/': {
+            redirect: {
+                to: '/home', statusCode: 301, 
+            }, 
+        }, 
+    },
 
     // SSG 模式 - 混合預渲染策略 + 效能優化
     nitro: { 
         prerender: { 
-            routes: ['/sitemap.xml'],
+            routes: ['/sitemap.xml', '/robots.txt'],
             crawlLinks: true,
         },
         // 效能優化
         minify: true,
+        // Workers 需啟用 Node.js 相容層（@nuxt/content 等依賴）
+        ...(isCloudflare ? { cloudflare: { nodeCompat: true } } : {}),
         compressPublicAssets: true,
         // 代碼分割優化
         rollupConfig: { output: { manualChunks: { 'vuetify-vendor': ['vuetify'] } } },
@@ -51,6 +71,8 @@ export default defineNuxtConfig({
             lg: 1024,
             xl: 1280,
         },
+        // Cloudflare Workers 無法使用 ipx(sharp)，改為直接輸出原圖
+        ...(isCloudflare ? { provider: 'none' } : {}),
         quality: 80,
         densities: [1, 2],
         providers: { static: { provider: 'ipx' } },
@@ -89,7 +111,7 @@ export default defineNuxtConfig({
                 },
                 {
                     rel: 'stylesheet', 
-                    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap',
+                    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Inter:wght@300..800&display=swap',
                 },
             ],
             script: [
@@ -129,5 +151,10 @@ export default defineNuxtConfig({
         },
     },
 
-    sitemap: { zeroRuntime: true },
+    sitemap: {
+        zeroRuntime: true,
+        // `/` 為 redirect，不納入 sitemap
+        exclude: ['/'],
+        sources: ['/api/__sitemap__/urls'],
+    },
 });

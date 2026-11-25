@@ -12,14 +12,6 @@ useHead({
     titleTemplate: `%s | ${siteConfig.siteName}`,
     meta: [
         {
-            name: 'description',
-            content: '專業前端工程師，專精 Vue.js、React、TypeScript 開發，提供企業級前端解決方案',
-        },
-        {
-            name: 'keywords',
-            content: '前端工程師,Vue.js,React,TypeScript,網站開發,接案',
-        },
-        {
             name: 'author',
             content: siteConfig.siteName,
         },
@@ -41,9 +33,6 @@ useHead({
             rel: 'icon',
             type: 'image/x-icon',
             href: '/favicon.ico',
-        }, {
-            rel: 'canonical',
-            href: siteConfig.domain,
         },
     ],
 });

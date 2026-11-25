@@ -8,7 +8,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "prepare": "husky install",
-    "cf:build": "pnpm install --frozen-lockfile && pnpm generate",
+    "cf:build": "pnpm install --frozen-lockfile && pnpm build",
     "lint": "eslint . --ext .ts,.js,.vue --fix"
   },
   "engines": {

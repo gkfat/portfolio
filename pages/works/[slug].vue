@@ -5,6 +5,7 @@
 <script setup lang="ts">
 import WorkDetailView from '~/views/works/WorkDetailView.vue';
 import type { Work } from '~/types';
+import { siteConfig } from '~/config/config';
 
 const route = useRoute();
 const slug = route.params.slug as string;
@@ -45,7 +46,7 @@ useSchemaOrg([
         description: work.value.description,
         author: {
             '@type': 'Person',
-            name: '您的名字',
+            name: siteConfig.siteName,
         },
         dateCreated: `${work.value.year}-01-01`,
         keywords: work.value.tech.join(', '),
