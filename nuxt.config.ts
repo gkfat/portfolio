@@ -136,6 +136,10 @@ export default defineNuxtConfig({
         },
     },
 
+    // CSS 以 <link> 引入，不 inline 進 HTML：
+    // 否則 Vuetify / mdi 樣式約 850KB 會排在 OG meta 之前，LinkedIn 等爬蟲讀不到預覽標籤
+    features: { inlineStyles: false },
+
     // 效能優化
     experimental: { 
         payloadExtraction: false,

@@ -2,7 +2,7 @@ export const seoI18n = {
     'zh-TW': {
         home: {
             title: '首頁',
-            description: 'Gk Wang — AI Forward Deployed Engineer。協助企業整合 AI、既有系統與營運流程，打造能投入生產環境的解決方案。',
+            description: 'Gk Wang — AI Forward Deployed Engineer。協助企業整合 AI、既有系統與營運流程，打造能投入生產環境的解決方案。Helping businesses integrate AI with existing systems and workflows to ship production-ready solutions.',
             keywords: 'AI Forward Deployed Engineer, AI 導入, RAG, Workflow Automation, 系統整合, 客製化軟體, 台灣',
         },
         works: {
