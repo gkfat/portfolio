@@ -20,12 +20,39 @@
                             All Works
                         </v-btn>
 
+                        <template v-if="typeLabel">
+                            <p class="eyebrow text-lightgrey mb-1">
+                                Project Type
+                            </p>
+                            <p class="text-body-1 mb-5">
+                                {{ typeLabel }}
+                            </p>
+                        </template>
+
                         <p class="eyebrow text-lightgrey mb-1">
-                            Year
+                            {{ work.period ? 'Period' : 'Year' }}
                         </p>
                         <p class="text-body-1 mb-5">
-                            {{ work.year }}
+                            {{ work.period ?? work.year }}
                         </p>
+
+                        <template v-if="work.industry">
+                            <p class="eyebrow text-lightgrey mb-1">
+                                Industry
+                            </p>
+                            <p class="text-body-2 mb-5">
+                                {{ work.industry }}
+                            </p>
+                        </template>
+
+                        <template v-if="work.roles?.length">
+                            <p class="eyebrow text-lightgrey mb-1">
+                                My Role
+                            </p>
+                            <p class="text-body-2 mb-5">
+                                {{ work.roles.join(' · ') }}
+                            </p>
+                        </template>
 
                         <p class="eyebrow text-lightgrey mb-1">
                             Built with
@@ -112,6 +139,8 @@ import type { Work } from '~/types';
 const props = defineProps<{ work: Work }>();
 
 const { smAndUp } = useDisplay();
+
+const typeLabel = computed(() => getWorkTypeLabel(props.work.type));
 
 // Query related works based on related_works slugs
 const { data: allWorks } = await useAsyncData('all-works-for-related', () =>

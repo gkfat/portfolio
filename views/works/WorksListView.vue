@@ -107,11 +107,16 @@ import type {
 
 const { smAndUp } = useDisplay();
 
-const types: { value: WorkType; label: string }[] = [
+const allTypes: { value: WorkType; label: string }[] = [
     {
         value: 'work',
         label: '合作案例', 
-    }, {
+    },
+    {
+        value: 'poc',
+        label: 'POC', 
+    },
+    {
         value: 'side_project',
         label: 'Side Projects', 
     },
@@ -126,6 +131,11 @@ const { data: works } = await useAsyncData('works', () =>
 );
 
 const DEFAULT_ORDER = 999;
+
+// 只顯示有作品的類型，避免出現空的篩選分頁（例如尚無 POC 時）
+const types = computed(() =>
+    allTypes.filter(type => (works.value ?? []).some(work => (work.type || 'work') === type.value)),
+);
 
 // 年份新到舊；同年度依 front matter 的 order（小的在前），未設定者維持原本順序
 const filteredWorks = computed(() =>

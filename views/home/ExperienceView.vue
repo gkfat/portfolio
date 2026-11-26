@@ -65,12 +65,13 @@
 <script setup lang="ts">
 import { useDisplay } from 'vuetify';
 import MDContentRenderer from '~/components/ui/MDContentRenderer.vue';
+import type { ParsedContent } from '@nuxt/content';
 import type { Experience } from '~/types';
 
 const { smAndUp } = useDisplay();
 
 const { data: experiences } = await useAsyncData('experiences', () => 
-    queryContent<Experience>('/experience')
+    queryContent<Experience & ParsedContent>('/experience')
         .sort({ order: 1 }) // 按 order 欄位排序
         .find(),
 );

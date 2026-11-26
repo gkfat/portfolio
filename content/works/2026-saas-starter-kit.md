@@ -41,36 +41,49 @@ images:
   - /images/works/2026-saas-starter-kit/23.jpg
   - /images/works/2026-saas-starter-kit/24.jpg
   - /images/works/2026-saas-starter-kit/25.jpg
+industry: "店家會員經營（SaaS）"
+roles:
+  - "架構設計"
+  - "程式開發"
+  - "自動化部署建置"
+featured:
+  order: 3
+  context: "店家與品牌普遍需要會員、點數、優惠券、VIP 等級與線上預約等會員經營功能。"
+  problem: "每次導入會員系統都得從零開發，耗時又重複。"
+  outcome: "個人專案（範本），已部署可操作的後台與 LINE 會員卡 Demo；導入成效尚未量測。"
+  capabilities:
+    - "SaaS Architecture（Monorepo）"
+    - "RBAC"
+    - "LINE LIFF"
+    - "自動化部署"
+  mockup:
+    desktop: "/images/works/2026-saas-starter-kit/1.jpg"
+    mobile: "/images/works/2026-saas-starter-kit/20.jpg"
 ---
 
 ## Overview
 
 可快速套用的 SaaS 會員系統範本，採 Monorepo 架構，拆分為後台管理介面、獨立 API Server，以及讓客人在 LINE 裡直接使用的會員卡三個子系統。
 
-### Live Demo
-
-- 後台管理介面：[saas-starter-kit-admin.web.app](https://saas-starter-kit-admin.web.app){:target="_blank"}
-- LINE 會員卡：[點此開啟](https://liff.line.me/2010923466-SNdYbl8E){:target="_blank"}（會直接在 LINE App 內開啟，需在手機 LINE 裡點擊才能正常登入）
-
-## Business Challenge
+## Business Problem
 
 許多店家或品牌都需要「會員系統」：讓客人加入會員、累積點數、領優惠券、升等 VIP、線上預約，但每次都得從零開發。
 
-## Solution
+## Discovery
+
+- 常見需求：會員、點數、優惠券、VIP 等級、活動、預約
+- 目標：功能模組化，可依店家需求挑選套用
+
+## Proposed Solution
 
 把這些常見需求整理成一套可以直接套用的範本：後台管理會員與營運，API Server 提供服務，客人用 LINE 就能直接開通會員卡，不需要額外註冊帳號密碼。
 
-## 角色互動
+### 角色互動
 
 ::saas-actors
 ::
 
-## 核心流程
-
-::saas-flows
-::
-
-## Key Features
+### Key Features
 
 - 會員與權限管理
   - 帳密、Google、LINE、手機 OTP 多種登入方式，支援綁定同一帳號
@@ -85,8 +98,37 @@ images:
 - LINE 會員卡：查看等級、點數與優惠券，線上預約，結帳時出示 QR Code 核銷
 - 環境與體驗：dev 與 prod 環境隔離、繁體中文與英文多語系、統一錯誤訊息與 Toast 通知
 
-## My Role
+## Architecture
 
-- 架構設計
-- 程式開發
-- 自動化部署建置
+### 核心流程
+
+::saas-flows
+::
+
+### 系統說明
+
+- Monorepo 拆分為後台管理介面、獨立 API Server、LINE 會員卡三個子系統，部署於 Firebase
+
+## Implementation
+
+- Hybrid RBAC：角色決定身分，並可在後台細粒度動態調整權限
+- 多種登入方式（帳密、Google、LINE、手機 OTP）綁定同一帳號
+- dev 與 prod 環境隔離，自動化部署
+
+## Challenges & Trade-offs
+
+- Monorepo 讓三個子系統共用型別與工具，代價是建置與部署設定較複雜
+
+## Evaluation & Results
+
+- 尚未量測：目前沒有可追溯的量化數據。
+
+## Demo
+
+- 後台管理介面：[saas-starter-kit-admin.web.app](https://saas-starter-kit-admin.web.app){:target="_blank"}
+- LINE 會員卡：[點此開啟](https://liff.line.me/2010923466-SNdYbl8E){:target="_blank"}（會直接在 LINE App 內開啟，需在手機 LINE 裡點擊才能正常登入）
+- 操作畫面：見下方圖片列表
+
+## Lessons Learned
+
+- 範本的價值在於模組邊界清楚，讓功能可以獨立啟用或移除

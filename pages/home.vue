@@ -5,34 +5,38 @@
             <HeroView />
         </SectionBlock>
 
-        <!-- Collaboration -->
-        <SectionBlock :id="'collab'">
-            <CollabView />
-        </SectionBlock>
-
-        <!-- Solutions -->
+        <!-- What I Solve -->
         <SectionBlock
             :id="'solutions'"
             :prefix="'01.'"
             :title="'What I Solve'"
-            stacked
         >
-            <SolutionsView />
+            <ProblemsView />
         </SectionBlock>
 
-        <!-- Features -->
+        <!-- Featured Case Studies -->
         <SectionBlock
-            :id="'features'"
+            :id="'cases'"
             :prefix="'02.'"
-            :title="'Selected Works'"
+            :title="'Case Studies'"
+            stacked
         >
-            <FeaturesView />
+            <CaseStudiesView />
+        </SectionBlock>
+
+        <!-- How I Work + Engineering Principles -->
+        <SectionBlock
+            :id="'process'"
+            :prefix="'03.'"
+            :title="'How I Work'"
+        >
+            <HowIWorkView />
         </SectionBlock>
 
         <!-- Capabilities -->
         <SectionBlock
             :id="'capabilities'"
-            :prefix="'03.'"
+            :prefix="'04.'"
             :title="'Capabilities'"
         >
             <CapabilitiesView />
@@ -41,8 +45,8 @@
         <!-- About -->
         <SectionBlock
             :id="'about'"
-            :prefix="'04.'"
-            :title="'About & Approach'"
+            :prefix="'05.'"
+            :title="'About'"
         >
             <AboutView />
         </SectionBlock>
@@ -50,7 +54,7 @@
         <!-- Contact -->
         <SectionBlock
             :id="'contact'"
-            :prefix="'05.'"
+            :prefix="'06.'"
             :title="'Contact'"
         >
             <ContactView />
@@ -60,11 +64,11 @@
 
 <script setup lang="ts">
 import ContactView from '~/views/home/ContactView.vue';
-import FeaturesView from '~/views/home/FeaturesView.vue';
-import SolutionsView from '~/views/home/SolutionsView.vue';
+import ProblemsView from '~/views/home/ProblemsView.vue';
+import CaseStudiesView from '~/views/home/CaseStudiesView.vue';
+import HowIWorkView from '~/views/home/HowIWorkView.vue';
 import CapabilitiesView from '~/views/home/CapabilitiesView.vue';
 import HeroView from '~/views/home/HeroView.vue';
-import CollabView from '~/views/home/CollabView.vue';
 import SectionBlock from '~/views/layout/SectionBlock.vue';
 import AboutView from '~/views/home/AboutView.vue';
 

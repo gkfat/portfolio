@@ -114,7 +114,7 @@ watch(drawer, (isOpen) => {
         document.documentElement.style.overflow = 'hidden';
         
         // 為頁面內容添加模糊效果，排除 header 和 nav sheet
-        const mainContent = document.querySelector('main, .v-main, [data-app-main]');
+        const mainContent = document.querySelector<HTMLElement>('main, .v-main, [data-app-main]');
         if (mainContent) {
             mainContent.style.filter = 'blur(3px)';
             mainContent.style.transition = 'filter 0.3s ease';
@@ -122,7 +122,7 @@ watch(drawer, (isOpen) => {
         }
         
         // 為其他可能的內容容器添加模糊
-        const layouts = document.querySelectorAll('.layout:not(.mobile-nav-sheet), .page-content');
+        const layouts = document.querySelectorAll<HTMLElement>('.layout:not(.mobile-nav-sheet), .page-content');
         layouts.forEach(element => {
             element.style.filter = 'blur(3px)';
             element.style.transition = 'filter 0.3s ease';
@@ -139,13 +139,13 @@ watch(drawer, (isOpen) => {
         // 恢復滾動位置
         window.scrollTo(0, scrollPosition);
         
-        const mainContent = document.querySelector('main, .v-main, [data-app-main]');
+        const mainContent = document.querySelector<HTMLElement>('main, .v-main, [data-app-main]');
         if (mainContent) {
             mainContent.style.filter = '';
             mainContent.style.pointerEvents = '';
         }
         
-        const layouts = document.querySelectorAll('.layout:not(.mobile-nav-sheet), .page-content');
+        const layouts = document.querySelectorAll<HTMLElement>('.layout:not(.mobile-nav-sheet), .page-content');
         layouts.forEach(element => {
             element.style.filter = '';
             element.style.pointerEvents = '';
@@ -161,12 +161,12 @@ onUnmounted(() => {
     document.body.style.width = '';
     document.documentElement.style.overflow = '';
     
-    const mainContent = document.querySelector('main, .v-main, [data-app-main]');
+    const mainContent = document.querySelector<HTMLElement>('main, .v-main, [data-app-main]');
     if (mainContent) {
         mainContent.style.filter = '';
         mainContent.style.pointerEvents = '';
     }
-    const layouts = document.querySelectorAll('.layout:not(.mobile-nav-sheet), .page-content');
+    const layouts = document.querySelectorAll<HTMLElement>('.layout:not(.mobile-nav-sheet), .page-content');
     layouts.forEach(element => {
         element.style.filter = '';
         element.style.pointerEvents = '';

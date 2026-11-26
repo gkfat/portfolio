@@ -26,21 +26,31 @@ images:
   - /images/works/2026-facet-yourself/8.jpg
   - /images/works/2026-facet-yourself/9.jpg
   - /images/works/2026-facet-yourself/10.jpg
+industry: "個人成長（自我分析）"
+roles:
+  - "系統分析"
+  - "UI/UX 設計"
+  - "程式開發"
 ---
 
 ## Overview
 
 AI 個人特質分析 Web App，整合星座、血型、MBTI、生命靈數、八字、人類圖等多個系統與自我評量測驗，並以可追溯來源的規則疊合成綜合報告，再由 OpenAI 產出詳細分析。
 
-## Business Challenge
+## Business Problem
 
 單一命理或性格系統只能看到自己的一個面向。
 
-## Solution
+## Discovery
+
+- 單一系統只能呈現一個面向，使用者需要跨系統的綜合觀點
+- 限制：AI 產出不能無中生有，報告內容需可追溯來源
+
+## Proposed Solution
 
 從不同角度認識自己，再把結果疊合成一份屬於使用者的報告。Nuxt 4 SPA 搭配 Nitro server，部署於 Vercel，資料存於 Firestore。
 
-## Key Features
+### Key Features
 
 - 多系統固定內容
   - 星座、血型、MBTI、生命靈數、Maya Kin、八字、人類圖
@@ -55,7 +65,12 @@ AI 個人特質分析 Web App，整合星座、血型、MBTI、生命靈數、�
 - 會員與點數
   - 訪客可先以 guest session 使用，登入後可認領紀錄
 
-## Technical Decisions
+## Architecture
+
+- Nuxt 4 SPA + Nitro server，部署於 Vercel，資料存於 Firestore
+- OpenAI 依報告內容產生詳細章節
+
+## Implementation
 
 - 報告以純函式組裝：同一份輸入一定得到同一份報告。每個系統只需實作 adapter，轉成共用的 `SystemReportInput`
 - 推論只從畫面上顯示的事實出發，報告的每句話都帶有來源，不產生無來源的句子；規則措辭有驗證，限制使用保守用語、禁用診斷與財務用語
@@ -64,8 +79,21 @@ AI 個人特質分析 Web App，整合星座、血型、MBTI、生命靈數、�
 - 以 CI 腳本檢查 client bundle 不洩漏 server secret
 - 採用 OpenSpec 以規格驅動開發，並產出系統分析文件；Vitest 搭配記憶體版 fake Firestore，不需 emulator 即可測試
 
-## My Role
+## Challenges & Trade-offs
 
-- 系統分析
-- UI/UX 設計
-- 程式開發
+- 報告以規則組裝、AI 只負責延伸說明：可追溯且穩定，代價是規則撰寫成本較高
+
+## Evaluation & Results
+
+- 尚未量測：目前沒有可追溯的量化數據。
+- 已知狀態：以 Vitest 撰寫測試，AI 報告有品質檢查。
+
+## Demo
+
+- 線上網站：[https://facet-yourself.vercel.app](https://facet-yourself.vercel.app){:target="_blank"}
+- 原始碼：[GitHub](https://github.com/gkfat/facet-yourself){:target="_blank"}
+- 操作畫面：見下方圖片列表
+
+## Lessons Learned
+
+- AI 應用中，讓 AI 處理表達、讓程式處理事實，能有效降低幻覺風險

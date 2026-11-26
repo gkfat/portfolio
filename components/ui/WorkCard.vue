@@ -13,7 +13,9 @@
                 }"
             >
                 <div class="card-head d-flex align-center mb-4">
-                    <span class="eyebrow text-lightgrey">{{ work.year }}</span>
+                    <span class="eyebrow text-lightgrey">
+                        {{ work.year }}<template v-if="typeLabel"> · {{ typeLabel }}</template>
+                    </span>
                     <v-spacer />
                     <v-btn
                         v-if="work.github"
@@ -62,9 +64,12 @@
 <script lang="ts" setup>
 import type { Work } from '~/types';
 
-defineProps<{
+// 不命名為 props，避免與 v-hover slot 的 props 衝突
+const cardProps = defineProps<{
     work: Work
 }>();
+
+const typeLabel = computed(() => getWorkTypeLabel(cardProps.work.type));
 </script>
 
 <style scoped>

@@ -3,8 +3,11 @@ import { siteConfig } from '~/config/config';
 import { seoI18n } from '~/seo/i18n';
 import { pageSeoMap } from '~/seo/pages';
 
+type SeoLocale = keyof typeof seoI18n;
+type SeoKey = keyof typeof seoI18n[SeoLocale];
+
 interface SeoOptions {
-  key?: string;
+  key?: SeoKey;
   title?: string;
   description?: string;
   keywords?: string;
@@ -14,10 +17,10 @@ interface SeoOptions {
 
 export function useSeo(options: SeoOptions = {}) {
     const route = useRoute();
-    const locale = useState('locale', () => 'zh-TW');
+    const locale = useState<SeoLocale>('locale', () => 'zh-TW');
 
     // 獲取 SEO key，支援動態路由
-    const getSeoKey = (): string => {
+    const getSeoKey = (): SeoKey => {
         if (options.key) return options.key;
         
         // 靜態頁面路由對應

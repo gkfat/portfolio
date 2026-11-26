@@ -2,8 +2,8 @@ export const seoI18n = {
     'zh-TW': {
         home: {
             title: '企業 AI 導入與系統整合',
-            description: 'Gk Wang — AI Forward Deployed Engineer。協助企業整合 AI、既有系統與營運流程，打造能投入生產環境的解決方案。Helping businesses integrate AI with existing systems and workflows to ship production-ready solutions.',
-            keywords: 'AI Forward Deployed Engineer, AI 導入, RAG, Workflow Automation, 系統整合, 客製化軟體, 台灣',
+            description: 'Gk Wang — AI Solutions Engineer。協助企業整合 AI、既有系統與營運流程，打造能投入生產環境的解決方案。Helping businesses integrate AI with existing systems and workflows to ship production-ready solutions.',
+            keywords: 'AI Solutions Engineer, AI Agent, AI 導入, RAG, Workflow Automation, 系統整合, 客製化軟體, 台灣',
         },
         works: {
             title: '作品集',
@@ -18,19 +18,19 @@ export const seoI18n = {
     },
     en: {
         home: {
-            title: 'Professional Frontend Developer Portfolio | Modern Web Development',
-            description: 'Experienced frontend developer specializing in Vue.js, React, and TypeScript for enterprise solutions',
-            keywords: 'Vue.js, React, TypeScript, Frontend Development, Web Design, RWD, SEO, Taiwan',
+            title: 'AI Integration & Enterprise Systems',
+            description: 'Gk Wang — AI Solutions Engineer. Helping businesses integrate AI with existing systems and workflows to ship production-ready solutions.',
+            keywords: 'AI Solutions Engineer, AI Agent, Workflow Automation, System Integration, Production AI, Taiwan',
         },
         works: {
-            title: 'Portfolio - Frontend Development Projects',
-            description: 'View various frontend development projects including enterprise systems, e-commerce platforms, and data visualization',
-            keywords: 'Portfolio, Project Cases, Frontend Projects, Vue.js Projects, React Development',
+            title: 'Case Studies',
+            description: 'Case studies in enterprise system integration, workflow automation and custom software, including client projects and personal projects',
+            keywords: 'Case Studies, Client Projects, System Integration, Workflow Automation, Custom Software',
         },
         work: {
-            title: '{title} - Frontend Development Case Study',
+            title: 'Case Study - {title}',
             description: '{description}',
-            keywords: '{tech}, Frontend Development, Project Case',
+            keywords: '{tech}, Case Study, System Integration',
         },
     },
 };

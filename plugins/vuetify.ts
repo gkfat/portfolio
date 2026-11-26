@@ -76,8 +76,6 @@ export default defineNuxtPlugin({
                     lg: 1280,
                     xl: 1920,
                 },
-                // 減少 SSR 水合問題
-                hydration: { mobileBreakpoint: 'sm' },
             },
             // SSR 配置
             ssr: import.meta.server ? { clientWidth: ssrClientWidth } : true,

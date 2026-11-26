@@ -61,7 +61,22 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@nuxtjs/seo',
         '@nuxt/image',
+        '@nuxt/fonts',
     ],
+
+    // 字型自架 + preload + 尺寸對齊的 fallback，避免 Inter 載入前後版面重排（FOUT / CLS）
+    fonts: {
+        families: [
+            {
+                name: 'Inter',
+                provider: 'google',
+                weights: ['300 800'],
+                styles: ['normal'],
+                subsets: ['latin'],
+                preload: true,
+            },
+        ],
+    },
     
     // @nuxt/image 配置
     image: {
@@ -105,19 +120,8 @@ export default defineNuxtConfig({
             link: [
                 {
                     rel: 'icon', type: 'image/x-icon', href: '/favicon.ico', 
-                },
-                {
+                }, {
                     rel: 'manifest', href: '/manifest.json', 
-                },
-                {
-                    rel: 'preconnect', href: 'https://fonts.googleapis.com',
-                },
-                {
-                    rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '',
-                },
-                {
-                    rel: 'stylesheet', 
-                    href: 'https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Inter:wght@300..800&display=swap',
                 },
             ],
             script: [
@@ -125,7 +129,7 @@ export default defineNuxtConfig({
                     src: 'https://www.googletagmanager.com/gtag/js?id=G-VR45SF9JFN',
                     async: true,
                 }, {
-                    children: `
+                    innerHTML: `
                         window.dataLayer = window.dataLayer || [];
                         function gtag(){dataLayer.push(arguments);}
                         gtag('js', new Date());

@@ -7,25 +7,29 @@ export function useNavigator() {
 
     // 導航項目配置
     const navigation: NavigationItem[] = [
-        // 編號與首頁各區塊的 prefix（01.～05.）一致
+        // 編號與首頁各區塊的 prefix（01.～06.）一致
         {
             name: '01. Solutions',
             anchor: '#solutions',
         },
         {
-            name: '02. Works',
-            anchor: '#features',
+            name: '02. Cases',
+            anchor: '#cases',
         },
         {
-            name: '03. Capabilities',
+            name: '03. Process',
+            anchor: '#process',
+        },
+        {
+            name: '04. Capabilities',
             anchor: '#capabilities',
         },
         {
-            name: '04. About',
+            name: '05. About',
             anchor: '#about',
         },
         {
-            name: '05. Contact',
+            name: '06. Contact',
             anchor: '#contact',
         },
     ];
