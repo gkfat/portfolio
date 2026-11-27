@@ -14,6 +14,13 @@
             <p class="text-body-2 text-lightgrey mb-0">
                 {{ item.desc }}
             </p>
+            <NuxtLink
+                v-if="item.caseLink"
+                :to="item.caseLink"
+                class="case-link"
+            >
+                看案例：{{ item.caseTitle }} →
+            </NuxtLink>
         </section>
     </div>
 </template>
@@ -22,6 +29,12 @@
 type Problem = {
     title: string;
     desc: string;
+    caseLink?: string;
+    caseTitle?: string;
+};
+
+const BUSINESS_OPS_AGENT = {
+    caseLink: '/works/2026-business-ops-agent', caseTitle: 'AI 報價需求處理 Agent', 
 };
 
 // 以客戶問題分類，而非技術名稱
@@ -29,10 +42,12 @@ const problems: Problem[] = [
     {
         title: 'Workflow Automation',
         desc: '將重複、跨系統的人工流程轉換成可追蹤的自動化工作流。',
+        ...BUSINESS_OPS_AGENT,
     },
     {
         title: 'AI Agent',
         desc: '讓 AI 理解任務、呼叫授權工具，並在必要時交由人員確認。',
+        ...BUSINESS_OPS_AGENT,
     },
     {
         title: 'Enterprise Data Integration',
@@ -58,6 +73,19 @@ const problems: Problem[] = [
     .problems {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
+
+.case-link {
+    display: inline-block;
+    margin-top: 12px;
+    color: rgb(var(--v-theme-secondary));
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.case-link:hover {
+    text-decoration: underline;
 }
 
 .problem {

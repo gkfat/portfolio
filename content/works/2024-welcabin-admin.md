@@ -27,7 +27,7 @@ roles:
   - "程式開發"
   - "UI / UX 設計（LINE LIFF 端）"
 featured:
-  order: 2
+  order: 3
   context: "長照接送車行：乘客透過 LINE 自助預約、內勤以電話接單，再集中安排車趟。"
   problem: "預約需求來自多個管道、資訊分散，車行難以集中管控與安排車趟。"
   outcome: "長期合作專案，系統持續擴充（AI 排班、復康訂車、乘客簽到），提供線上 Demo；量化成效尚未量測。"

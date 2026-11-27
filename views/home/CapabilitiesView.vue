@@ -39,12 +39,12 @@ type Group = {
 const groups: Group[] = [
     {
         title: 'AI Engineering',
-        items: ['AI-assisted Development（SDD 規格驅動開發）'],
-        experiments: [
-            'LLM API Integration',
-            'RAG / Embedding',
-            'Function Calling',
+        items: [
+            'AI-assisted Development（SDD 規格驅動開發）',
+            'LLM API Integration（Structured Outputs）',
+            'LLM Evaluation（評估資料集與自動評分）',
         ],
+        experiments: ['RAG / Embedding', 'Function Calling'],
     },
     {
         title: 'Backend & Integration',
@@ -53,6 +53,7 @@ const groups: Group[] = [
             'Authentication / RBAC',
             'Third-party Login（Google / LINE / OTP）',
             'Firebase / Firestore',
+            'PostgreSQL（Drizzle、交易與併發控制）',
         ],
     },
     {

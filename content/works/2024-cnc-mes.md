@@ -17,7 +17,7 @@ industry: "製造業（CNC 加工）"
 roles:
   - "程式開發"
 featured:
-  order: 1
+  order: 2
   context: "CNC 加工廠的報價、訂單、採購與現場生產，都需要追蹤到每一張工單。"
   problem: "現場生產進度仰賴人工回報，管理端無法即時掌握每張工單的狀況。"
   outcome: "已實作現場掃描 QR Code 登錄與工單即時追蹤；量化成效尚未量測。"
